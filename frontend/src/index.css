@@ -4,6 +4,24 @@
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 53.3%, 0.4);
+  border-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8fbc8f;
+}
+
+:root {
+  font-family: "Open Sans";
+}
+
 .page {
   margin-top: 50px;
+  min-height: calc(100vh-50px);
 }
