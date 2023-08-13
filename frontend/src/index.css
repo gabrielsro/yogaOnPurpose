@@ -23,5 +23,11 @@ body::-webkit-scrollbar {
 
 .page {
   margin-top: 50px;
-  min-height: calc(100vh-50px);
+  min-height: calc(100vh - 50px);
+}
+
+@media only screen and (max-width: 500px) {
+  .page {
+    margin-top: 0px;
+  }
 }

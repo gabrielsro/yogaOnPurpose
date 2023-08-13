@@ -1,15 +1,40 @@
 nav {
-  display: flex;
   top: 0;
-  justify-content: space-around;
-  align-items: center;
   background-color: #8fbc8f;
   position: fixed;
   width: 100vw;
   height: 50px;
+  display: flex;
+  align-items: center;
 }
 
-nav a {
+#menu {
+  position: absolute;
+  right: 10px;
+  display: none;
+}
+
+.menuIconAnimation {
+  animation: spin 200ms ease-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  background-color: #8fbc8f;
+  width: 100%;
+}
+
+.links a {
   text-decoration: none;
   font-weight: bold;
   color: white;
@@ -19,18 +44,68 @@ nav a {
   transition: transform 0.2s;
 }
 
-nav a:hover {
+.links a:hover {
   transform: scale(1.2);
 }
 
-nav a p {
+.links a p {
   transition: color 0.2s ease-in 0.01s;
 }
 
-nav a:hover p {
+.links a:hover p {
   color: #7600ff;
 }
 
-nav img {
+.links img,
+#menu img {
   width: 30px;
+}
+
+@media only screen and (max-width: 660px) {
+  .links img {
+    width: 20px;
+  }
+
+  .links a {
+    gap: 0px;
+  }
+
+  .links a:hover {
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  nav {
+    top: calc(100vh - 50px);
+  }
+
+  #menu {
+    display: grid;
+    place-content: center;
+    border: 0px;
+    background-color: rgba(255, 0, 0, 0);
+  }
+
+  .links img {
+    width: 35px;
+  }
+
+  .links a {
+    gap: 10px;
+  }
+
+  .links {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 25px;
+    height: calc(100vh - 50px);
+    position: absolute;
+    bottom: 50px;
+    padding-bottom: 30px;
+    transition: display 200ms ease;
+  }
 }
