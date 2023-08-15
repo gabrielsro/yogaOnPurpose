@@ -11,8 +11,10 @@ import menu from "./icons/menu.svg";
 import MenuIconRotation from "./javascripts/MenuIconRotation";
 import toggleMobileMenu from "./javascripts/toggleMobileMenu";
 import checkLinkClick from "./javascripts/checkLinkClick";
+import detectResizing from "./javascripts/detectResizing";
 
 const Navbar = () => {
+  detectResizing();
   return (
     <nav>
       <button
