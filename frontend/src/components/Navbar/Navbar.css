@@ -109,3 +109,11 @@ nav {
     transition: display 200ms ease;
   }
 }
+
+.selected {
+  color: #7600ff;
+}
+
+.unselected {
+  color: white;
+}
