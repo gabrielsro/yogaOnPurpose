@@ -6,5 +6,16 @@ import Events from "./Events/Events";
 import Contact from "./Contact/Contact";
 import Blog from "./Blog/Blog";
 import Login from "./Login/Login";
+import Signup from "./Signup/Signup";
 
-export default { About, Home, Store, Schedule, Events, Contact, Blog, Login };
+export default {
+  About,
+  Home,
+  Store,
+  Schedule,
+  Events,
+  Contact,
+  Blog,
+  Login,
+  Signup,
+};

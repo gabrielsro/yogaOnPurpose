@@ -11,6 +11,7 @@ app.use("/items", routes.items);
 app.use("/pages", routes.pages);
 app.use("/posts", routes.posts);
 app.use("/schedule", routes.schedule);
+app.use("/users", routes.users);
 
 app.use(morgan("dev"));
 
