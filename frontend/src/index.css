@@ -9,6 +9,10 @@ body::-webkit-scrollbar {
   width: 6px;
 }
 
+li {
+  list-style-type: none;
+}
+
 ::-webkit-scrollbar-thumb {
   background: hsla(0, 0%, 53.3%, 0.4);
   border-radius: 9px;
@@ -24,6 +28,7 @@ body::-webkit-scrollbar {
 
 .page {
   margin-top: 50px;
+  padding-bottom: 50px;
   min-height: calc(100vh - 50px);
 }
 
