@@ -18,8 +18,11 @@ export default () => {
   lotusFlower.setAttribute("alt", "Yoga position icon");
   const container = document.querySelector(".logoSection");
   const icons = [matIcon, ballIcon, blackOmIcon, lotusFlower];
+  let viewport = window.innerWidth;
   icons.forEach((icon) => {
-    icon.classList.add("homeIcon");
+    viewport > 500
+      ? icon.classList.add("homeIcon")
+      : icon.classList.add("homeIconMobile");
   });
 
   randomizer(icons, container, 1, 3);
@@ -36,6 +39,7 @@ function randomizer(icons, container, part, parts) {
   icon.style.left = `${xDistance * 100}%`;
   icon.addEventListener("animationend", () => container.removeChild(icon));
   container.appendChild(icon);
-
-  setTimeout(() => randomizer(icons, container, part, parts), 3600);
+  let nextDelay = Math.random() * 3600;
+  nextDelay < 2000 ? (nextDelay = 3000) : (nextDelay += 1);
+  setTimeout(() => randomizer(icons, container, part, parts), nextDelay);
 }
