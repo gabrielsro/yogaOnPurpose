@@ -1,0 +1,62 @@
+#home {
+  padding-top: 20px;
+}
+
+#logo {
+  height: 100%;
+  width: 300px;
+}
+
+.logoSection {
+  display: grid;
+  grid-template-columns: 300px auto;
+  overflow: hidden;
+}
+
+.logoContainer {
+  width: 300px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.logoGradient {
+  position: relative;
+  background: linear-gradient(to right, #8fbabf, #cfc8c6);
+  width: 100%;
+  height: 190px;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.slogan {
+  position: absolute;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  place-self: center;
+  color: white;
+}
+
+.slogan h1 {
+  position: relative;
+  z-index: 2;
+}
+
+.homeIcon {
+  width: 20px;
+  position: absolute;
+  top: 80px;
+  animation: rain 5s linear forwards;
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(160px);
+    opacity: 0;
+  }
+}

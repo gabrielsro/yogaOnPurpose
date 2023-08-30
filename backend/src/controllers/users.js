@@ -1,7 +1,8 @@
 export default { createUser, logUser };
 
 async function createUser(req, res, next) {
-  res.send("I was hit!");
+  console.log(req.body);
+  res.send(req.body);
   next();
 }
 async function logUser() {}

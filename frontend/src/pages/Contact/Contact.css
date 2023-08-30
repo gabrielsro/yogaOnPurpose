@@ -1,0 +1,64 @@
+#contactMain {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+  place-content: center;
+  height: 100%;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.socialMediaCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialMediaCard p {
+  font-size: 1.7rem;
+}
+
+.socialMedia > .socialMediaCard:nth-child(1) {
+  color: red;
+}
+
+.socialMedia > .socialMediaCard:nth-child(2) {
+  color: pink;
+}
+
+.socialMedia > .socialMediaCard:nth-child(3) {
+  color: blue;
+}
+
+.socialMedia > .socialMediaCard:nth-child(4) {
+  color: rgb(117, 117, 5);
+}
+
+.socialMedia > .socialMediaCard:nth-child(5) {
+  color: grey;
+}
+
+.socialMediaCard img {
+  width: 50px;
+}
+
+.text {
+  display: grid;
+  place-content: center;
+}
+
+.contactForm {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.contactForm div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

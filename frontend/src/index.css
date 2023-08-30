@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -24,6 +25,10 @@ body::-webkit-scrollbar {
 .page {
   margin-top: 50px;
   min-height: calc(100vh - 50px);
+}
+
+.pageContent {
+  height: calc(100vh - 50px);
 }
 
 @media only screen and (max-width: 500px) {
