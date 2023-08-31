@@ -1,6 +1,6 @@
 nav {
   top: 0;
-  background-color: #8fbc8f;
+  background-color: #8fbabf;
   position: fixed;
   width: 100vw;
   height: 50px;
@@ -31,7 +31,7 @@ nav {
 .links {
   display: flex;
   justify-content: space-around;
-  background-color: #8fbc8f;
+  background-color: #8fbabf;
   width: 100%;
 }
 

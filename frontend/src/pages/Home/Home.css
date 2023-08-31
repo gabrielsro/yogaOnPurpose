@@ -1,5 +1,7 @@
 #home {
   padding-top: 20px;
+  padding-bottom: 200px;
+  position: relative;
 }
 
 #logo {
@@ -119,6 +121,47 @@
   opacity: 1;
 }
 
+.homeExternals {
+  margin-top: 70px;
+  display: grid;
+  place-content: center;
+}
+
+.homeExternals ul {
+  width: 200px;
+  display: flex;
+  place-content: center;
+  gap: 40px;
+}
+
+.homeExternals img {
+  width: 40px;
+}
+
+#home footer {
+  background-color: rgb(215, 213, 213);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding: 10px;
+  display: grid;
+  place-content: center;
+}
+
+#home footer div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#home footer img {
+  width: 30px;
+}
+
+#home footer .footerContact {
+  gap: 120px;
+}
+
 @media only screen and (max-width: 500px) {
   #home {
     padding-top: 0px;
@@ -158,8 +201,9 @@
   }
 
   .valueProposition {
+    height: 1000px;
     grid-template-columns: 1fr;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: 1fr 1fr;
   }
 
   #valuePropositionText {

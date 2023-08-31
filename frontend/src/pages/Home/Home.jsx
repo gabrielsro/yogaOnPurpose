@@ -8,6 +8,11 @@ import img4 from "./images/yoga4.jpg";
 import img5 from "./images/yoga5.jpg";
 import img6 from "./images/yoga6.jpg";
 import img9 from "./images/yoga9.jpg";
+import youtube from "./icons/youtube.svg";
+import instagram from "./icons/instagram.svg";
+import facebook from "./icons/facebook.svg";
+import email from "./icons/email.svg";
+import phone from "./icons/phone.svg";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -53,6 +58,37 @@ const Home = () => {
           </ul>
         </div>
       </div>
+      <section className="homeExternals">
+        <ul>
+          <li className="homeExternal">
+            <a href="https://www.youtube.com/@YogaOnPurpose">
+              <img src={youtube} alt="Youtube icon" />
+            </a>
+          </li>
+          <li className="homeExternal">
+            <a href="https://www.instagram.com/jamiez_life/">
+              <img src={facebook} alt="Facebook icon" />
+            </a>
+          </li>
+          <li className="homeExternal">
+            <a href="https://www.instagram.com/jamiez_life/">
+              <img src={instagram} alt="Instagram icon" />
+            </a>
+          </li>
+        </ul>
+      </section>
+      <footer>
+        <div className="footerContact">
+          <div>
+            <img src={email} alt="Email icon" />
+            <p>Email</p>
+          </div>
+          <div>
+            <img src={phone} alt="Phone icon" />
+            <p>Phone</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
