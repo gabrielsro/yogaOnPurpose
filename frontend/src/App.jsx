@@ -12,6 +12,7 @@ const App = () => {
         <Navbar page={page} setPage={setPage} />
         <Routes>
           <Route path="/" element={<pages.Home />} />
+          <Route path="/yogaOnPurpose" element={<pages.Home />} />
           <Route path="/schedule" element={<pages.Schedule />} />
           <Route path="/events" element={<pages.Events />} />
           <Route path="/contact" element={<pages.Contact />} />
