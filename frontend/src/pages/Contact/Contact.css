@@ -1,5 +1,5 @@
 #contactMain {
-  height: 130vh;
+  height: auto;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,6 +16,7 @@
   display: grid;
   place-content: center;
   grid-column: 1/3;
+  padding-bottom: 100px;
 }
 
 .contactForm form {
@@ -56,4 +57,33 @@
 
 .contactLinks img {
   width: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  #contactMain {
+    display: block;
+    width: 100%;
+  }
+
+  .contactForm form {
+    width: 90vw;
+    grid-template-columns: 1fr;
+    row-gap: 7px;
+  }
+
+  .contactForm form label {
+    margin-top: 15px;
+    place-self: start;
+  }
+
+  .contactLinks {
+    width: 100%;
+    flex-direction: column;
+    gap: 90px;
+  }
+
+  .contactOptions {
+    padding-top: 70px;
+    width: 100%;
+  }
 }
