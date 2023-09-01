@@ -4,15 +4,18 @@ import facebook from "./icons/facebook.svg";
 import instagram from "./icons/instagram.svg";
 import phone from "./icons/phone.svg";
 import email from "./icons/email.svg";
+import messageSubmission from "./javascripts/messageSubmission";
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    messageSubmission();
+  }, []);
   return (
     <div className="page">
       <div className="pageContent">
         <main id="contactMain">
-          <div className="contactAnimation">
-            <h2>Animation Here</h2>
-          </div>
+          <div className="contactAnimation"></div>
           <div className="contactForm">
             <form action="">
               <label htmlFor="firstName">First name:</label>
@@ -39,25 +42,30 @@ const Contact = () => {
                 <a href="">
                   <img src={youtube} alt="Youtube icon" />
                 </a>
+                <p>@yogaonpurpose</p>
               </li>
               <li>
                 <a href="">
-                  <img src={facebook} alt="Youtube icon" />
+                  <img src={facebook} alt="Facebook icon" />
+                </a>
+                <p>@yogaonpurpose</p>
+              </li>
+              <li>
+                <a href="">
+                  <img src={instagram} alt="Instagram icon" />
+                  <p>@yogaonpurpose</p>
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src={instagram} alt="Youtube icon" />
+                  <img src={phone} alt="Phone icon" />
+                  <p>+1-812-664-8369</p>
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src={phone} alt="Youtube icon" />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img src={email} alt="Youtube icon" />
+                  <img src={email} alt="Email icon" />
+                  <p>yogaonpurpose@gmail.com</p>
                 </a>
               </li>
             </ul>

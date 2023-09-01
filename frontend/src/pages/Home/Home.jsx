@@ -81,11 +81,11 @@ const Home = () => {
         <div className="footerContact">
           <div>
             <img src={email} alt="Email icon" />
-            <p>Email</p>
+            <p>yogaonpurpose@gmail.com</p>
           </div>
           <div>
             <img src={phone} alt="Phone icon" />
-            <p>Phone</p>
+            <p>+1-812-664-8369</p>
           </div>
         </div>
       </footer>

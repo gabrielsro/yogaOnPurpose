@@ -65,6 +65,10 @@
     width: 100%;
   }
 
+  .contactForm {
+    height: 100vh;
+  }
+
   .contactForm form {
     width: 90vw;
     grid-template-columns: 1fr;

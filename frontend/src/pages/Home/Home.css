@@ -160,6 +160,7 @@
 
 #home footer .footerContact {
   gap: 120px;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 500px) {
@@ -212,5 +213,15 @@
 
   #valuePropositionCarousel {
     grid-row: 1/2;
+  }
+
+  #home footer {
+    bottom: 50px;
+  }
+
+  #home footer .footerContact {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
   }
 }
