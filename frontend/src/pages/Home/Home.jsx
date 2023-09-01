@@ -28,12 +28,14 @@ const Home = () => {
         </div>
         <div className="logoGradient"></div>
         <div className="slogan">
-          <h1>Slogan goes here</h1>
+          <h1>Purpose fuels passion</h1>
         </div>
       </div>
       <div className="valueProposition">
         <div id="valuePropositionText">
-          <h2>Value Proposition Goes Here</h2>
+          <h2>Making Yoga accessible to everyone!</h2>
+          <h2>In-person, online and outdoors</h2>
+          <h2>RYI 275 hr</h2>
         </div>
         <div id="valuePropositionCarousel">
           <ul>
