@@ -1,6 +1,5 @@
 
 node_modules/
-frontend/dist
 .env
 .git
 details.txt
