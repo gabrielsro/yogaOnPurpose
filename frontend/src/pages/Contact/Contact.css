@@ -1,64 +1,59 @@
 #contactMain {
+  height: 130vh;
+  width: 100%;
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 30px;
-  place-content: center;
-  height: 100%;
-}
-
-.socialMedia {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.socialMediaCard {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.socialMediaCard p {
-  font-size: 1.7rem;
-}
-
-.socialMedia > .socialMediaCard:nth-child(1) {
-  color: red;
-}
-
-.socialMedia > .socialMediaCard:nth-child(2) {
-  color: pink;
-}
-
-.socialMedia > .socialMediaCard:nth-child(3) {
-  color: blue;
-}
-
-.socialMedia > .socialMediaCard:nth-child(4) {
-  color: rgb(117, 117, 5);
-}
-
-.socialMedia > .socialMediaCard:nth-child(5) {
-  color: grey;
-}
-
-.socialMediaCard img {
-  width: 50px;
-}
-
-.text {
-  display: grid;
-  place-content: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh auto;
 }
 
 .contactForm {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
+  display: grid;
+  place-content: center;
 }
 
-.contactForm div {
+.contactOptions {
+  background-color: #eee;
+  display: grid;
+  place-content: center;
+  grid-column: 1/3;
+}
+
+.contactForm form {
+  position: relative;
+  display: grid;
+  column-gap: 10px;
+  row-gap: 20px;
+  width: 560px;
+  grid-template-columns: 138px auto;
+  padding-bottom: 50px;
+}
+
+.contactForm form label {
+  place-self: end;
+  font-size: 1.3rem;
+}
+
+.contactForm form textarea {
+  resize: none;
+}
+
+.contactForm form button {
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#messageLabel {
+  align-self: start;
+}
+
+.contactLinks {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  width: 95vw;
+  justify-content: space-around;
+}
+
+.contactLinks img {
+  width: 50px;
 }

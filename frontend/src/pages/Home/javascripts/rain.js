@@ -1,7 +1,7 @@
-import Mat from "./icons/mat.svg";
-import Ball from "./icons/ball.svg";
-import OmBlack from "./icons/omBlack.svg";
-import LotusFlower from "./icons/lotusFlower.svg";
+import Mat from "../icons/mat.svg";
+import Ball from "../icons/ball.svg";
+import OmBlack from "../icons/omBlack.svg";
+import LotusFlower from "../icons/lotusFlower.svg";
 
 export default () => {
   const matIcon = document.createElement("img");

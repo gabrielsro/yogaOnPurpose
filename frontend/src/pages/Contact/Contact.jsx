@@ -1,57 +1,66 @@
 import "./Contact.css";
-import youtubeIcon from "./icons/youtube.svg";
-import instagramIcon from "./icons/instagram.svg";
-import facebookIcon from "./icons/facebook.svg";
-import phoneIcon from "./icons/phone.svg";
-import emailIcon from "./icons/email.svg";
+import youtube from "./icons/youtube.svg";
+import facebook from "./icons/facebook.svg";
+import instagram from "./icons/instagram.svg";
+import phone from "./icons/phone.svg";
+import email from "./icons/email.svg";
 
 const Contact = () => {
   return (
     <div className="page">
-      <div className="pageTitle">
-        <h1>Contact</h1>
-      </div>
       <div className="pageContent">
         <main id="contactMain">
-          <div className="socialMedia">
-            <div className="socialMediaCard">
-              <img src={youtubeIcon} alt="Youtube icon" />
-              <p>@yogaonpurpose</p>
-            </div>
-            <div className="socialMediaCard">
-              <img src={instagramIcon} alt="Instagram icon" />
-              <p>@yogaonpurpose</p>
-            </div>
-            <div className="socialMediaCard">
-              <img src={facebookIcon} alt="Facebook icon" />
-              <p>@yogaonpurpose</p>
-            </div>
-            <div className="socialMediaCard">
-              <img src={phoneIcon} alt="Phone icon" />
-              <p>+314-325-2674</p>
-            </div>
-            <div className="socialMediaCard">
-              <img src={emailIcon} alt="Email icon" />
-              <p>yougaonpurpose@gmail.com</p>
-            </div>
+          <div className="contactAnimation">
+            <h2>Animation Here</h2>
           </div>
-          <div className="text">
-            <form action="" className="contactForm">
-              <div>
-                <label htmlFor="contactEmail">Email: </label>
-                <input type="text" id="contactEmail" />
-              </div>
-              <div>
-                <label htmlFor="contactMessage">Message: </label>
-                <textarea
-                  name="userMessage"
-                  id="contactMessage"
-                  cols="30"
-                  rows="10"
-                ></textarea>
-              </div>
+          <div className="contactForm">
+            <form action="">
+              <label htmlFor="firstName">First name:</label>
+              <input type="text" id="firstName" />
+              <label htmlFor="lastName">Last name:</label>
+              <input type="text" id="lastName" />
+              <label htmlFor="email">Email:</label>
+              <input type="text" id="email" />
+              <label htmlFor="message" id="messageLabel">
+                Your Message:
+              </label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+              ></textarea>
               <button>Send</button>
             </form>
+          </div>
+          <div className="contactOptions">
+            <ul className="contactLinks">
+              <li>
+                <a href="">
+                  <img src={youtube} alt="Youtube icon" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src={facebook} alt="Youtube icon" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src={instagram} alt="Youtube icon" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src={phone} alt="Youtube icon" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src={email} alt="Youtube icon" />
+                </a>
+              </li>
+            </ul>
           </div>
         </main>
       </div>

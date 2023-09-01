@@ -1,7 +1,7 @@
 import "./Home.css";
-import Logo from "./YOPLogo.png";
-import rain from "./rain";
-import carousel from "./carousel";
+import Logo from "./images/YOPLogo.png";
+import rain from "./javascripts/rain.js";
+import carousel from "./javascripts/carousel.js";
 import img1 from "./images/yoga11.jpg";
 import img2 from "./images/yoga10.jpg";
 import img4 from "./images/yoga4.jpg";
