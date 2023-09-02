@@ -8,6 +8,9 @@ import img4 from "./images/yoga4.jpg";
 import img5 from "./images/yoga5.jpg";
 import img6 from "./images/yoga6.jpg";
 import img9 from "./images/yoga9.jpg";
+import retreat from "./images/retreat1.jpg";
+import soundBath from "./images/soundBath1.jpg";
+import meditation from "./images/meditation1.jpg";
 import youtube from "./icons/youtube.svg";
 import instagram from "./icons/instagram.svg";
 import facebook from "./icons/facebook.svg";
@@ -60,6 +63,56 @@ const Home = () => {
           </ul>
         </div>
       </div>
+      <section className="homeServices">
+        <div className="homeService">
+          <div className="homeServiceText">
+            <h2>Yoga Retreats</h2>
+            <p>
+              Et temporibus reiciendis et sapiente distinctio in voluptates
+              internos ex voluptas doloribus quo deserunt aliquam quo nesciunt
+              inventore eos molestiae sint? Qui error expedita vel corporis
+              laborum qui fugiat magnam in tempore aspernatur sed pariatur nihil
+              hic voluptate ullam. Ut minima facere sed assumenda exercitationem
+              in eligendi minima et neque ipsa. Qui nobis tempora vel doloribus
+              quis qui earum velit id eius quidem ea omnis asperiores et
+              perferendis distinctio et illum dolore!
+            </p>
+          </div>
+          <img src={retreat} alt="Yoga retreat" />
+        </div>
+        <div className="homeService">
+          <div className="homeServiceText">
+            <h2>Sound Baths</h2>
+            <p>
+              Et temporibus reiciendis et sapiente distinctio in voluptates
+              internos ex voluptas doloribus quo deserunt aliquam quo nesciunt
+              inventore eos molestiae sint? Qui error expedita vel corporis
+              laborum qui fugiat magnam in tempore aspernatur sed pariatur nihil
+              hic voluptate ullam. Ut minima facere sed assumenda exercitationem
+              in eligendi minima et neque ipsa. Qui nobis tempora vel doloribus
+              quis qui earum velit id eius quidem ea omnis asperiores et
+              perferendis distinctio et illum dolore!
+            </p>
+          </div>
+          <img src={soundBath} alt="Sound Bath" />
+        </div>
+        <div className="homeService">
+          <div className="homeServiceText">
+            <h2>Meditation</h2>
+            <p>
+              Et temporibus reiciendis et sapiente distinctio in voluptates
+              internos ex voluptas doloribus quo deserunt aliquam quo nesciunt
+              inventore eos molestiae sint? Qui error expedita vel corporis
+              laborum qui fugiat magnam in tempore aspernatur sed pariatur nihil
+              hic voluptate ullam. Ut minima facere sed assumenda exercitationem
+              in eligendi minima et neque ipsa. Qui nobis tempora vel doloribus
+              quis qui earum velit id eius quidem ea omnis asperiores et
+              perferendis distinctio et illum dolore!
+            </p>
+          </div>
+          <img src={meditation} alt="Meditation" />
+        </div>
+      </section>
       <section className="homeExternals">
         <ul>
           <li className="homeExternal">
@@ -78,9 +131,6 @@ const Home = () => {
             </a>
           </li>
         </ul>
-      </section>
-      <section>
-        <h2>Yoga Retreats</h2>
       </section>
       <footer>
         <div className="footerContact">

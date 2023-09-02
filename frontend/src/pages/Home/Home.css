@@ -172,6 +172,27 @@
   overflow: hidden;
 }
 
+.homeServices {
+  padding-top: 50px;
+  display: grid;
+  gap: 30px;
+  place-content: center;
+}
+
+.homeService {
+  position: relative;
+}
+
+.homeServiceText {
+  position: absolute;
+  background-color: rgba(215, 213, 213, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.homeService img {
+  width: 800px;
+}
+
 @media only screen and (max-width: 500px) {
   #home {
     padding-top: 0px;
