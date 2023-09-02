@@ -12,6 +12,7 @@ import retreat from "./images/retreat1.jpg";
 import soundBath from "./images/soundBath1.jpg";
 import meditation from "./images/meditation1.jpg";
 import privateLesson from "./images/privateLesson.jpg";
+import yogaWorkshop from "./images/yogaWorkshops.jpg";
 import youtube from "./icons/youtube.svg";
 import instagram from "./icons/instagram.svg";
 import facebook from "./icons/facebook.svg";
@@ -80,7 +81,7 @@ const Home = () => {
             </p>
           </div>
           <div className="homeServiceContact">
-            <h2>Interested having a Yoga Retreat?</h2>
+            <h2>Interested in our Yoga Retreat?</h2>
             <p>Reach out to us!</p>
             <form action="">
               <label htmlFor="yogaRetreatEmail">Email:</label>
@@ -137,14 +138,10 @@ const Home = () => {
           <div className="homeServiceText">
             <h2>Sound Baths</h2>
             <p>
-              Et temporibus reiciendis et sapiente distinctio in voluptates
-              internos ex voluptas doloribus quo deserunt aliquam quo nesciunt
-              inventore eos molestiae sint? Qui error expedita vel corporis
-              laborum qui fugiat magnam in tempore aspernatur sed pariatur nihil
-              hic voluptate ullam. Ut minima facere sed assumenda exercitationem
-              in eligendi minima et neque ipsa. Qui nobis tempora vel doloribus
-              quis qui earum velit id eius quidem ea omnis asperiores et
-              perferendis distinctio et illum dolore!
+              Immerse yourself in a deeply rejuvenating and transformative
+              experience with our Sound Bath Services. Our sessions are designed
+              to provide a serene and harmonious space for you to unwind, relax,
+              and reconnect with your inner self.
             </p>
           </div>
           <div className="homeServiceContact">
@@ -201,6 +198,40 @@ const Home = () => {
           </div>
           <img src={meditation} alt="Meditation" />
         </div>
+        <div className="homeService">
+          <div className="homeServiceText">
+            <h2>Yoga Workshops</h2>
+            <p>
+              Et temporibus reiciendis et sapiente distinctio in voluptates
+              internos ex voluptas doloribus quo deserunt aliquam quo nesciunt
+              inventore eos molestiae sint? Qui error expedita vel corporis
+              laborum qui fugiat magnam in tempore aspernatur sed pariatur nihil
+              hic voluptate ullam. Ut minima facere sed assumenda exercitationem
+              in eligendi minima et neque ipsa. Qui nobis tempora vel doloribus
+              quis qui earum velit id eius quidem ea omnis asperiores et
+              perferendis distinctio et illum dolore!
+            </p>
+          </div>
+          <div className="homeServiceContact">
+            <h2>Interested in our Yoga Workshops?</h2>
+            <p>Reach out to us!</p>
+            <form action="">
+              <label htmlFor="yogaRetreatEmail">Email:</label>
+              <input type="text" id="yogaRetreatEmail" />
+              <label htmlFor="yogaRetreatMessage" className="messageLabel">
+                Message:
+              </label>
+              <textarea
+                name="yogaRetreatMessage"
+                id="yogaRetreatMessage"
+                cols="35"
+                rows="5"
+              ></textarea>
+              <button>Send</button>
+            </form>
+          </div>
+          <img src={yogaWorkshop} alt="Meditation" />
+        </div>
       </section>
       <section className="homeExternals">
         <ul>
@@ -210,12 +241,12 @@ const Home = () => {
             </a>
           </li>
           <li className="homeExternal">
-            <a href="https://www.instagram.com/jamiez_life/">
+            <a href="https://www.facebook.com/people/Yoga-On-Purpose/100026223651824">
               <img src={facebook} alt="Facebook icon" />
             </a>
           </li>
           <li className="homeExternal">
-            <a href="https://www.instagram.com/jamiez_life/">
+            <a href="https://www.instagram.com/yogaonpurpose/">
               <img src={instagram} alt="Instagram icon" />
             </a>
           </li>

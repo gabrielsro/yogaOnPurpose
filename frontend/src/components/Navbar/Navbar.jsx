@@ -1,13 +1,13 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import home from "./icons/home.svg";
-import schedule from "./icons/schedule.svg";
-import store from "./icons/store.svg";
-import blog from "./icons/blog.svg";
-import events from "./icons/events.svg";
-import about from "./icons/about.svg";
-import contact from "./icons/contact.svg";
-import menu from "./icons/menu.svg";
+import home from "./icons/homeBlack.svg";
+import schedule from "./icons/scheduleBlack.svg";
+import store from "./icons/storeBlack.svg";
+import blog from "./icons/blogBlack.svg";
+import events from "./icons/eventsBlack.svg";
+import about from "./icons/aboutBlack.svg";
+import contact from "./icons/contactBlack.svg";
+import menu from "./icons/menuBlack.svg";
 import { detectResizing, menuClick, linkClick } from "./javascripts";
 
 const Navbar = (props) => {

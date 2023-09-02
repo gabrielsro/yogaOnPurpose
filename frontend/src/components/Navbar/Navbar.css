@@ -54,7 +54,7 @@ nav {
 }
 
 .links a:hover p {
-  color: #7600ff;
+  color: black;
 }
 
 .links img,
@@ -112,7 +112,7 @@ nav {
 }
 
 .selected {
-  color: #7600ff;
+  color: black;
 }
 
 .unselected {

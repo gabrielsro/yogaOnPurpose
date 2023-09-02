@@ -1,0 +1,37 @@
+#about {
+  display: grid;
+  place-content: center;
+}
+
+.mainAbout {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.mainPicture img {
+  width: 300px;
+  display: block;
+}
+
+.mainDescription {
+  background-color: grey;
+  display: grid;
+  place-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+}
+
+.mainDescription p {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.mainDescription img {
+  width: 70px;
+  position: absolute;
+  bottom: 20px;
+  right: 250px;
+}
