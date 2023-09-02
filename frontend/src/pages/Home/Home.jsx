@@ -79,6 +79,9 @@ const Home = () => {
           </li>
         </ul>
       </section>
+      <section>
+        <h2>Yoga Retreats</h2>
+      </section>
       <footer>
         <div className="footerContact">
           <div>
