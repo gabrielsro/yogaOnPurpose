@@ -229,7 +229,7 @@ const Home = () => {
           </div>
           <div>
             <img src={phone} alt="Phone icon" />
-            <p>+1-812-664-8369</p>
+            <p>+1-314-325-2674</p>
           </div>
         </div>
       </footer>
