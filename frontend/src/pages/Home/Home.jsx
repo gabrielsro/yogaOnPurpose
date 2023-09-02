@@ -11,6 +11,7 @@ import img9 from "./images/yoga9.jpg";
 import retreat from "./images/retreat1.jpg";
 import soundBath from "./images/soundBath1.jpg";
 import meditation from "./images/meditation1.jpg";
+import privateLesson from "./images/privateLesson.jpg";
 import youtube from "./icons/youtube.svg";
 import instagram from "./icons/instagram.svg";
 import facebook from "./icons/facebook.svg";
@@ -78,7 +79,59 @@ const Home = () => {
               perferendis distinctio et illum dolore!
             </p>
           </div>
+          <div className="homeServiceContact">
+            <h2>Interested having a Yoga Retreat?</h2>
+            <p>Reach out to us!</p>
+            <form action="">
+              <label htmlFor="yogaRetreatEmail">Email:</label>
+              <input type="text" id="yogaRetreatEmail" />
+              <label htmlFor="yogaRetreatMessage" className="messageLabel">
+                Message:
+              </label>
+              <textarea
+                name="yogaRetreatMessage"
+                id="yogaRetreatMessage"
+                cols="35"
+                rows="5"
+              ></textarea>
+              <button>Send</button>
+            </form>
+          </div>
           <img src={retreat} alt="Yoga retreat" />
+        </div>
+        <div className="homeService">
+          <div className="homeServiceText">
+            <h2>Private Lessons</h2>
+            <p>
+              Et temporibus reiciendis et sapiente distinctio in voluptates
+              internos ex voluptas doloribus quo deserunt aliquam quo nesciunt
+              inventore eos molestiae sint? Qui error expedita vel corporis
+              laborum qui fugiat magnam in tempore aspernatur sed pariatur nihil
+              hic voluptate ullam. Ut minima facere sed assumenda exercitationem
+              in eligendi minima et neque ipsa. Qui nobis tempora vel doloribus
+              quis qui earum velit id eius quidem ea omnis asperiores et
+              perferendis distinctio et illum dolore!
+            </p>
+          </div>
+          <div className="homeServiceContact">
+            <h2>Interested in Private Lessons?</h2>
+            <p>Reach out to us!</p>
+            <form action="">
+              <label htmlFor="yogaRetreatEmail">Email:</label>
+              <input type="text" id="yogaRetreatEmail" />
+              <label htmlFor="yogaRetreatMessage" className="messageLabel">
+                Message:
+              </label>
+              <textarea
+                name="yogaRetreatMessage"
+                id="yogaRetreatMessage"
+                cols="35"
+                rows="5"
+              ></textarea>
+              <button>Send</button>
+            </form>
+          </div>
+          <img src={privateLesson} alt="Private lesson" />
         </div>
         <div className="homeService">
           <div className="homeServiceText">
@@ -93,6 +146,24 @@ const Home = () => {
               quis qui earum velit id eius quidem ea omnis asperiores et
               perferendis distinctio et illum dolore!
             </p>
+          </div>
+          <div className="homeServiceContact">
+            <h2>Interested in Sound Baths?</h2>
+            <p>Reach out to us!</p>
+            <form action="">
+              <label htmlFor="yogaRetreatEmail">Email:</label>
+              <input type="text" id="yogaRetreatEmail" />
+              <label htmlFor="yogaRetreatMessage" className="messageLabel">
+                Message:
+              </label>
+              <textarea
+                name="yogaRetreatMessage"
+                id="yogaRetreatMessage"
+                cols="35"
+                rows="5"
+              ></textarea>
+              <button>Send</button>
+            </form>
           </div>
           <img src={soundBath} alt="Sound Bath" />
         </div>
@@ -109,6 +180,24 @@ const Home = () => {
               quis qui earum velit id eius quidem ea omnis asperiores et
               perferendis distinctio et illum dolore!
             </p>
+          </div>
+          <div className="homeServiceContact">
+            <h2>Interested in Meditation?</h2>
+            <p>Reach out to us!</p>
+            <form action="">
+              <label htmlFor="yogaRetreatEmail">Email:</label>
+              <input type="text" id="yogaRetreatEmail" />
+              <label htmlFor="yogaRetreatMessage" className="messageLabel">
+                Message:
+              </label>
+              <textarea
+                name="yogaRetreatMessage"
+                id="yogaRetreatMessage"
+                cols="35"
+                rows="5"
+              ></textarea>
+              <button>Send</button>
+            </form>
           </div>
           <img src={meditation} alt="Meditation" />
         </div>

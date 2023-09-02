@@ -184,13 +184,71 @@
 }
 
 .homeServiceText {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: absolute;
-  background-color: rgba(215, 213, 213, 0.2);
+  top: 100px;
+  left: 30px;
+  right: 30px;
+  border-radius: 10px;
+  background-color: rgba(215, 213, 213, 0.1);
   backdrop-filter: blur(10px);
 }
 
+.homeServiceContact {
+  position: absolute;
+  left: 100px;
+  bottom: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(215, 213, 213, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.homeServiceContact form {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  display: grid;
+  column-gap: 10px;
+  row-gap: 20px;
+  grid-template-columns: 100px auto;
+}
+
+.homeService form button {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.homeServiceContact form label {
+  place-self: end;
+}
+
+.homeServiceContact form textarea {
+  resize: none;
+}
+
+.homeServiceContact form .messageLabel {
+  align-self: start;
+}
+
+.homeServiceText h2 {
+  margin-bottom: 30px;
+}
+
+.homeServiceText p {
+  font-size: 1.3rem;
+}
+
 .homeService img {
-  width: 800px;
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media only screen and (max-width: 500px) {
