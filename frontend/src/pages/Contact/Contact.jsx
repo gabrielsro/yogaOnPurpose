@@ -17,6 +17,9 @@ const Contact = () => {
         <main id="contactMain">
           <div className="contactAnimation"></div>
           <div className="contactForm">
+            <div className="formTitle">
+              <h2>{`Let's chat!`}</h2>
+            </div>
             <form action="">
               <label htmlFor="firstName">First name:</label>
               <input type="text" id="firstName" />
@@ -39,34 +42,30 @@ const Contact = () => {
           <div className="contactOptions">
             <ul className="contactLinks">
               <li>
-                <a href="">
+                <a href="https://www.youtube.com/@YogaOnPurpose">
                   <img src={youtube} alt="Youtube icon" />
                 </a>
                 <p>@yogaonpurpose</p>
               </li>
               <li>
-                <a href="">
+                <a href="https://www.facebook.com/people/Yoga-On-Purpose/100026223651824">
                   <img src={facebook} alt="Facebook icon" />
                 </a>
                 <p>@yogaonpurpose</p>
               </li>
               <li>
-                <a href="">
+                <a href="https://www.instagram.com/yogaonpurpose/">
                   <img src={instagram} alt="Instagram icon" />
                   <p>@yogaonpurpose</p>
                 </a>
               </li>
               <li>
-                <a href="">
-                  <img src={phone} alt="Phone icon" />
-                  <p>+1-812-664-8369</p>
-                </a>
+                <img src={phone} alt="Phone icon" />
+                <p>+1-812-664-8369</p>
               </li>
               <li>
-                <a href="">
-                  <img src={email} alt="Email icon" />
-                  <p>yogaonpurpose@gmail.com</p>
-                </a>
+                <img src={email} alt="Email icon" />
+                <p>yogaonpurpose@gmail.com</p>
               </li>
             </ul>
           </div>
