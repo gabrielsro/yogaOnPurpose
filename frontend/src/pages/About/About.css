@@ -35,3 +35,28 @@
   bottom: 20px;
   right: 250px;
 }
+
+@media only screen and (max-width: 500px) {
+  .mainAbout {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mainAbout .mainPicture {
+    align-self: center;
+  }
+
+  .mainAbout .mainPicture img {
+    border-radius: 100px;
+  }
+
+  .mainDescription {
+    padding-bottom: 70px;
+  }
+
+  .mainDescription img {
+    right: 50px;
+  }
+}
