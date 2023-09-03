@@ -8,11 +8,6 @@ import img4 from "./images/yoga4.jpg";
 import img5 from "./images/yoga5.jpg";
 import img6 from "./images/yoga6.jpg";
 import img9 from "./images/yoga9.jpg";
-import retreat from "./images/retreat1.jpg";
-import soundBath from "./images/soundBath1.jpg";
-import meditation from "./images/meditation1.jpg";
-import privateLesson from "./images/privateLesson.jpg";
-import yogaWorkshop from "./images/yogaWorkshops.jpg";
 import youtube from "./icons/youtube.svg";
 import instagram from "./icons/instagram.svg";
 import facebook from "./icons/facebook.svg";
@@ -66,7 +61,7 @@ const Home = () => {
         </div>
       </div>
       <section className="homeServices">
-        <div className="homeService">
+        <div className="homeService" id="yogaRetreats">
           <div className="homeServiceText">
             <h2>Yoga Retreats</h2>
             <p>
@@ -82,7 +77,6 @@ const Home = () => {
           </div>
           <div className="homeServiceContact">
             <h2>Interested in our Yoga Retreat?</h2>
-            <p>Reach out to us!</p>
             <form action="">
               <label htmlFor="yogaRetreatEmail">Email:</label>
               <input type="text" id="yogaRetreatEmail" />
@@ -98,9 +92,8 @@ const Home = () => {
               <button>Send</button>
             </form>
           </div>
-          <img src={retreat} alt="Yoga retreat" />
         </div>
-        <div className="homeService">
+        <div className="homeService" id="privateLessons">
           <div className="homeServiceText">
             <h2>Private Lessons</h2>
             <p>
@@ -132,9 +125,8 @@ const Home = () => {
               <button>Send</button>
             </form>
           </div>
-          <img src={privateLesson} alt="Private lesson" />
         </div>
-        <div className="homeService">
+        <div className="homeService" id="soundBaths">
           <div className="homeServiceText">
             <h2>Sound Baths</h2>
             <p>
@@ -162,9 +154,8 @@ const Home = () => {
               <button>Send</button>
             </form>
           </div>
-          <img src={soundBath} alt="Sound Bath" />
         </div>
-        <div className="homeService">
+        <div className="homeService" id="meditation">
           <div className="homeServiceText">
             <h2>Meditation</h2>
             <p>
@@ -196,9 +187,8 @@ const Home = () => {
               <button>Send</button>
             </form>
           </div>
-          <img src={meditation} alt="Meditation" />
         </div>
-        <div className="homeService">
+        <div className="homeService" id="yogaWorkshops">
           <div className="homeServiceText">
             <h2>Yoga Workshops</h2>
             <p>
@@ -230,7 +220,6 @@ const Home = () => {
               <button>Send</button>
             </form>
           </div>
-          <img src={yogaWorkshop} alt="Meditation" />
         </div>
       </section>
       <section className="homeExternals">
