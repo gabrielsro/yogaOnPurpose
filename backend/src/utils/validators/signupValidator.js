@@ -8,6 +8,11 @@ export default [
     .trim()
     .notEmpty()
     .escape(),
+  body("passwordAgain", "Your passwords don't match").custom(
+    (value, { req }) => {
+      return req.body.password == value;
+    },
+  ),
   body("key", "Key cannot be empty").trim().notEmpty().escape(),
   (req, res, next) => {
     const errors = validationResult(req);
