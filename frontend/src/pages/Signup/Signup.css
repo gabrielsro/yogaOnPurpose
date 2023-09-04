@@ -27,3 +27,36 @@
   padding-right: 5px;
   right: 0px;
 }
+
+.errorContainer {
+  position: relative;
+  grid-column: 1/3;
+}
+
+.errorDetails {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+}
+
+.errorDetails ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: red;
+  text-align: center;
+}
+
+.invisible {
+  display: none;
+}
+
+.validField {
+  border: 2px solid rgb(31, 189, 31);
+  outline: none;
+}
+
+.validField:focus-visible {
+  border: 2px solid rgb(22, 232, 22);
+}

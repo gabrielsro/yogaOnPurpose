@@ -1,5 +1,6 @@
-export default async function submitSignup(e) {
+export default async function submitSignup(e, stateSetter) {
   e.preventDefault();
+  stateSetter({ status: "loading", messages: null });
   const formData = new FormData(e.target);
   const formDataObject = Object.fromEntries(formData);
   const formDataJSON = JSON.stringify(formDataObject);
@@ -13,4 +14,7 @@ export default async function submitSignup(e) {
   const response = await responseRaw.json();
   console.log(responseRaw);
   console.log(response);
+  if (response.statusCode == 400) {
+    stateSetter({ status: "error", messages: response.data.errors });
+  }
 }
