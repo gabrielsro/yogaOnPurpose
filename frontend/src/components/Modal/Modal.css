@@ -14,6 +14,11 @@
   animation: spin 2s linear infinite;
 }
 
+.successIcon,
+.errorIcon {
+  width: 50px;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -23,7 +28,8 @@
   }
 }
 
-.loading {
+.loading,
+.success {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,4 +38,15 @@
 
 .loading p {
   font-size: 1.2rem;
+}
+
+.success {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.success p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
 }

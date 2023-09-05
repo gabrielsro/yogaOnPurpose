@@ -33,10 +33,18 @@
   grid-column: 1/3;
 }
 
-.errorDetails {
+.errorDetails,
+.successDetails {
   position: absolute;
   top: 70px;
   width: 100%;
+}
+
+.errorDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .errorDetails ul {
@@ -45,6 +53,27 @@
   align-items: center;
   gap: 5px;
   color: red;
+  text-align: center;
+}
+
+.errorDetails p {
+  color: red;
+  text-align: center;
+}
+
+#serverError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#keyIcon {
+  width: 40px;
+}
+
+.successDetails p {
+  color: green;
   text-align: center;
 }
 
