@@ -6,7 +6,7 @@ const userSchema = new Schema({
   lastName: { type: String, required: true },
   username: { type: String, required: true },
   password: { type: String, required: true },
-  level: { type: String, required: true },
+  level: { type: String, enum: ["admin", "guest"], required: true },
 });
 
 const User = model("User", userSchema);
