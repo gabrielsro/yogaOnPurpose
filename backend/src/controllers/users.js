@@ -23,4 +23,8 @@ async function createUser(req, res, next) {
   }
   next();
 }
-async function logUser() {}
+async function logUser(req, res, next) {
+  console.log("LLEGUE AQUI");
+  res.json("gonorrea");
+  next();
+}

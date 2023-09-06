@@ -21,6 +21,7 @@ const App = () => {
           <Route path="/about" element={<pages.About />} />
           <Route path="/login" element={<pages.Login />} />
           <Route path="/signup" element={<pages.Signup />} />
+          <Route path="/user" element={<pages.UserDashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

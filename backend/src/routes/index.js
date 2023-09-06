@@ -4,5 +4,6 @@ import pages from "./pages";
 import posts from "./posts";
 import schedule from "./schedule";
 import users from "./users";
+import login from "./login";
 
-export default { events, items, pages, posts, schedule, users };
+export default { events, items, pages, posts, schedule, users, login };

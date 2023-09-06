@@ -7,6 +7,7 @@ import Contact from "./Contact/Contact";
 import Blog from "./Blog/Blog";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
+import UserDashboard from "./UserDashboard";
 
 export default {
   About,
@@ -18,4 +19,5 @@ export default {
   Blog,
   Login,
   Signup,
+  UserDashboard,
 };

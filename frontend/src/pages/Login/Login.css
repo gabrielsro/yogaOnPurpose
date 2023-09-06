@@ -27,3 +27,35 @@
   padding-right: 5px;
   right: 0px;
 }
+
+.loginFormContainer {
+  position: relative;
+}
+
+.messageContainer {
+  position: absolute;
+  width: 100%;
+  bottom: -200px;
+  display: grid;
+  place-content: center;
+}
+
+.messageContents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.errors {
+  color: red;
+}
+
+.messageContents img {
+  width: 30px;
+}
+
+#serverErrorImg {
+  width: 50px;
+}
