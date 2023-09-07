@@ -24,4 +24,17 @@ router.post("/", (req, res, next) => {
   })(req, res, next);
 });
 
+router.get("/", (req, res) => {
+  if (!req.isAuthenticated()) {
+    return res.json("Not logged");
+  }
+  return res.json({
+    firstName: req.user.firstName,
+    lastName: req.user.lastName,
+    username: req.user.username,
+    level: req.user.level,
+    id: req.user._id,
+  });
+});
+
 export default router;

@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^4.32.6",
+    "@tinymce/tinymce-react": "^4.3.0",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^5.0.0",
     "cors": "^2.8.5",
@@ -45,6 +46,7 @@
     "passport-local": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0"
+    "react-router-dom": "^6.15.0",
+    "tinymce": "^6.7.0"
   }
 }
