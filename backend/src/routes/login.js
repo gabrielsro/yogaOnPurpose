@@ -9,11 +9,17 @@ router.post("/", (req, res, next) => {
       next(err);
     }
     if (!user) {
-      res.json({ info, status });
+      return res.json({ info, status });
     }
     req.logIn(user, (err) => {
       err && next(err);
-      return res.json({ user, info, status });
+      return res.json({
+        firstName: user.firstName,
+        lastName: user.lastName,
+        username: user.username,
+        level: user.level,
+        id: user._id,
+      });
     });
   })(req, res, next);
 });

@@ -1,0 +1,57 @@
+#userPage {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+#userPage section {
+  background-color: aqua;
+  width: 900px;
+}
+
+#doneIcon {
+  width: 70px;
+}
+
+.userBasics {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashCategory div:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.dashCategoryIcon {
+  width: 40px;
+}
+
+.userActivity ul {
+  padding-top: 10px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.assetsTitle img {
+  width: 30px;
+}
+
+@media only screen and (max-width: 900px) {
+  #userPage section {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .userBasics {
+    margin-top: 0px;
+  }
+}

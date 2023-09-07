@@ -1,4 +1,4 @@
-export default async (e, stateSetter) => {
+export default async (e, stateSetter, userSetter, navigate) => {
   e.preventDefault();
   stateSetter({ status: "loading", messages: null });
   const formData = new FormData(e.target);
@@ -13,13 +13,20 @@ export default async (e, stateSetter) => {
       credentials: "include",
     });
   } catch (err) {
-    console.log("la cagada");
     stateSetter({ status: "connectionError", error: err.message });
     return;
   }
-  //   const receivedUser = await user.json();
-  const receivedUser = await user.text();
-  console.log(receivedUser);
+  const receivedUser = await user.json();
+  if (receivedUser.username) {
+    userSetter(receivedUser);
+    navigate("/user");
+  }
+  if (receivedUser.info) {
+    stateSetter({
+      status: "wrongCredentials",
+      error: receivedUser.info.message,
+    });
+  }
   if (receivedUser.statusCode && receivedUser.statusCode == 500) {
     stateSetter({ status: "serverError", error: receivedUser.error });
   }

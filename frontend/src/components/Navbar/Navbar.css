@@ -76,7 +76,7 @@ nav {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 790px) {
   nav {
     top: calc(100vh - 50px);
   }

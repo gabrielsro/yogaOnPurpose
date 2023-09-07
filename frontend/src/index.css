@@ -37,7 +37,7 @@ li {
   height: calc(100vh - 50px);
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 790px) {
   .page {
     margin-top: 0px;
   }

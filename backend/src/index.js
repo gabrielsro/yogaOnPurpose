@@ -45,7 +45,6 @@ passport.use(
   }),
 );
 passport.serializeUser((user, cb) => {
-  console.log(user);
   return cb(null, user._id);
 });
 passport.deserializeUser(async (id, done) => {
@@ -71,6 +70,7 @@ app.use("/posts", routes.posts);
 app.use("/schedule", routes.schedule);
 app.use("/users", routes.users);
 app.use("/login", routes.login);
+app.use("/logout", routes.logout);
 app.use((error, req, res, next) => {
   if (!error.statusCode) {
     error.statusCode = 500;

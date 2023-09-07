@@ -8,11 +8,12 @@ import events from "./icons/eventsBlack.svg";
 import about from "./icons/aboutBlack.svg";
 import contact from "./icons/contactBlack.svg";
 import menu from "./icons/menuBlack.svg";
+import settings from "./icons/settings.svg";
 import { detectResizing, menuClick, linkClick } from "./javascripts";
 
 const Navbar = (props) => {
   detectResizing();
-  const { page, setPage } = props;
+  const { page, setPage, loggedUser } = props;
   return (
     <nav>
       <button id="menu" onClick={() => menuClick()}>
@@ -51,6 +52,14 @@ const Navbar = (props) => {
           <img src={about} alt="About icon" />
           <p className={page == "about" ? "selected" : "unselected"}>About</p>
         </Link>
+        {loggedUser?.username && (
+          <Link to="/user" onClick={() => linkClick("settings", setPage)}>
+            <img src={settings} alt="Settings icon" />
+            <p className={page == "settings" ? "selected" : "unselected"}>
+              Settings
+            </p>
+          </Link>
+        )}
       </div>
     </nav>
   );

@@ -5,11 +5,12 @@ import pages from "./pages";
 
 const App = () => {
   const [page, setPage] = useState("home");
+  const [loggedUser, setLoggedUser] = useState(null);
 
   return (
     <div>
       <BrowserRouter>
-        <Navbar page={page} setPage={setPage} />
+        <Navbar page={page} setPage={setPage} loggedUser={loggedUser} />
         <Routes>
           <Route path="/" element={<pages.Home />} />
           <Route path="/yogaOnPurpose" element={<pages.Home />} />
@@ -19,9 +20,20 @@ const App = () => {
           <Route path="/store" element={<pages.Store />} />
           <Route path="/blog" element={<pages.Blog />} />
           <Route path="/about" element={<pages.About />} />
-          <Route path="/login" element={<pages.Login />} />
+          <Route
+            path="/login"
+            element={<pages.Login setLoggedUser={setLoggedUser} />}
+          />
           <Route path="/signup" element={<pages.Signup />} />
-          <Route path="/user" element={<pages.UserDashboard />} />
+          <Route
+            path="/user"
+            element={
+              <pages.UserDashboard
+                loggedUser={loggedUser}
+                setLoggedUser={setLoggedUser}
+              />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

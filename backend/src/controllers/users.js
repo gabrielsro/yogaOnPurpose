@@ -1,4 +1,4 @@
-export default { createUser, logUser };
+export default { createUser };
 import User from "../models/user";
 import bcrypt from "bcryptjs";
 
@@ -21,10 +21,5 @@ async function createUser(req, res, next) {
       error: Object.entries(err),
     });
   }
-  next();
-}
-async function logUser(req, res, next) {
-  console.log("LLEGUE AQUI");
-  res.json("gonorrea");
   next();
 }
