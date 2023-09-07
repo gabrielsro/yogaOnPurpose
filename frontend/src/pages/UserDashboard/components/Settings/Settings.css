@@ -1,0 +1,19 @@
+.option {
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.option p {
+  font-size: 1.17rem;
+}
+
+.option img {
+  width: 35px;
+}
+
+#deleteAccountOption p {
+  color: #e12d2d;
+}
