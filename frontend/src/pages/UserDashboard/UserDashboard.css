@@ -44,6 +44,27 @@
   width: 30px;
 }
 
+.userInfoDetails {
+  padding-top: 5px;
+  padding-left: 20px;
+}
+
+.userInfoDetails li {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 1.17em;
+  margin-bottom: 5px;
+}
+
+.userInfoDetails li > p:first-child {
+  font-weight: bold;
+}
+
+.userInfoDetails li img {
+  width: 25px;
+}
+
 @media only screen and (max-width: 900px) {
   #userPage section {
     width: 100%;

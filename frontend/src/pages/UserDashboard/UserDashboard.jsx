@@ -13,6 +13,8 @@ import scheduleIcon from "./icons/calendar.svg";
 import postIcon from "./icons/script.svg";
 import eventIcon from "./icons/event.svg";
 import storeIcon from "./icons/shopping.svg";
+import adminIcon from "./icons/crown.svg";
+import guestIcon from "./icons/guest.svg";
 
 const UserDashboard = ({ loggedUser, setLoggedUser }) => {
   const [dashboardState, setDashboardState] = useState("loaded");
@@ -53,6 +55,34 @@ const UserDashboard = ({ loggedUser, setLoggedUser }) => {
             />
             <h2>Account Info</h2>
           </div>
+          <ul className="userInfoDetails">
+            <li>
+              <p>Name:</p>
+              <p>{`${loggedUser.firstName} ${loggedUser.lastName}`}</p>
+            </li>
+            <li>
+              <p>Username:</p>
+              <p>{loggedUser.username}</p>
+            </li>
+            <li>
+              <p>Email:</p>
+              <p>{loggedUser.email ? loggedUser.email : "N/A"}</p>
+            </li>
+            <li>
+              <p>Member Since:</p>
+              <p>{loggedUser.memberSince ? loggedUser.memberSince : "N/A"}</p>
+            </li>
+            <li>
+              <p>Account Level:</p>
+              <p>{loggedUser.level}</p>
+              {loggedUser.level == "admin" && (
+                <img src={adminIcon} alt="Admin icon" />
+              )}
+              {loggedUser.level == "guest" && (
+                <img src={guestIcon} alt="Admin icon" />
+              )}
+            </li>
+          </ul>
         </section>
         <section className="userActivity dashCategory">
           <div>
