@@ -7,7 +7,6 @@
 
 #userPage .dashCategory,
 .userBasics {
-  background-color: #a5a3a3;
   width: 900px;
 }
 
@@ -76,6 +75,11 @@
   #userPage .dashCategory,
   .userBasics {
     width: 100%;
+  }
+
+  #userPage {
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 

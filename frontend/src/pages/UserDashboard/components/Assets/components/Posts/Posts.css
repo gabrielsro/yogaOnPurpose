@@ -2,3 +2,58 @@
   padding-top: 10px;
   padding-left: 15px;
 }
+
+.assets .addAsset {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 1.17em;
+  padding: 10px;
+  width: 100%;
+}
+
+.addAsset img {
+  width: 25px;
+}
+
+.postManager {
+  background-color: aqua;
+  padding-top: 5px;
+  padding-left: 20px;
+}
+
+.postMaker {
+  width: 98%;
+  height: 50vh;
+  resize: none;
+}
+
+.postMakerActions {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  justify-content: flex-end;
+}
+
+.postMakerActions button {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px;
+  height: 100%;
+}
+
+.postMakerActions img {
+  width: 30px;
+}
+
+.assets .asset .postManager .postManagerContents {
+  border: 1px solid black;
+  border-radius: 5px;
+  flex-direction: column;
+}

@@ -37,6 +37,15 @@ li {
   height: calc(100vh - 50px);
 }
 
+.transparentButton {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+}
+
+.transparentButton:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 790px) {
   .page {
     margin-top: 0px;

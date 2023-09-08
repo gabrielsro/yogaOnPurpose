@@ -62,6 +62,33 @@ nav {
   width: 30px;
 }
 
+.navControls {
+  display: flex;
+  white-space: nowrap;
+  gap: 15px;
+  padding-right: 30px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.navControls a {
+  color: black;
+  text-decoration: none;
+}
+
+.navControls a:hover {
+  color: yellow;
+}
+
+.navControls button {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.navControls button:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 660px) {
   .links img {
     width: 20px;

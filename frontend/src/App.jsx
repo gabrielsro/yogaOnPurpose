@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Modal from "./components/Modal/Modal";
 import pages from "./pages";
 import loadingIcon from "./components/Modal/icons/loading.svg";
+import doneIcon from "./components/Modal/icons/done.svg";
 import getLogin from "./javascripts/getLogin";
 
 const App = () => {
@@ -26,11 +27,28 @@ const App = () => {
     );
   }
 
-  if (appState !== "loading") {
+  if (appState == "success") {
+    return (
+      <Modal>
+        <div className="success">
+          <p>Successfully logged out</p>
+          <img src={doneIcon} alt="Done icon" id="doneIcon" />
+        </div>
+      </Modal>
+    );
+  }
+
+  if (appState == "loaded") {
     return (
       <div>
         <BrowserRouter>
-          <Navbar page={page} setPage={setPage} loggedUser={loggedUser} />
+          <Navbar
+            page={page}
+            setPage={setPage}
+            loggedUser={loggedUser}
+            setAppState={setAppState}
+            setLoggedUser={setLoggedUser}
+          />
           <Routes>
             <Route path="/" element={<pages.Home />} />
             <Route path="/yogaOnPurpose" element={<pages.Home />} />

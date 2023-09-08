@@ -6,3 +6,7 @@
 .asset {
   margin-bottom: 10px;
 }
+
+.dashCategory .assets .asset {
+  display: block;
+}
