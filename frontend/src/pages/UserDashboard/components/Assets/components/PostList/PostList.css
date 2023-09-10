@@ -1,0 +1,77 @@
+.postList {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.postListPost {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3px;
+}
+
+.postList .postListPost .basics {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.postBasics {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.postBasicsTitle p {
+  font-weight: bold;
+}
+
+.postBasicsDate p {
+  font-size: 0.8em;
+}
+
+.postMore {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.postInfo,
+.postActions {
+  display: grid;
+  place-content: center;
+}
+
+.postActions {
+  padding-left: 20px;
+  padding-right: 7px;
+  display: flex;
+  gap: 13px;
+}
+
+.postInfo {
+  min-width: 80px;
+}
+
+.postActionDelete img {
+  width: 22px;
+}
+
+.postActionEdit img {
+  width: 26px;
+}
+
+.postActionDraft img {
+  width: 22px;
+}
+
+.postActionPublish img {
+  width: 22px;
+}
+
+@media only screen and (min-width: 900px) {
+  .postActions {
+    padding-left: 180px;
+  }
+}

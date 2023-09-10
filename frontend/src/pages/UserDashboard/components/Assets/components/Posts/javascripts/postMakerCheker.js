@@ -1,10 +1,10 @@
 export default (stateSetter) => {
-  const postMaker = document.querySelector(".postMaker");
-  if (postMaker.value) {
+  const postMakerContent = document.getElementById("postContent");
+  const postMakerTitle = document.getElementById("postTitle");
+  if (postMakerContent.value || postMakerTitle.value) {
     stateSetter("written");
   }
-  if (!postMaker.value) {
+  if (!postMakerContent.value && !postMakerTitle.value) {
     stateSetter("addPost");
   }
-  console.log(postMaker.value);
 };

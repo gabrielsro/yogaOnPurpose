@@ -1,0 +1,6 @@
+.loadingPage {
+  background-color: #8fbabf;
+  height: calc(100vh - 50px);
+  display: grid;
+  place-content: center;
+}

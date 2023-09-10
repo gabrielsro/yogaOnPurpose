@@ -1,12 +1,12 @@
 export default async (stateSetter, userSetter, navigate) => {
-  stateSetter("loading");
+  stateSetter({ status: "loading", petition: "logout" });
   try {
     const logout = await fetch("http://localhost:3003/logout", {
       method: "POST",
       credentials: "include",
     });
     if (logout.ok) {
-      stateSetter("success");
+      stateSetter({ status: "success", petition: "logout" });
       setTimeout(() => navigate("/login"), 2000);
       userSetter(null);
     } else {

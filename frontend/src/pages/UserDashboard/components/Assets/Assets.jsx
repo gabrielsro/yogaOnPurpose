@@ -4,7 +4,7 @@ import Posts from "./components/Posts";
 import Events from "./components/Events";
 import Store from "./components/Store";
 
-const Assets = () => {
+const Assets = ({ loggedUser, setDashboardState }) => {
   return (
     <div className="dashCategory">
       <div>
@@ -12,8 +12,8 @@ const Assets = () => {
         <h2>Assets</h2>
       </div>
       <div className="assets">
-        <Posts />
-        <Events />
+        <Posts loggedUser={loggedUser} setDashboardState={setDashboardState} />
+        <Events loggedUser={loggedUser} />
         <Store />
       </div>
     </div>

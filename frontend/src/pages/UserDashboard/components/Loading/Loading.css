@@ -1,0 +1,10 @@
+.page .dashCategory .loadingDashElement {
+  display: grid;
+  place-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.page .dashCategory .loadingDashElement img {
+  width: 30px;
+}

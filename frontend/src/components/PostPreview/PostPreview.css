@@ -1,0 +1,62 @@
+.postContainerPost {
+  border-radius: 5px;
+  box-shadow: 3px 3px 14px #888888;
+  overflow: hidden;
+  max-height: 170px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.postContainerPost a {
+  text-decoration: none;
+  color: black;
+}
+
+.postPreviewCreationDate {
+  margin-bottom: 7px;
+  color: rgb(49, 49, 49);
+  text-align: start;
+}
+
+.postPreviewTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: start;
+}
+
+.postPreviewAuthor {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.postPreviewAuthor > p:nth-child(2) {
+  font-weight: bold;
+}
+
+.postPreviewContent {
+  text-align: start;
+}
+
+@media only screen and (min-width: 900px) {
+  .postPreviewAuthor {
+    margin-bottom: 17px;
+  }
+
+  .postContainerPost {
+    padding-top: 3px;
+    padding-bottom: 9px;
+    max-height: 220px;
+  }
+
+  .postPreviewCreationDate {
+    padding-left: 4px;
+  }
+
+  .postPreviewTitle,
+  .postPreviewAuthor,
+  .postPreviewContent {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}

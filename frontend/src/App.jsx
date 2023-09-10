@@ -72,6 +72,7 @@ const App = () => {
                 />
               }
             />
+            <Route path="/viewPost/:postId" element={<pages.PostViewer />} />
           </Routes>
         </BrowserRouter>
       </div>

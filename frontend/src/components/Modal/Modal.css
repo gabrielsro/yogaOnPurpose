@@ -33,15 +33,23 @@
 }
 
 .loading,
-.success {
+.success,
+.error {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-.loading p {
+.loading p,
+.error p {
   font-size: 1.2rem;
+}
+
+.error p {
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
 
 .success {

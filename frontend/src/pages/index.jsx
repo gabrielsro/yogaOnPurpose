@@ -8,6 +8,7 @@ import Blog from "./Blog/Blog";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import UserDashboard from "./UserDashboard";
+import PostViewer from "./PostViewer";
 
 export default {
   About,
@@ -20,4 +21,5 @@ export default {
   Login,
   Signup,
   UserDashboard,
+  PostViewer,
 };

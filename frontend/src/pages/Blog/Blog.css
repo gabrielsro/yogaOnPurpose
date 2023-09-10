@@ -1,0 +1,33 @@
+.postsContainer {
+  padding-bottom: 100px;
+}
+
+.postsContainerList {
+  padding-top: 20px;
+  padding-left: 2px;
+  padding-right: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.postContainerPost button {
+  width: 100%;
+}
+
+.postViewPost {
+  display: grid;
+  place-content: center;
+}
+
+@media only screen and (min-width: 900px) {
+  .postsContainer {
+    display: grid;
+    place-content: center;
+  }
+  .postsContainerList {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 900px;
+  }
+}

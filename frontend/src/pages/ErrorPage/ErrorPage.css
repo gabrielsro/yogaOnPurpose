@@ -1,0 +1,17 @@
+.errorPage {
+  background-color: #eee;
+  height: calc(100vh - 50px);
+  display: grid;
+  place-content: center;
+  gap: 20px;
+}
+
+.errorPage p {
+  color: red;
+  font-weight: bold;
+}
+
+.errorPage img {
+  width: 70px;
+  place-self: center;
+}

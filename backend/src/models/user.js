@@ -1,5 +1,4 @@
-import { Schema } from "mongoose";
-import { model } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const userSchema = new Schema(
   {
@@ -9,9 +8,15 @@ const userSchema = new Schema(
     password: { type: String, required: true },
     bio: { type: String },
     email: { type: String },
-    pic: { type: String },
-    level: { type: String, enum: ["admin", "guest", "member"], required: true },
+    profilePicSmall: { type: String },
+    profilePicLarge: { type: String },
+    level: {
+      type: String,
+      enum: ["owner", "admin", "guest", "member"],
+      required: true,
+    },
     posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
+    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
     events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
   },
   { timestamps: true },

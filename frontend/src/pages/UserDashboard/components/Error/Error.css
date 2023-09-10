@@ -1,0 +1,14 @@
+.page .dashCategory .dashElementError {
+  display: grid;
+  place-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.errorMessage img {
+  width: 33px;
+}
+
+.errorMessage p {
+  color: red;
+}

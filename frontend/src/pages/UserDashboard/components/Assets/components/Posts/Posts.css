@@ -1,31 +1,24 @@
-.assets {
-  padding-top: 10px;
-  padding-left: 15px;
-}
-
-.assets .addAsset {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  font-size: 1.17em;
-  padding: 10px;
-  width: 100%;
-}
-
-.addAsset img {
-  width: 25px;
-}
-
 .postManager {
-  background-color: aqua;
   padding-top: 5px;
-  padding-left: 20px;
 }
 
-.postMaker {
+#postMakerForm {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+}
+
+#postTitle {
+  width: 98%;
+  place-self: center;
+}
+
+#postContent {
   width: 98%;
   height: 50vh;
   resize: none;
+  place-self: center;
 }
 
 .postMakerActions {
@@ -35,7 +28,13 @@
   padding-bottom: 3px;
   padding-left: 3px;
   padding-right: 3px;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.writtenButtons {
+  display: flex;
+  gap: 10px;
 }
 
 .postMakerActions button {
