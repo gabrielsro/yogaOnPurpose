@@ -1,11 +1,11 @@
-.postList {
+.assetList {
   padding-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.postListPost {
+.assetsListElement {
   border: 1px solid black;
   border-radius: 5px;
   display: flex;
@@ -13,18 +13,19 @@
   padding-left: 3px;
 }
 
-.postList .postListPost .basics {
+.assetList .assetsListElement .basics {
   display: flex;
   flex-direction: column;
   align-items: start;
 }
 
-.postBasics {
+.assetBasics {
   white-space: nowrap;
   overflow: hidden;
 }
 
-.postBasicsTitle p {
+.postBasicsTitle p,
+.eventBasicsName p {
   font-weight: bold;
 }
 
@@ -32,46 +33,46 @@
   font-size: 0.8em;
 }
 
-.postMore {
+.assetMore {
   display: grid;
   grid-template-columns: auto auto;
 }
 
-.postInfo,
-.postActions {
+.assetInfo,
+.assetActions {
   display: grid;
   place-content: center;
 }
 
-.postActions {
+.assetActions {
   padding-left: 20px;
   padding-right: 7px;
   display: flex;
   gap: 13px;
 }
 
-.postInfo {
+.assetInfo {
   min-width: 80px;
 }
 
-.postActionDelete img {
+.assetActionDelete img {
   width: 22px;
 }
 
-.postActionEdit img {
+.assetActionEdit img {
   width: 26px;
 }
 
-.postActionDraft img {
+.assetActionDraft img {
   width: 22px;
 }
 
-.postActionPublish img {
+.assetActionPublish img {
   width: 22px;
 }
 
 @media only screen and (min-width: 900px) {
-  .postActions {
+  .assetActions {
     padding-left: 180px;
   }
 }

@@ -1,0 +1,14 @@
+#makerForm,
+.additionalFields {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+}
+
+#postContent {
+  width: 100%;
+  height: 50vh;
+  resize: none;
+  place-self: center;
+}

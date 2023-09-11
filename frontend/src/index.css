@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+textarea {
+  resize: none;
+}
+
 body::-webkit-scrollbar {
   width: 6px;
 }

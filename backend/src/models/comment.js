@@ -6,8 +6,13 @@ const commentSchema = new Schema(
   {
     author: { Type: Schema.Types.ObjectId, required: true, ref: "User" },
     content: { Type: String, required: true },
-    target: { Type: String, enum: ["post", "comment"], required: true },
-    postTarget: { Type: Schema.Types.ObjectId, ref: "Post", required: true },
+    target: {
+      Type: String,
+      enum: ["Post", "Comment", "Event"],
+      required: true,
+    },
+    postTarget: { Type: Schema.Types.ObjectId, ref: "Post" },
+    eventTarget: { Type: Schema.Types.ObjectId, ref: "Event" },
     commentTarget: { Type: Schema.Types.ObjectId, ref: "Comment" },
     comments: [{ Type: Schema.Types.ObjectId, ref: "Comment" }],
   },

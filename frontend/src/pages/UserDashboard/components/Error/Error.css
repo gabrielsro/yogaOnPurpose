@@ -5,6 +5,11 @@
   padding-bottom: 10px;
 }
 
+.errorMessage {
+  display: flex;
+  align-items: center;
+}
+
 .errorMessage img {
   width: 33px;
 }

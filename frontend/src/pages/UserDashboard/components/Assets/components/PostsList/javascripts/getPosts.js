@@ -6,13 +6,14 @@ export default async (stateSetter) => {
     });
     if (!response.ok) {
       console.log(response);
-      stateSetter({ status: "error", result: null });
+      stateSetter({ status: "error" });
       return;
     }
     const posts = await response.json();
     console.log(posts);
-    stateSetter({ status: "success", result: posts });
+    stateSetter({ status: "success", result: posts.posts });
   } catch (error) {
+    stateSetter({ status: "error" });
     console.log(error);
   }
 };

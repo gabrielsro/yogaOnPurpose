@@ -2,25 +2,6 @@
   padding-top: 5px;
 }
 
-#postMakerForm {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  place-content: center;
-}
-
-#postTitle {
-  width: 98%;
-  place-self: center;
-}
-
-#postContent {
-  width: 98%;
-  height: 50vh;
-  resize: none;
-  place-self: center;
-}
-
 .postMakerActions {
   width: 100%;
   display: flex;

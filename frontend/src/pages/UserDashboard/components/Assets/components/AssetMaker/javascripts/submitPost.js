@@ -1,7 +1,6 @@
-export default async (e, action, author, stateSetter) => {
-  e.preventDefault();
+export default async (action, author, stateSetter) => {
   stateSetter({ status: "loading", petition: `post_${action}` });
-  const form = document.getElementById("postMakerForm");
+  const form = document.getElementById("makerForm");
   const formData = new FormData(form);
   let formDataObject = Object.fromEntries(formData);
   formDataObject.status = action;

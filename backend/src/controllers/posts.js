@@ -31,7 +31,7 @@ async function getPosts(req, res, next) {
   next();
 }
 
-async function getPostsLevel(req, res, next) {
+async function getPostsLevel(req, res) {
   let postList;
   try {
     if (req.user.level == "admin" || req.user.level == "owner") {
@@ -44,7 +44,6 @@ async function getPostsLevel(req, res, next) {
     return;
   }
   res.json({ posts: postList });
-  next();
 }
 
 async function getPost(req, res, next) {

@@ -66,8 +66,16 @@ const UserDashboard = ({ loggedUser, setLoggedUser }) => {
               <p>{`We couldn't publish your post`}</p>
             )}
           {dashboardState.status == "error" &&
-            dashboardState.petition == "post_draft" && (
+            /draft/.test(dashboardState.petition) && (
               <p>{`We couldn't save your draft`}</p>
+            )}
+          {dashboardState.status == "error" &&
+            dashboardState.petition == "event_published" && (
+              <p>{`We couldn't publish your event`}</p>
+            )}
+          {dashboardState.status == "error" &&
+            dashboardState.petition == "item_published" && (
+              <p>{`We couldn't add your item to the store`}</p>
             )}
           {/* Icons */}
           {dashboardState.status == "loading" && (
