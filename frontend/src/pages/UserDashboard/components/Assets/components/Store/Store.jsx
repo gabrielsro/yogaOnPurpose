@@ -2,6 +2,7 @@ import "./Store.css";
 import storeIcon from "./icons/shopping.svg";
 import { useState } from "react";
 import AssetMaker from "../AssetMaker";
+import ItemsList from "../ItemsList";
 
 const Store = ({ loggedUser, setDashboardState }) => {
   const [categoryState, setCategoryState] = useState({ view: "collapsed" });
@@ -19,11 +20,14 @@ const Store = ({ loggedUser, setDashboardState }) => {
         <p>Store</p>
       </button>
       {categoryState.view !== "collapsed" && (
-        <AssetMaker
-          assetType={"item"}
-          loggedUser={loggedUser}
-          setDashboardState={setDashboardState}
-        />
+        <div>
+          <AssetMaker
+            assetType={"item"}
+            loggedUser={loggedUser}
+            setDashboardState={setDashboardState}
+          />
+          <ItemsList />
+        </div>
       )}
     </div>
   );

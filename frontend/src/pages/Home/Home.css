@@ -9,6 +9,10 @@
   width: 300px;
 }
 
+ol > li {
+  list-style: decimal;
+}
+
 .logoSection {
   display: grid;
   grid-template-columns: 300px auto;

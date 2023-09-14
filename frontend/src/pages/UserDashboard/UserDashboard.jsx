@@ -1,6 +1,6 @@
 import "./UserDashboard.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Modal from "../../components/Modal";
 import Basics from "./components/Basics/Basics";
 import Users from "./components/Users/Users";
@@ -14,13 +14,18 @@ import successIcon from "../../components/Modal/icons/success.svg";
 import errorIcon from "../../components/Modal/icons/error.svg";
 
 const UserDashboard = ({ loggedUser, setLoggedUser }) => {
+  const navigate = useNavigate();
+
   const [dashboardState, setDashboardState] = useState({
     status: "loaded",
     petition: null,
   });
-  const navigate = useNavigate();
 
-  if (dashboardState.status == "loaded") {
+  if (!loggedUser) {
+    return <Navigate to="/login" />;
+  }
+
+  if (dashboardState.status == "loaded" && loggedUser) {
     return (
       <div className="page" id="userPage">
         <Basics

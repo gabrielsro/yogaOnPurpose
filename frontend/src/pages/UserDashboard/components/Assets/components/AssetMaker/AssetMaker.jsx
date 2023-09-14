@@ -9,6 +9,8 @@ import eventMakerChecker from "./javascripts/eventMakerChecker";
 import itemMakerChecker from "./javascripts/itemMakerChecker";
 import submitPost from "./javascripts/submitPost";
 import submitEvent from "./javascripts/submitEvent";
+import submitItem from "./javascripts/submitItem";
+import BundledEditor from "../../../../../../components/BundledEditor";
 
 const AssetMaker = ({ assetType, loggedUser, setDashboardState }) => {
   const [makerState, setMakerState] = useState({ status: "idle" });
@@ -38,6 +40,34 @@ const AssetMaker = ({ assetType, loggedUser, setDashboardState }) => {
                   onInput={() => postMakerCheker(setMakerState)}
                 />
                 <label htmlFor="postContent">Content</label>
+                <BundledEditor
+                  //   onInit={(evt, editor) => (editorRef.current = editor)}
+                  initialValue="<p>This is the initial content of the editor.</p>"
+                  init={{
+                    height: 500,
+                    selector: "textarea",
+                    menubar: false,
+                    plugins: [
+                      "advlist",
+                      "anchor",
+                      "autolink",
+                      "help",
+                      "image",
+                      "link",
+                      "lists",
+                      "searchreplace",
+                      "table",
+                      "wordcount",
+                    ],
+                    toolbar:
+                      "undo redo | blocks | " +
+                      "bold italic forecolor | alignleft aligncenter " +
+                      "alignright alignjustify | bullist numlist outdent indent | " +
+                      "removeformat | help",
+                    content_style:
+                      "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+                  }}
+                />
                 <textarea
                   name="content"
                   id="postContent"
@@ -154,6 +184,8 @@ const AssetMaker = ({ assetType, loggedUser, setDashboardState }) => {
                         submitPost("draft", loggedUser, setDashboardState);
                       assetType == "event" &&
                         submitEvent("draft", loggedUser, setDashboardState);
+                      assetType == "item" &&
+                        submitItem("draft", loggedUser, setDashboardState);
                     }}
                   >
                     <img src={saveIcon} alt="Save icon" />
@@ -167,6 +199,8 @@ const AssetMaker = ({ assetType, loggedUser, setDashboardState }) => {
                         submitPost("published", loggedUser, setDashboardState);
                       assetType == "event" &&
                         submitEvent("published", loggedUser, setDashboardState);
+                      assetType == "item" &&
+                        submitItem("published", loggedUser, setDashboardState);
                     }}
                   >
                     <img src={publishIcon} alt="Publish icon" />

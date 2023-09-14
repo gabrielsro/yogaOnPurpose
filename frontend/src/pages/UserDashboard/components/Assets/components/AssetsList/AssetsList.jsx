@@ -4,10 +4,11 @@ import deleteIcon from "../../../../icons/delete.svg";
 import editIcon from "../../../../icons/edit2.svg";
 import draftIcon from "../../../../icons/pause2.svg";
 import publishIcon from "../../../../icons/play.svg";
+import placeholderPicture from "./images/picturePlaceholder2.svg";
 
 const AssetsList = ({ assets, type }) => {
   return (
-    <ul className="assetList">
+    <ul className="assetList" id={type == "item" ? "item" : "regular"}>
       {assets.map((asset) => (
         <li key={asset._id} className="assetsListElement">
           {type == "post" && (
@@ -39,6 +40,31 @@ const AssetsList = ({ assets, type }) => {
                 <p>{`Ends: ${
                   asset.dateEnd ? dateFormatter(asset.dateEnd) : "N/A"
                 }`}</p>
+              </div>
+            </div>
+          )}
+          {type == "item" && (
+            <div className="assetBasics" id="assetItem">
+              <div className="assetBasicsImg">
+                {asset.pictures.length < 1 ? (
+                  <img src={placeholderPicture} alt="Placeholder item" />
+                ) : (
+                  <img src={asset.thumbnail} alt="Item" />
+                )}
+              </div>
+              <div className="assetBasicsInfo">
+                <p>{asset.name}</p>
+                <p>
+                  {asset.price.toLocaleString("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                  })}
+                </p>
+                <p>{`Uploader: ${asset.uploaderName}`}</p>
+                <p>{`Published on: ${dateFormatter(asset.createdAt)}`}</p>
+                {asset.createdAt !== asset.updatedAt && (
+                  <p>{`Last update: ${dateFormatter(asset.createdAt)}`}</p>
+                )}
               </div>
             </div>
           )}

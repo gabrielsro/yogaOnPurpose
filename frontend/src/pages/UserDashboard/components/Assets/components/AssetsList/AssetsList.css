@@ -71,8 +71,93 @@
   width: 22px;
 }
 
+.assetBasicsImg {
+  display: grid;
+  place-content: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.assetBasicsImg img {
+  width: 70px;
+}
+
+.assetBasicsInfo > p:first-child {
+  font-weight: bold;
+}
+
+.assetBasicsInfo > p:nth-child(4) {
+  font-size: 0.85rem;
+}
+
+@media only screen and (max-width: 899px) {
+  #item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  }
+
+  #item .assetsListElement {
+    display: grid;
+    place-content: center;
+    position: relative;
+    min-width: 195px;
+    padding: 0px;
+  }
+
+  #item .assetBasicsImg {
+    padding: 0px;
+  }
+
+  #item .assetBasicsImg img {
+    width: 100%;
+  }
+
+  #item .assetMore {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #item .assetInfo {
+    position: absolute;
+    top: 3px;
+    padding-left: 3px;
+    place-content: start;
+    font-weight: bold;
+  }
+
+  #item .assetBasicsInfo {
+    min-height: 85px;
+    padding-left: 2px;
+  }
+
+  #item .assetActions {
+    padding-left: 7px;
+    padding-right: 7px;
+    justify-content: space-between;
+  }
+}
+
 @media only screen and (min-width: 900px) {
   .assetActions {
     padding-left: 180px;
+  }
+
+  #assetItem {
+    display: flex;
+    gap: 5px;
+  }
+
+  .assetBasicsImg img {
+    width: 100px;
+  }
+
+  .assetBasicsInfo {
+    display: grid;
+    place-content: center;
+  }
+
+  .assetBasicsInfo > p:first-child {
+    font-size: 1.2rem;
   }
 }
