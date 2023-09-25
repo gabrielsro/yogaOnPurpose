@@ -1,0 +1,15 @@
+#privateLessons {
+  background-image: url("../../../../images/privateLesson.jpg");
+  background-position: center;
+}
+
+#privateLessons .serviceIntro {
+  background-color: hsla(0, 15%, 81%, 0.2);
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+#privateLessons .serviceTitle {
+  color: white;
+}

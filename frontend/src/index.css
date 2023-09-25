@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  scrollbar-gutter: stable;
 }
 
 textarea {
@@ -11,6 +12,7 @@ textarea {
 
 body::-webkit-scrollbar {
   width: 6px;
+  background-color: transparent;
 }
 
 li {
@@ -24,6 +26,10 @@ li {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #8fbc8f;
+}
+
+::-webkit-scrollbar-track {
+  background: hsla(0, 0%, 53.3%, 0.4);
 }
 
 :root {

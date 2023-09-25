@@ -1,0 +1,15 @@
+#yogaRetreats {
+  background-image: url("../../../../images/retreat1.jpg");
+  background-position: center;
+}
+
+#yogaRetreats .serviceIntro {
+  background-color: hsla(0, 15%, 81%, 0.2);
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
+#yogaRetreats .serviceTitle {
+  color: white;
+}

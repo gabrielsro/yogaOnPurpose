@@ -9,6 +9,10 @@
   width: 300px;
 }
 
+.service {
+  border: 1px solid black;
+}
+
 ol > li {
   list-style: decimal;
 }
@@ -199,68 +203,6 @@ ol > li {
   padding-right: 20px;
 }
 
-.homeServiceText {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 10px;
-  background-color: rgba(215, 213, 213, 0.1);
-  backdrop-filter: blur(10px);
-  grid-row: 1/2;
-  height: auto;
-}
-
-.homeServiceContact {
-  position: absolute;
-  width: 50%;
-  bottom: 40px;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: rgba(215, 213, 213, 0.1);
-  backdrop-filter: blur(10px);
-  place-self: start;
-}
-
-.homeServiceContact h2 {
-  margin-bottom: 10px;
-}
-
-.homeServiceContact form {
-  position: relative;
-  padding-bottom: 40px;
-  display: grid;
-  column-gap: 10px;
-  row-gap: 10px;
-  grid-template-columns: 100px auto;
-}
-
-.homeService form button {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-}
-
-.homeServiceContact form label {
-  place-self: end;
-}
-
-.homeServiceContact form textarea {
-  resize: none;
-}
-
-.homeServiceContact form .messageLabel {
-  align-self: start;
-}
-
-.homeServiceText h2 {
-  margin-bottom: 30px;
-}
-
-.homeServiceText p {
-  font-size: 1.3rem;
-}
-
 .homeService img {
   display: block;
   height: 100%;
@@ -269,39 +211,6 @@ ol > li {
   object-position: center;
   max-height: 130vh;
   grid-row: 1/4;
-}
-
-#yogaRetreats {
-  background-image: url("./images/retreat1.jpg");
-}
-
-#privateLessons {
-  background-image: url("./images/privateLesson.jpg");
-}
-
-#soundBaths {
-  background-image: url("./images/soundBath1.jpg");
-}
-
-#meditation {
-  background-image: url("./images/meditation1.jpg");
-}
-
-#yogaWorkshops {
-  background-image: url("./images/yogaWorkshops.jpg");
-}
-
-#yogaRetreats,
-#soundBaths,
-#meditation,
-#privateLessons,
-#yogaWorkshops {
-  position: relative;
-  background-position: center;
-  min-height: 130vh;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 @media only screen and (max-width: 790px) {
@@ -368,5 +277,71 @@ ol > li {
 
   .homeServiceContact {
     width: 90%;
+  }
+}
+
+/* This is the refactored portion: */
+
+.service {
+  padding-bottom: 60px;
+  text-align: justify;
+  overflow: hidden;
+}
+
+.serviceHeader {
+  padding-top: 300px;
+  padding-bottom: 80px;
+}
+
+.serviceHeader,
+.serviceBody {
+  padding-left: 70px;
+  padding-right: 70px;
+  width: 100vw;
+}
+
+.serviceTitle {
+  margin-bottom: 30px;
+}
+
+.serviceIntro {
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+}
+
+.service h3 {
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+
+.service li {
+  list-style: none;
+}
+
+.service li > p:first-child {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.servicesNavigation {
+  font-size: 1.4rem;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.serviceTitle {
+  font-size: 4rem;
+}
+
+.serviceIntro {
+  padding: 10px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 790px) {
+  .serviceHeader,
+  .serviceBody {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
