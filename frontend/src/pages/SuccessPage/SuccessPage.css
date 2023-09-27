@@ -1,0 +1,17 @@
+.successPage {
+  background-color: #8fbabf;
+  height: calc(100vh - 50px);
+  display: grid;
+  place-content: center;
+  gap: 20px;
+}
+
+.successPage p {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.successPage img {
+  width: 70px;
+  place-self: center;
+}

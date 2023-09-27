@@ -7,8 +7,9 @@ const Meditation = () => {
       <div className="serviceHeader" id="meditation">
         <h2 className="serviceTitle">Meditation</h2>
         <p className="serviceIntro">
-          This is the Meditation intro. Something long goes here
-          kjsfdoslfdghsjidfghskjdfghskjdfhgskjdfhgskjdfhgskjdfhgskjdfhgkjsdfg
+          {`At Yoga on Purpose, we believe that true wellness encompasses both the
+          body and the mind. That's why, in addition to our invigorating yoga
+          classes, we proudly offer the transformative practice of meditation.`}
         </p>
       </div>
       <div className="serviceBody">

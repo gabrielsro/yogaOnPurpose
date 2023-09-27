@@ -6,5 +6,16 @@ import schedule from "./schedule";
 import users from "./users";
 import login from "./login";
 import logout from "./logout";
+import contact from "./contact";
 
-export default { events, items, pages, posts, schedule, users, login, logout };
+export default {
+  events,
+  items,
+  pages,
+  posts,
+  schedule,
+  users,
+  login,
+  logout,
+  contact,
+};

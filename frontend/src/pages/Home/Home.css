@@ -9,10 +9,6 @@
   width: 300px;
 }
 
-.service {
-  border: 1px solid black;
-}
-
 ol > li {
   list-style: decimal;
 }
