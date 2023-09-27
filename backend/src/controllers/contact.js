@@ -10,13 +10,13 @@ async function receiveUserContact(req, res, next) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "gabrielsantiagorodriguez19@gmail.com",
-      pass: "jvso tbwv vyyf fabv",
+      user: process.env.EMAIL_SENDER,
+      pass: process.env.EMAIL_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: "gabrielsantiagorodriguez19@gmail.com",
+    from: process.env.EMAIL_SENDER,
     to: req.body.email,
     subject: `yogaonpurpose.net message from ${sender}`,
     text: req.body.message,
