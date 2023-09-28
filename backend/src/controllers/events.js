@@ -25,10 +25,9 @@ async function getEvent() {}
 
 async function getEventsAccount(req, res, next) {
   try {
-    const events = await Event.find().populate(
-      "organizers",
-      "firstName lastName",
-    );
+    const events = await Event.find()
+      .populate("organizers", "firstName lastName")
+      .sort({ createdAt: -1 });
     res.json({ events });
     next();
   } catch (err) {

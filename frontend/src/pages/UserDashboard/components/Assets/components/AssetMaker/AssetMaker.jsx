@@ -12,7 +12,7 @@ import submitEvent from "./javascripts/submitEvent";
 import submitItem from "./javascripts/submitItem";
 import BundledEditor from "../../../../../../components/BundledEditor";
 
-const AssetMaker = ({ assetType, loggedUser, setDashboardState }) => {
+const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
   const [makerState, setMakerState] = useState({ status: "idle" });
   return (
     <div className="postManager">
@@ -181,11 +181,11 @@ const AssetMaker = ({ assetType, loggedUser, setDashboardState }) => {
                     onClick={(e) => {
                       e.preventDefault();
                       assetType == "post" &&
-                        submitPost("draft", loggedUser, setDashboardState);
+                        submitPost("draft", loggedUser, setAssetState);
                       assetType == "event" &&
-                        submitEvent("draft", loggedUser, setDashboardState);
+                        submitEvent("draft", loggedUser, setAssetState);
                       assetType == "item" &&
-                        submitItem("draft", loggedUser, setDashboardState);
+                        submitItem("draft", loggedUser, setAssetState);
                     }}
                   >
                     <img src={saveIcon} alt="Save icon" />
@@ -196,11 +196,11 @@ const AssetMaker = ({ assetType, loggedUser, setDashboardState }) => {
                     onClick={(e) => {
                       e.preventDefault();
                       assetType == "post" &&
-                        submitPost("published", loggedUser, setDashboardState);
+                        submitPost("published", loggedUser, setAssetState);
                       assetType == "event" &&
-                        submitEvent("published", loggedUser, setDashboardState);
+                        submitEvent("published", loggedUser, setAssetState);
                       assetType == "item" &&
-                        submitItem("published", loggedUser, setDashboardState);
+                        submitItem("published", loggedUser, setAssetState);
                     }}
                   >
                     <img src={publishIcon} alt="Publish icon" />

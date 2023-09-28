@@ -22,7 +22,7 @@ async function getItems() {}
 
 async function getItemsForLevel(req, res) {
   try {
-    const items = await Item.find();
+    const items = await Item.find().sort({ createdAt: -1 });
     res.json({ items });
   } catch (err) {
     res.sendStatus(500);

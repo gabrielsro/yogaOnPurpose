@@ -5,7 +5,7 @@ import Events from "./components/Events";
 import Store from "./components/Store";
 import { useState } from "react";
 
-const Assets = ({ loggedUser, setDashboardState }) => {
+const Assets = ({ loggedUser }) => {
   const [assetsState, setAssetsState] = useState({ view: "collapsed" });
   return (
     <div className="dashCategory">
@@ -22,18 +22,9 @@ const Assets = ({ loggedUser, setDashboardState }) => {
       </button>
       {assetsState.view !== "collapsed" && (
         <div className="assets">
-          <Posts
-            loggedUser={loggedUser}
-            setDashboardState={setDashboardState}
-          />
-          <Events
-            loggedUser={loggedUser}
-            setDashboardState={setDashboardState}
-          />
-          <Store
-            loggedUser={loggedUser}
-            setDashboardState={setDashboardState}
-          />
+          <Posts loggedUser={loggedUser} />
+          <Events loggedUser={loggedUser} />
+          <Store loggedUser={loggedUser} />
         </div>
       )}
     </div>

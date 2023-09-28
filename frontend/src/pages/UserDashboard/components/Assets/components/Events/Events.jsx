@@ -3,32 +3,45 @@ import eventIcon from "./icons/event.svg";
 import { useState } from "react";
 import AssetMaker from "../AssetMaker";
 import EventsList from "../EventsList";
+import AppInfo from "../../../AppInfo";
 
-const Events = ({ loggedUser, setDashboardState }) => {
+const Events = ({ loggedUser }) => {
   const [categoryState, setCategoryState] = useState({ view: "collapsed" });
-
+  const [assetState, setAssetState] = useState({ status: "loaded" });
   return (
     <div className="asset">
-      <button
-        className="assetTitle transparentButton"
-        onClick={() =>
-          setCategoryState({
-            view: categoryState.view == "collapsed" ? "expanded" : "collapsed",
-          })
-        }
-      >
-        <img src={eventIcon} alt="Events icon" />
-        <p>Events</p>
-      </button>
-      {categoryState.view !== "collapsed" && (
+      {assetState.status == "loaded" && (
         <div>
-          <AssetMaker
-            assetType={"event"}
-            loggedUser={loggedUser}
-            setDashboardState={setDashboardState}
-          />
-          <EventsList />
+          <button
+            className="assetTitle transparentButton"
+            onClick={() =>
+              setCategoryState({
+                view:
+                  categoryState.view == "collapsed" ? "expanded" : "collapsed",
+              })
+            }
+          >
+            <img src={eventIcon} alt="Events icon" />
+            <p>Events</p>
+          </button>
+          {categoryState.view !== "collapsed" && (
+            <div>
+              <AssetMaker
+                assetType={"event"}
+                loggedUser={loggedUser}
+                setAssetState={setAssetState}
+              />
+              <EventsList />
+            </div>
+          )}
         </div>
+      )}
+      {assetState.status !== "loaded" && (
+        <AppInfo
+          status={assetState.status}
+          message={assetState.message}
+          errorMessage={assetState.errorMessage}
+        />
       )}
     </div>
   );

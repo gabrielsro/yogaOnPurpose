@@ -1,5 +1,5 @@
 export default async (action, author, stateSetter) => {
-  stateSetter({ status: "loading", petition: `item_${action}` });
+  stateSetter({ status: "loading" });
   const form = document.getElementById("makerForm");
   const formData = new FormData(form);
   let formDataObject = Object.fromEntries(formData);
@@ -22,14 +22,29 @@ export default async (action, author, stateSetter) => {
     });
     if (!response.ok) {
       console.log(response);
-      stateSetter({ status: "error", petition: `item_${action}` });
-      setTimeout(
-        () => stateSetter({ status: "loaded", petition: "null" }),
-        4000,
-      );
+      stateSetter({
+        status: "error",
+        message: null,
+        errorMessage: "There was an error. Please try again later",
+      });
+      setTimeout(() => stateSetter({ status: "loaded" }), 4000);
       return;
     }
-    stateSetter({ status: "loaded" });
+    if (action == "published") {
+      stateSetter({
+        status: "success",
+        message: "Item successfully added to the store!",
+        errorMessage: null,
+      });
+    }
+    if (action == "draft") {
+      stateSetter({
+        status: "done",
+        message: "Item saved as a draft",
+        errorMessage: null,
+      });
+    }
+    setTimeout(() => stateSetter({ status: "loaded" }), 2000);
   } catch (err) {
     console.log(err);
   }
