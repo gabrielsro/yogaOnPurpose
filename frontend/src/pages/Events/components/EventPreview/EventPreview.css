@@ -1,0 +1,61 @@
+.eventCardTitle {
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.eventCardImagePlaceholder {
+  height: 200px;
+}
+
+.eventCardImagePlaceholder {
+  background-image: url("./icons/beach.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.eventCardBasics img {
+  width: 50px;
+}
+
+.eventCardLocation,
+.eventCardDates {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.eventCardLocation {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: grey;
+}
+
+.eventCardDates {
+  font-size: 1.1rem;
+}
+
+.eventCardFooter {
+  padding-top: 5px;
+  padding-left: 3px;
+  display: flex;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.eventCardFooter > p:first-child {
+  color: rgba(245, 99, 42, 0.705);
+}
+
+.eventCardFooter > p:nth-child(2) {
+  color: grey;
+}
+
+@media only screen and (min-width: 700px) {
+  .eventCardBasics {
+    display: flex;
+    gap: 30px;
+  }
+}

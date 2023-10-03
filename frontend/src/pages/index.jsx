@@ -9,6 +9,8 @@ import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import UserDashboard from "./UserDashboard";
 import PostViewer from "./PostViewer";
+import EventViewer from "./EventViewer";
+import ItemViewer from "./ItemViewer";
 
 export default {
   About,
@@ -22,4 +24,6 @@ export default {
   Signup,
   UserDashboard,
   PostViewer,
+  EventViewer,
+  ItemViewer,
 };

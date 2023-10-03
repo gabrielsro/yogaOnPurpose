@@ -4,7 +4,8 @@ import authenticate from "../utils/sessions/authenticate";
 
 const router = Router();
 
-router.get("/", events.getEvent);
+router.get("/", events.getEvents);
+router.get("/:eventId", events.getEvent);
 router.get("/account", events.getEventsAccount);
 router.post("/", authenticate, events.createEvent);
 router.put("/");

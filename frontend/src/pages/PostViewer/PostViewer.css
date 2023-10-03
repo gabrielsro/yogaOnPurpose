@@ -11,15 +11,30 @@
 }
 
 .postViewerTitle {
-  padding-bottom: 15px;
+  padding-bottom: 30px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.postViewerAuthor {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .postViewerDate {
   padding-top: 5px;
+  text-align: center;
 }
 
 .postViewerContent {
-  padding-top: 30px;
+  padding-top: 60px;
+  overflow-x: auto;
+}
+
+.postViewerContent img {
+  max-width: 890px;
+  height: auto;
 }
 
 .returnLink {

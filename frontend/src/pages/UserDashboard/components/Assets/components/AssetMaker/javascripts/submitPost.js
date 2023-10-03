@@ -1,10 +1,11 @@
-export default async (action, author, stateSetter) => {
+export default async (action, author, stateSetter, editorRef) => {
   stateSetter({ status: "loading" });
-  const form = document.getElementById("makerForm");
-  const formData = new FormData(form);
+  const formData = new FormData();
   let formDataObject = Object.fromEntries(formData);
+  formDataObject.title = document.getElementById("postTitle").value;
   formDataObject.status = action;
   formDataObject.author = author.id;
+  formDataObject.content = editorRef.current.getContent();
   formDataObject.authorName = `${author.firstName} ${author.lastName}`;
   const formDataString = JSON.stringify(formDataObject);
   try {

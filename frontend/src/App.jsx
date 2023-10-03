@@ -73,6 +73,8 @@ const App = () => {
               }
             />
             <Route path="/viewPost/:postId" element={<pages.PostViewer />} />
+            <Route path="/viewEvent/:eventId" element={<pages.EventViewer />} />
+            <Route path="/viewItem/:itemId" element={<pages.ItemViewer />} />
           </Routes>
         </BrowserRouter>
       </div>

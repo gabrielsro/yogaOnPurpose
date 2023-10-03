@@ -1,14 +1,18 @@
-export default async (action, author, stateSetter) => {
+export default async (action, author, stateSetter, editorRef) => {
   stateSetter({
     status: "loading",
   });
-  const form = document.getElementById("makerForm");
-  const formData = new FormData(form);
+  const formData = new FormData();
   let formDataObject = Object.fromEntries(formData);
-  formDataObject.status = action;
+  formDataObject.name = document.getElementById("eventName");
+  formDataObject.dateStart = document.getElementById("eventDate");
+  formDataObject.dateEnd = document.getElementById("eventDateFinish");
+  formDataObject.location = document.getElementById("eventLocation");
+  formDataObject.formDataObject.status = action;
   formDataObject.organizers = [author.id];
   formDataObject.mainImage = "";
   formDataObject.secondaryImage = "";
+  formDataObject.description = editorRef.current.getContent();
   const formDataString = JSON.stringify(formDataObject);
   console.log(formDataString);
   try {

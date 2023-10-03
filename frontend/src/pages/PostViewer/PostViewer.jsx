@@ -31,14 +31,15 @@ const PostViewer = () => {
               <h1>{viewerState.result.title}</h1>
             </div>
             <div className="postViewerAuthor">
-              <h2>{`By ${viewerState.result.authorName}`}</h2>
+              <p>{`By ${viewerState.result.authorName}`}</p>
             </div>
             <div className="postViewerDate">
               <p>{dateFormatter(viewerState.result.createdAt, "post")}</p>
             </div>
-            <div className="postViewerContent">
-              {viewerState.result.content}
-            </div>
+            <div
+              className="postViewerContent"
+              dangerouslySetInnerHTML={{ __html: viewerState.result.content }}
+            />
             <div className="postViewerComments">
               <p>Comments:</p>
               <div className="postViewerCommentMaker">

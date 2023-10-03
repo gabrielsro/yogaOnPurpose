@@ -1,5 +1,5 @@
 import "./AssetMaker.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import addIcon from "../../icons/add.svg";
 import discardIcon from "../../icons/discard.svg";
 import publishIcon from "../../icons/publish.svg";
@@ -11,9 +11,13 @@ import submitPost from "./javascripts/submitPost";
 import submitEvent from "./javascripts/submitEvent";
 import submitItem from "./javascripts/submitItem";
 import BundledEditor from "../../../../../../components/BundledEditor";
+import editorConfig from "./javascripts/editorConfig";
 
 const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
   const [makerState, setMakerState] = useState({ status: "idle" });
+  const postEditorRef = useRef(null);
+  const eventEditorRef = useRef(null);
+  const itemEditorRef = useRef(null);
   return (
     <div className="postManager">
       <div className="postManagerContents">
@@ -37,42 +41,13 @@ const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
                   type="text"
                   id="postTitle"
                   name="title"
-                  onInput={() => postMakerCheker(setMakerState)}
+                  onInput={() => postMakerCheker(setMakerState, postEditorRef)}
                 />
                 <label htmlFor="postContent">Content</label>
                 <BundledEditor
-                  //   onInit={(evt, editor) => (editorRef.current = editor)}
-                  initialValue="<p>This is the initial content of the editor.</p>"
-                  init={{
-                    height: 500,
-                    selector: "textarea",
-                    menubar: false,
-                    plugins: [
-                      "advlist",
-                      "anchor",
-                      "autolink",
-                      "help",
-                      "image",
-                      "link",
-                      "lists",
-                      "searchreplace",
-                      "table",
-                      "wordcount",
-                    ],
-                    toolbar:
-                      "undo redo | blocks | " +
-                      "bold italic forecolor | alignleft aligncenter " +
-                      "alignright alignjustify | bullist numlist outdent indent | " +
-                      "removeformat | help",
-                    content_style:
-                      "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-                  }}
-                />
-                <textarea
-                  name="content"
-                  id="postContent"
-                  className="postMaker"
-                  onInput={() => postMakerCheker(setMakerState)}
+                  init={editorConfig}
+                  onInit={(e, editor) => (postEditorRef.current = editor)}
+                  onDirty={() => setMakerState("written")}
                 />
               </div>
             )}
@@ -107,11 +82,10 @@ const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
                   onInput={() => eventMakerChecker(setMakerState)}
                 />
                 <label htmlFor="eventDescription">Description</label>
-                <textarea
-                  type="text"
-                  id="eventDescription"
-                  name="description"
-                  onInput={() => eventMakerChecker(setMakerState)}
+                <BundledEditor
+                  init={editorConfig}
+                  onInit={(e, editor) => (eventEditorRef.current = editor)}
+                  onDirty={() => setMakerState("written")}
                 />
                 <label htmlFor="mainImage">Main image</label>
                 <input
@@ -148,7 +122,10 @@ const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
                   onInput={() => itemMakerChecker(setMakerState)}
                 />
                 <label htmlFor="itemDescription">Description</label>
-                <textarea name="description" id="itemDescription" />
+                <BundledEditor
+                  init={editorConfig}
+                  onInit={(e, editor) => (itemEditorRef.current = editor)}
+                />
                 <label htmlFor="image1">Image 1</label>
                 <input type="file" id="image1" name="image1" />
                 <label htmlFor="image1">Image 2</label>
@@ -181,11 +158,26 @@ const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
                     onClick={(e) => {
                       e.preventDefault();
                       assetType == "post" &&
-                        submitPost("draft", loggedUser, setAssetState);
+                        submitPost(
+                          "draft",
+                          loggedUser,
+                          setAssetState,
+                          postEditorRef,
+                        );
                       assetType == "event" &&
-                        submitEvent("draft", loggedUser, setAssetState);
+                        submitEvent(
+                          "draft",
+                          loggedUser,
+                          setAssetState,
+                          eventEditorRef,
+                        );
                       assetType == "item" &&
-                        submitItem("draft", loggedUser, setAssetState);
+                        submitItem(
+                          "draft",
+                          loggedUser,
+                          setAssetState,
+                          itemEditorRef,
+                        );
                     }}
                   >
                     <img src={saveIcon} alt="Save icon" />
@@ -196,11 +188,26 @@ const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
                     onClick={(e) => {
                       e.preventDefault();
                       assetType == "post" &&
-                        submitPost("published", loggedUser, setAssetState);
+                        submitPost(
+                          "published",
+                          loggedUser,
+                          setAssetState,
+                          postEditorRef,
+                        );
                       assetType == "event" &&
-                        submitEvent("published", loggedUser, setAssetState);
+                        submitEvent(
+                          "published",
+                          loggedUser,
+                          setAssetState,
+                          eventEditorRef,
+                        );
                       assetType == "item" &&
-                        submitItem("published", loggedUser, setAssetState);
+                        submitItem(
+                          "published",
+                          loggedUser,
+                          setAssetState,
+                          itemEditorRef,
+                        );
                     }}
                   >
                     <img src={publishIcon} alt="Publish icon" />

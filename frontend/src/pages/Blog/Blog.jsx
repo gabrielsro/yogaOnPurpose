@@ -4,7 +4,6 @@ import LoadingPage from "../LoadingPage";
 import getPosts from "./javascripts/getPosts";
 import ErrorPage from "../ErrorPage";
 import PostPreview from "../../components/PostPreview";
-import dateFormatter from "../../javascripts/dateFormatter";
 
 const Blog = () => {
   const [blogState, setBlogState] = useState({
@@ -25,30 +24,6 @@ const Blog = () => {
               <PostPreview post={post} key={post._id} />
             ))}
           </ul>
-        </div>
-      )}
-      {blogState.status == "loaded" && blogState.view == "post" && (
-        <div className="postView">
-          <div className="postViewControls">
-            <button className="transparentButton">
-              <p>Return</p>
-            </button>
-          </div>
-          <div className="postViewPost">
-            <div className="postViewTitle">
-              <h1>{blogState.result.title}</h1>
-            </div>
-            <div className="postViewAuthor">
-              <h2>{blogState.result.authorName}</h2>
-            </div>
-            <div className="postViewDate">
-              <h3>{dateFormatter(blogState.result.createdAt, "post")}</h3>
-            </div>
-            <div className="postViewContent">{blogState.result.content}</div>
-            <section className="postViewComments">
-              <p>Comments:</p>
-            </section>
-          </div>
         </div>
       )}
     </div>

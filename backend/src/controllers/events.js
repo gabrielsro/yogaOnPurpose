@@ -2,10 +2,11 @@ import Event from "../models/event";
 
 export default {
   createEvent,
-  getEvent,
+  getEvents,
   getEventsAccount,
   updateEvent,
   deleteEvent,
+  getEvent,
 };
 
 async function createEvent(req, res, next) {
@@ -21,7 +22,30 @@ async function createEvent(req, res, next) {
   }
 }
 
-async function getEvent() {}
+async function getEvents(req, res, next) {
+  try {
+    const events = await Event.find()
+      .sort({ createdAt: -1 })
+      .populate("organizers");
+    res.json({ events });
+    next();
+  } catch (err) {
+    res.sendStatus(500);
+  }
+}
+
+async function getEvent(req, res, next) {
+  try {
+    const event = await Event.findById(req.params.eventId).populate(
+      "organizers",
+    );
+    res.json(event);
+    next();
+  } catch (err) {
+    res.sendStatus(500);
+    next();
+  }
+}
 
 async function getEventsAccount(req, res, next) {
   try {

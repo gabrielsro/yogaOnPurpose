@@ -1,10 +1,10 @@
-export default (stateSetter) => {
-  const postMakerContent = document.getElementById("postContent");
+export default (stateSetter, editorRef) => {
   const postMakerTitle = document.getElementById("postTitle");
-  if (postMakerContent.value || postMakerTitle.value) {
+  if (postMakerTitle.value) {
     stateSetter("written");
   }
-  if (!postMakerContent.value && !postMakerTitle.value) {
-    stateSetter("addPost");
+  if (!postMakerTitle.value) {
+    const content = editorRef.current.getContent();
+    !content && stateSetter("addPost");
   }
 };

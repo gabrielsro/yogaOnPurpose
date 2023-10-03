@@ -1,0 +1,26 @@
+.itemThumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.itemName {
+  font-size: 1.3rem;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.itemPrice {
+  padding-top: 5px;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* @media only screen and (min-width: 900px) {
+  .itemCard {
+    display: flex;
+  }
+  .itemThumbnail img {
+    width: 200px;
+  }
+} */

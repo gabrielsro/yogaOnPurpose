@@ -14,7 +14,10 @@ const PostPreview = ({ post }) => {
           <p>By</p>
           <p>{post.authorName}</p>
         </div>
-        <div className="postPreviewContent">{post.content}</div>
+        <div
+          className="postPreviewContent"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
       </Link>
     </li>
   );

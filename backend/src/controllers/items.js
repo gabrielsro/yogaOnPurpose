@@ -15,10 +15,20 @@ async function createItem(req, res) {
     await newItem.save();
     res.sendStatus(200);
   } catch (err) {
+    console.log(req.body);
+    console.log(err);
     res.sendStatus(500);
   }
 }
-async function getItems() {}
+async function getItems(req, res, next) {
+  try {
+    const items = await Item.find().sort({ createdAt: -1 });
+    res.json({ items });
+    next();
+  } catch (err) {
+    res.sendStatus(500);
+  }
+}
 
 async function getItemsForLevel(req, res) {
   try {
@@ -29,6 +39,15 @@ async function getItemsForLevel(req, res) {
   }
 }
 
-async function getItem() {}
+async function getItem(req, res, next) {
+  try {
+    const item = await Item.findById(req.params.itemId);
+    res.json(item);
+    next();
+  } catch (err) {
+    res.sendStatus(500);
+    next();
+  }
+}
 async function updateItem() {}
 async function deleteItem() {}
