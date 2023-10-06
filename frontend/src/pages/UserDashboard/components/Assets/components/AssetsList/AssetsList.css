@@ -10,18 +10,12 @@
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  padding-left: 3px;
 }
 
 .assetList .assetsListElement .basics {
   display: flex;
   flex-direction: column;
   align-items: start;
-}
-
-.assetBasics {
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .postBasicsTitle p,
@@ -74,12 +68,13 @@
 .assetBasicsImg {
   display: grid;
   place-content: center;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  min-height: 195px;
+  min-width: 195px;
 }
 
 .assetBasicsImg img {
-  width: 70px;
+  max-width: 195px;
+  max-height: 195px;
 }
 
 .assetBasicsInfo > p:first-child {
@@ -93,23 +88,13 @@
 @media only screen and (max-width: 899px) {
   #item {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
   }
 
   #item .assetsListElement {
     display: grid;
     place-content: center;
     position: relative;
-    min-width: 195px;
-    padding: 0px;
-  }
-
-  #item .assetBasicsImg {
-    padding: 0px;
-  }
-
-  #item .assetBasicsImg img {
-    width: 100%;
   }
 
   #item .assetMore {
@@ -146,10 +131,6 @@
   #assetItem {
     display: flex;
     gap: 5px;
-  }
-
-  .assetBasicsImg img {
-    width: 100px;
   }
 
   .assetBasicsInfo {

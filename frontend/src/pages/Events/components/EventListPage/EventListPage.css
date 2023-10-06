@@ -1,5 +1,5 @@
 .eventListPage {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  display: grid;
+  place-content: center;
+  gap: 90px;
 }

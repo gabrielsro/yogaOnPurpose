@@ -9,7 +9,7 @@ const itemSchema = new Schema(
     uploaderName: { type: String, required: true },
     description: { type: String },
     thumbnail: { type: String },
-    pictures: [{ type: Schema.Types.ObjectId }],
+    pictures: [{ type: Schema.Types.ObjectId, ref: "Picture" }],
     views: { type: Number },
   },
   { timestamps: true },

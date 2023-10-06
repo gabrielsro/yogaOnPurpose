@@ -49,7 +49,10 @@ const AssetsList = ({ assets, type }) => {
                 {asset.pictures.length < 1 ? (
                   <img src={placeholderPicture} alt="Placeholder item" />
                 ) : (
-                  <img src={asset.thumbnail} alt="Item" />
+                  <img
+                    src={`https://res.cloudinary.com/drkbr9f2j/image/upload/c_thumb,w_300,g_face/v1696457085/${asset.thumbnail}`}
+                    alt="Item"
+                  />
                 )}
               </div>
               <div className="assetBasicsInfo">

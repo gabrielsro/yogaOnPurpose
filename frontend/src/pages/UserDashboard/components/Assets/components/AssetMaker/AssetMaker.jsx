@@ -127,15 +127,40 @@ const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
                   onInit={(e, editor) => (itemEditorRef.current = editor)}
                 />
                 <label htmlFor="image1">Image 1</label>
-                <input type="file" id="image1" name="image1" />
+                <input
+                  type="file"
+                  id="image1"
+                  name="image1"
+                  className="itemImageInput"
+                />
                 <label htmlFor="image1">Image 2</label>
-                <input type="file" id="image2" name="image2" />
+                <input
+                  type="file"
+                  id="image2"
+                  name="image2"
+                  className="itemImageInput"
+                />
                 <label htmlFor="image1">Image 3</label>
-                <input type="file" id="image3" name="image3" />
+                <input
+                  type="file"
+                  id="image3"
+                  name="image3"
+                  className="itemImageInput"
+                />
                 <label htmlFor="image1">Image 4</label>
-                <input type="file" id="image4" name="image4" />
+                <input
+                  type="file"
+                  id="image4"
+                  name="image4"
+                  className="itemImageInput"
+                />
                 <label htmlFor="image1">Image 5</label>
-                <input type="file" id="image5" name="image5" />
+                <input
+                  type="file"
+                  id="image5"
+                  name="image5"
+                  className="itemImageInput"
+                />
               </div>
             )}
             <div className="postMakerActions">

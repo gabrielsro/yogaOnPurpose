@@ -7,6 +7,7 @@ import users from "./users";
 import login from "./login";
 import logout from "./logout";
 import contact from "./contact";
+import cdn from "./cdn";
 
 export default {
   events,
@@ -18,4 +19,5 @@ export default {
   login,
   logout,
   contact,
+  cdn,
 };

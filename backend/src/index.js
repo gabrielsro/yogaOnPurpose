@@ -72,6 +72,7 @@ app.use("/users", routes.users);
 app.use("/login", routes.login);
 app.use("/logout", routes.logout);
 app.use("/contact", routes.contact);
+app.use("/cdn-signature", routes.cdn);
 app.use((error, req, res, next) => {
   if (!error.statusCode) {
     error.statusCode = 500;

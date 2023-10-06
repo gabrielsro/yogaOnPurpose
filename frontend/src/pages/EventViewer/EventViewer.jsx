@@ -26,34 +26,48 @@ const EventViewer = () => {
               Return
             </Link>
           </div>
-          <div className="eventMainImagePage"></div>
-          <div className="eventTitlePage">
-            <h1>{eventState.result.name}</h1>
+          <div className="eventViewerWrapper">
+            <div className="eventMainImagePage">
+              {eventState.result.mainImage && (
+                <img
+                  src={`https://res.cloudinary.com/drkbr9f2j/image/upload/c_fill,w_${Math.min(
+                    window.innerWidth,
+                    900,
+                  )}/v1696465311/${eventState.result.mainImage}`}
+                  alt={`${eventState.result.name} pic`}
+                />
+              )}
+            </div>
+            <div className="eventTitlePage">
+              <h1>{eventState.result.name}</h1>
+            </div>
+            <div className="eventBasicsPage">
+              <div className="eventLocationPage">
+                <p>{eventState.result.location}</p>
+              </div>
+              <div className="eventDatesPage">
+                <p>{dateFormatter(eventState.result.dateStart, "post")}</p>
+                <p>{dateFormatter(eventState.result.dateEnd, "post")}</p>
+              </div>
+              <div className="eventOrganizersPage">
+                <p>Organized by:</p>
+                <ul>
+                  {eventState.result.organizers.map((organizer) => (
+                    <li
+                      key={organizer._id}
+                    >{`${organizer.firstName} ${organizer.lastName}`}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="eventMediaPage"></div>
+            <div
+              className="eventDescriptionPage"
+              dangerouslySetInnerHTML={{
+                __html: eventState.result.description,
+              }}
+            ></div>
           </div>
-          <div className="eventBasicsPage">
-            <div className="eventLocationPage">
-              <p>{eventState.result.location}</p>
-            </div>
-            <div className="eventDatesPage">
-              <p>{dateFormatter(eventState.result.dateStart, "post")}</p>
-              <p>{dateFormatter(eventState.result.dateEnd, "post")}</p>
-            </div>
-            <div className="eventOrganizersPage">
-              <p>Organized by:</p>
-              <ul>
-                {eventState.result.organizers.map((organizer) => (
-                  <li
-                    key={organizer._id}
-                  >{`${organizer.firstName} ${organizer.lastName}`}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="eventMediaPage"></div>
-          <div
-            className="eventDescriptionPage"
-            dangerouslySetInnerHTML={{ __html: eventState.result.description }}
-          ></div>
         </div>
       )}
     </div>

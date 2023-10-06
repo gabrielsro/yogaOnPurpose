@@ -1,0 +1,116 @@
+.itemTitlePage {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.itemMediaMain {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: grid;
+  place-content: center;
+}
+
+.itemMainPic {
+  /* border: 1px solid black; */
+  width: min(99vw, 503px);
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+}
+
+.itemMainPic img {
+  max-height: min(98vw, 500px);
+  max-width: min(98vw, 500px);
+}
+
+.itemSlides {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.itemSlides button:hover {
+  cursor: pointer;
+}
+
+.itemSlidesThumbnail {
+  border: 1px solid black;
+  display: grid;
+  place-content: center;
+  height: 83px;
+  width: 83px;
+}
+
+.itemSlidesThumbnail img {
+  max-height: 80px;
+  max-width: 80px;
+}
+
+.itemInfoPage {
+  padding-top: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.itemPricePage {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.unknownItemImage {
+  background-image: url("./icons/ufo.svg");
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  place-content: center;
+}
+
+.unknownItemImage div {
+  width: 100vw;
+  text-align: center;
+  padding: 8px;
+  background-color: rgba(58, 58, 59, 0.3);
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+@media only screen and (min-width: 930px) {
+  .itemTitlePage {
+    padding-top: 0px;
+  }
+  .itemWrapper {
+    display: grid;
+    place-content: center;
+  }
+  .itemContentsPage {
+    display: flex;
+    gap: 20px;
+  }
+  .itemInfoPage {
+    padding-top: 20px;
+    width: 400px;
+  }
+  .itemPricePage {
+    font-size: 2.4rem;
+  }
+  .unknownItemImage {
+    width: 503px;
+    height: 503px;
+    border-radius: 7px;
+  }
+  .unknownItemImage div {
+    border-radius: 7px;
+    display: grid;
+    place-content: center;
+    width: 503px;
+    height: 503px;
+    background-color: rgba(58, 58, 59, 0.1);
+    backdrop-filter: blur(8px);
+  }
+}

@@ -5,12 +5,22 @@ import dateIcon from "./icons/calendar1.svg";
 import { Link } from "react-router-dom";
 
 const EventPreview = ({ event }) => {
+  console.log(Math.min(window.innerWidth, 900));
   return (
     <li className="eventCard">
       <Link to={`/viewEvent/${event._id}`}>
         <div className="eventCardImage">
           {!event.mainImage && (
             <div className="eventCardImagePlaceholder"></div>
+          )}
+          {event.mainImage && (
+            <img
+              src={`https://res.cloudinary.com/drkbr9f2j/image/upload/c_fill,h_200,w_${Math.min(
+                window.innerWidth,
+                900,
+              )}/v1696465311/${event.mainImage}`}
+              alt={`${event.name} main pic`}
+            />
           )}
         </div>
         <div className="eventCardTitle">

@@ -1,0 +1,10 @@
+.eventViewerWrapper {
+  display: grid;
+  place-content: center;
+  padding-top: 10px;
+}
+
+.eventTitlePage {
+  padding-top: 10px;
+  text-align: center;
+}

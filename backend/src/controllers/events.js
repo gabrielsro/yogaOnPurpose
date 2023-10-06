@@ -12,6 +12,7 @@ export default {
 async function createEvent(req, res, next) {
   console.log(req.body);
   const newEvent = new Event(req.body);
+
   try {
     await newEvent.save();
     res.sendStatus(200);
@@ -47,16 +48,16 @@ async function getEvent(req, res, next) {
   }
 }
 
-async function getEventsAccount(req, res, next) {
+async function getEventsAccount(req, res) {
   try {
     const events = await Event.find()
       .populate("organizers", "firstName lastName")
       .sort({ createdAt: -1 });
     res.json({ events });
-    next();
   } catch (err) {
     res.sendStatus(500);
   }
 }
+
 async function updateEvent() {}
 async function deleteEvent() {}
