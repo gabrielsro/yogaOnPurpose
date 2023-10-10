@@ -26,10 +26,11 @@ export default async function submitSignup(e, stateSetter) {
   }
   if (response.statusCode == 400) {
     const regexp = new RegExp("key");
+    console.log(response);
     stateSetter({
       status: "error",
-      messages: response.data.errors,
-      key: response.data.errors.some((m) => regexp.test(m.msg)),
+      messages: response.error,
+      key: response.errors.some((m) => regexp.test(m.msg)),
     });
   }
   if (response.status && response.status == "error") {

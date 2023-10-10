@@ -1,0 +1,77 @@
+.userPreviewCard {
+  border: 1px solid black;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.userPic {
+  display: grid;
+  place-content: center;
+}
+
+.userPic img {
+  width: 50px;
+}
+
+.userNames {
+  padding-left: 3px;
+  width: 170px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: grid;
+  align-content: center;
+}
+
+.userNames div > p:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.userNames div > p:nth-child(2) {
+  color: rgb(72, 70, 70);
+}
+
+.userInfo {
+  display: flex;
+}
+
+.userLevel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+}
+
+.userLevel p {
+  place-self: center;
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userActions button {
+  display: grid;
+  place-content: center;
+}
+
+.userActions img {
+  width: 30px;
+}
+
+#adminIcon {
+  width: 30px;
+}
+
+#guestIcon {
+  width: 25px;
+}
+
+@media only screen and (min-width: 900px) {
+  .userNames {
+    width: 400px;
+  }
+}

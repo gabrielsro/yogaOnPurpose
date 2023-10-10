@@ -1,0 +1,40 @@
+.commentListLoading {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  display: grid;
+  place-content: center;
+}
+
+.commentListLoading img {
+  width: 30px;
+}
+
+.emptyCommentList,
+.commentListError {
+  display: grid;
+  place-content: center;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.commentListError div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.commentListError img {
+  width: 30px;
+}
+
+.commentListError p {
+  color: rgb(234, 91, 91);
+  font-weight: bold;
+}
+
+.commentList {
+  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-right: 3px;
+  padding-left: 3px;
+}

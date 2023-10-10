@@ -1,0 +1,12 @@
+#defaultUserPicSettings {
+  width: 200px;
+}
+
+#profilePicForm > label {
+  padding-right: 14px;
+}
+
+.settingProfilePicWrapper {
+  padding-left: 70px;
+  padding-bottom: 20px;
+}

@@ -8,3 +8,78 @@
   padding-top: 10px;
   text-align: center;
 }
+
+.eventBasicsPage {
+  padding-top: 20px;
+}
+
+.eventLocationPage,
+.eventDatesPage {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.eventLocationPage img,
+.eventDatesPage img {
+  width: 60px;
+}
+
+.eventLocationPage p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: grey;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.eventDatesPage div {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventDatesPage p {
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.eventOrganizersPage {
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-bottom: 30px;
+}
+
+.eventOrganizersPage > p:first-child {
+  margin-bottom: 10px;
+}
+
+.eventOrganizersPage li {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.eventOrganizersPage li img {
+  width: 40px;
+}
+
+.eventOrganizersPage li p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 900px) {
+  .eventOrganizersPage {
+    padding-top: 20px;
+  }
+
+  .eventOrganizersPage li img {
+    width: 60px;
+  }
+
+  .eventBasicsPage > div:first-child {
+    display: flex;
+    justify-content: space-between;
+  }
+}

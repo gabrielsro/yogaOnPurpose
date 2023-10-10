@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import LoadingPage from "../LoadingPage";
 import ErrorPage from "../ErrorPage";
+import Comments from "../../components/Comments";
 import getPost from "./javascripts/getPost";
 import dateFormatter from "../../javascripts/dateFormatter";
 
@@ -40,24 +41,7 @@ const PostViewer = () => {
               className="postViewerContent"
               dangerouslySetInnerHTML={{ __html: viewerState.result.content }}
             />
-            <div className="postViewerComments">
-              <p>Comments:</p>
-              <div className="postViewerCommentMaker">
-                <form action="">
-                  <textarea
-                    name="postComment"
-                    id="postComment"
-                    placeholder="Leave your comment here"
-                  ></textarea>
-                  <button>Post comment</button>
-                </form>
-              </div>
-              {viewerState.result.comments.length < 1 && (
-                <div className="emptyCommentSection">
-                  <p>Nobody has commented on this post</p>
-                </div>
-              )}
-            </div>
+            <Comments assetType={"post"} assetId={postId} />
           </div>
         </div>
       )}

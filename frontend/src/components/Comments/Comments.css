@@ -1,0 +1,7 @@
+.comments {
+  padding-top: 30px;
+}
+
+.comments > p {
+  font-weight: bold;
+}

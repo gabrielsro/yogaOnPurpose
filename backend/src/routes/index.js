@@ -8,6 +8,7 @@ import login from "./login";
 import logout from "./logout";
 import contact from "./contact";
 import cdn from "./cdn";
+import comments from "./comments";
 
 export default {
   events,
@@ -20,4 +21,5 @@ export default {
   logout,
   contact,
   cdn,
+  comments,
 };

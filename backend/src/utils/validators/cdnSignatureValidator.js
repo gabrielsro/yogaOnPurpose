@@ -6,6 +6,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+//Validate Item images:
 export default (req, res, next) => {
   if (req.body.pics?.length > 0) {
     let expectedSignature;
@@ -37,6 +38,29 @@ export default (req, res, next) => {
     return;
   }
 
+  //Validate profile pic update image:
+  if (req.body.profilePicUpdate) {
+    const expectedSignature = cloudinary.utils.api_sign_request(
+      {
+        public_id: req.body.profilePicUpdate.publicId,
+        version: req.body.profilePicUpdate.version,
+      },
+      process.env.CLOUDINARY_API_SECRET,
+    );
+    if (expectedSignature !== req.body.profilePicUpdate?.signature) {
+      console.log("Failed profile pic update attempt: invalid CDN signature");
+      console.log(
+        `${expectedSignature} vs ${req.body.profilePicUpdate?.signature}`,
+      );
+      res.sendStatus(500);
+      return;
+    }
+    req.body.profilePic = req.body.profilePicUpdate?.publicId;
+    next();
+    return;
+  }
+
+  //Validate Event images:
   if (req.body.mainImage?.publicId || req.body.secondaryImage?.publicId) {
     if (req.body.mainImage?.publicId) {
       const expectedSignature = cloudinary.utils.api_sign_request(

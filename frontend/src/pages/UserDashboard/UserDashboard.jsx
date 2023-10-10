@@ -11,7 +11,11 @@ import AppInfo from "./components/AppInfo";
 
 const UserDashboard = ({ loggedUser, setLoggedUser }) => {
   const navigate = useNavigate();
-  const [dashboardState, setDashboardState] = useState({ status: "loaded" });
+  const [dashboardState, setDashboardState] = useState({
+    status: "loaded",
+    previousView: undefined,
+    previousShowing: undefined,
+  });
 
   if (!loggedUser) {
     return <Navigate to="/login" />;
@@ -25,8 +29,16 @@ const UserDashboard = ({ loggedUser, setLoggedUser }) => {
           setDashboardState={setDashboardState}
           setLoggedUser={setLoggedUser}
           navigate={navigate}
+          user={dashboardState.user}
         />
-        <Settings />
+        <Settings
+          loggedUser={loggedUser}
+          previousView={dashboardState.previousView}
+          previousShowing={dashboardState.previousShowing}
+          setDashboardState={setDashboardState}
+          success={dashboardState.success}
+          setLoggedUser={setLoggedUser}
+        />
         <Info loggedUser={loggedUser} />
         <Assets loggedUser={loggedUser} />
         {loggedUser.level == "admin" && <Schedule />}

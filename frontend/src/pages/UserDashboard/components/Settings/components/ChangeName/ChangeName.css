@@ -1,0 +1,66 @@
+#changeNameForm {
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: grid;
+}
+
+#newFirstName {
+  margin-bottom: 15px;
+}
+
+.changeNameButton {
+  display: flex;
+  place-content: end;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+}
+
+.changeNameLoading {
+  min-height: 161.5px;
+  display: grid;
+  place-content: center;
+}
+
+.changeNameSuccess,
+.changeNameError {
+  display: grid;
+  place-content: center;
+  min-height: 161.5px;
+}
+
+.changeNameSuccess div,
+.changeNameError div {
+  display: flex;
+  align-items: center;
+}
+
+.changeNameSuccess img,
+.changeNameError img {
+  width: 40px;
+}
+
+.changeNameSuccess p {
+  font-weight: bold;
+  color: rgb(157, 183, 44);
+}
+
+.changeNameError p {
+  font-weight: bold;
+  color: rgb(225, 86, 86);
+  text-align: center;
+}
+
+@media only screen and (min-width: 900px) {
+  #changeNameForm {
+    padding-top: 27px;
+    max-width: 500px;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+  }
+  .changeNameButton {
+    max-width: 500px;
+    padding-bottom: 15px;
+  }
+}

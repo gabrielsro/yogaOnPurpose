@@ -53,38 +53,6 @@
   font-weight: bold;
 }
 
-.postViewerCommentMaker form textarea {
-  resize: none;
-  width: 100%;
-  height: 80px;
-  border-radius: 5px;
-  border: 0px;
-  padding: 6px;
-}
-
-.postViewerCommentMaker form {
-  position: relative;
-  padding-bottom: 30px;
-}
-
-.postViewerCommentMaker form button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.postViewerCommentMaker {
-  padding-top: 10px;
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-.emptyCommentSection {
-  padding-top: 30px;
-  display: grid;
-  place-content: center;
-}
-
 @media only screen and (min-width: 900px) {
   .postViewer > div {
     width: 900px;
@@ -93,14 +61,5 @@
   .pageControls {
     padding-top: 10px;
     padding-left: 10px;
-  }
-
-  .postViewerCommentMaker {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .postViewerCommentMaker form textarea {
-    height: 60px;
   }
 }

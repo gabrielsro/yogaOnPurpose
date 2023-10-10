@@ -1,0 +1,47 @@
+.commentReplier {
+  padding-top: 10px;
+}
+
+.commentReplier form {
+  display: flex;
+  flex-direction: column;
+}
+
+.replierButton {
+  display: flex;
+  place-content: end;
+  padding-top: 5px;
+}
+
+.replierStatus {
+  display: grid;
+  place-content: center;
+}
+
+.replierError {
+  color: rgb(245, 105, 105);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.replierSuccess {
+  display: flex;
+  align-items: center;
+  color: rgb(144, 172, 21);
+  font-weight: bold;
+}
+
+.replierError img,
+.replierSuccess img {
+  width: 30px;
+}
+
+.replierLoading {
+  display: grid;
+  place-content: center;
+}
+
+.replierLoading img {
+  width: 30px;
+}

@@ -1,0 +1,9 @@
+.userBasicsHeader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.userProfilePicHeader img {
+  width: 100px;
+}

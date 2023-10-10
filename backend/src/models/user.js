@@ -8,8 +8,7 @@ const userSchema = new Schema(
     password: { type: String, required: true },
     bio: { type: String },
     email: { type: String },
-    profilePicSmall: { type: String },
-    profilePicLarge: { type: String },
+    profilePic: { type: String },
     level: {
       type: String,
       enum: ["owner", "admin", "guest", "member"],
@@ -18,6 +17,7 @@ const userSchema = new Schema(
     posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
     comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
     events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
+    status: { type: String, enum: ["active", "suspended"] },
   },
   { timestamps: true },
 );

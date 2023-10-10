@@ -19,6 +19,7 @@ router.post("/", (req, res, next) => {
         username: user.username,
         level: user.level,
         id: user._id,
+        profilePic: user.profilePic,
       });
     });
   })(req, res, next);
@@ -28,13 +29,9 @@ router.get("/", (req, res) => {
   if (!req.isAuthenticated()) {
     return res.json("Not logged");
   }
-  return res.json({
-    firstName: req.user.firstName,
-    lastName: req.user.lastName,
-    username: req.user.username,
-    level: req.user.level,
-    id: req.user._id,
-  });
+  const loggedUser = req.user;
+  loggedUser.password = "";
+  return res.json(loggedUser);
 });
 
 export default router;

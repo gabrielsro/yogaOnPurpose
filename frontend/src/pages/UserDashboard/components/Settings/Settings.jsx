@@ -9,9 +9,21 @@ import trashIcon from "./icons/trash.svg";
 import levelIcon from "./icons/level2.svg";
 import aboutIcon from "./icons/about.svg";
 import { useState } from "react";
+import ChangePic from "./components/ChangePic";
+import ChangeName from "./components/ChangeName";
 
-const Settings = () => {
-  const [settingsState, setSettingsState] = useState({ view: "collapsed" });
+const Settings = ({
+  loggedUser,
+  previousView,
+  previousShowing,
+  success,
+  setLoggedUser,
+}) => {
+  const [settingsState, setSettingsState] = useState({
+    view: previousView ? previousView : "collapsed",
+    showing: previousShowing ? previousShowing : [],
+  });
+
   return (
     <div className="dashCategory">
       <button
@@ -19,6 +31,7 @@ const Settings = () => {
         onClick={() =>
           setSettingsState({
             view: settingsState.view == "collapsed" ? "extended" : "collapsed",
+            showing: [],
           })
         }
       >
@@ -32,10 +45,23 @@ const Settings = () => {
       {settingsState.view !== "collapsed" && (
         <ul className="userSettingsOptions">
           <li>
-            <button className="option">
+            <button
+              className="option"
+              onClick={() => {
+                setSettingsState({
+                  view: "extended",
+                  showing: settingsState.showing.some((s) => s == "ChangeName")
+                    ? settingsState.showing.filter((s) => s !== "ChangeName")
+                    : settingsState.showing.concat(["ChangeName"]),
+                });
+              }}
+            >
               <img src={nameIcon} alt="Name icon" />
               <p>Change name</p>
             </button>
+            {settingsState.showing.some((s) => s == "ChangeName") && (
+              <ChangeName setLoggedUser={setLoggedUser} />
+            )}
           </li>
           <li>
             <button className="option">
@@ -44,10 +70,27 @@ const Settings = () => {
             </button>
           </li>
           <li>
-            <button className="option">
+            <button
+              className="option"
+              onClick={() => {
+                setSettingsState({
+                  view: "extended",
+                  showing: settingsState.showing.some((s) => s == "ChangePic")
+                    ? settingsState.showing.filter((s) => s !== "ChangePic")
+                    : settingsState.showing.concat(["ChangePic"]),
+                });
+              }}
+            >
               <img src={picIcon} alt="Profile pic icon" />
               <p>Change profile picture</p>
             </button>
+            {settingsState.showing.some((s) => s == "ChangePic") && (
+              <ChangePic
+                loggedUser={loggedUser}
+                success={success}
+                setLoggedUser={setLoggedUser}
+              />
+            )}
           </li>
           <li>
             <button className="option">

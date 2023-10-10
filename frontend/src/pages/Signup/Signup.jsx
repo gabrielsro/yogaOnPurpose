@@ -15,6 +15,7 @@ const Signup = () => {
     status: "loaded",
     messages: null,
   });
+  console.log(signupState);
   if (signupState.status !== "loading" && signupState.status !== "success") {
     return (
       <div className="page" id="signupPage">
@@ -72,8 +73,8 @@ const Signup = () => {
                   <img src={keyIcon} alt="Key icon" id="keyIcon" />
                 )}
                 <ul>
-                  {signupState.messages.map((message, index) => (
-                    <li key={index}>{message.msg}</li>
+                  {signupState.messages.split(",").map((message, index) => (
+                    <li key={index}>{message}</li>
                   ))}
                 </ul>
               </div>

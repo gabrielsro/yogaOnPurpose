@@ -1,0 +1,77 @@
+.commentMaker form textarea {
+  resize: none;
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  border: 0px;
+  padding: 6px;
+}
+
+.commentMaker form {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.commentMaker form button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.commentMaker {
+  padding-top: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.commentLoadingContainer {
+  display: grid;
+  place-content: center;
+  padding-top: 35px;
+  padding-bottom: 40px;
+}
+
+.commentLoadingContainer img {
+  width: 30px;
+}
+
+.commentMakerErrorMessage,
+.commentMakeSuccessMessage {
+  display: grid;
+  place-content: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.commentMakerErrorMessage > div,
+.commentMakeSuccessMessage > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.commentMakerErrorMessage img,
+.commentMakeSuccessMessage img {
+  width: 40px;
+}
+
+.commentMakerErrorMessage p {
+  color: rgb(254, 83, 83);
+  font-weight: bold;
+}
+
+.commentMakeSuccessMessage p {
+  color: rgb(148, 172, 42);
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 900px) {
+  .postViewerCommentMaker {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .postViewerCommentMaker form textarea {
+    height: 60px;
+  }
+}

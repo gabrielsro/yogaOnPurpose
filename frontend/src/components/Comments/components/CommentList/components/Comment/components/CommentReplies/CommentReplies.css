@@ -1,0 +1,34 @@
+.repliesLoading {
+  display: grid;
+  place-content: center;
+  padding-top: 5px;
+}
+
+.repliesLoading img {
+  width: 20px;
+}
+
+.repliesError {
+  padding-top: 8px;
+  display: grid;
+  place-content: center;
+}
+
+.repliesError div {
+  display: flex;
+  align-items: center;
+}
+
+.repliesError img {
+  width: 30px;
+}
+
+.repliesError p {
+  color: rgb(254, 104, 104);
+  font-weight: bold;
+}
+
+.replyList {
+  padding-top: 6px;
+  border-left: 1px solid black;
+}
