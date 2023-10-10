@@ -57,5 +57,23 @@ async function getPost(req, res, next) {
   res.json({ post: post });
   next();
 }
-async function updatePost() {}
+async function updatePost(req, res, next) {
+  try {
+    await Post.findOneAndUpdate(
+      { _id: req.params.postId },
+      {
+        status: req.body.postType,
+        title: req.body.postTitle,
+        content: req.body.postContent,
+      },
+    );
+    const user = req.user;
+    user.password = "";
+    res.json(user);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+    next();
+  }
+}
 async function deletePost() {}

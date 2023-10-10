@@ -5,9 +5,11 @@
   gap: 5px;
 }
 
-.assetsListElement {
+.assetListElementWrapper {
   border: 1px solid black;
-  border-radius: 5px;
+}
+
+.assetsListElement {
   display: flex;
   justify-content: space-between;
 }

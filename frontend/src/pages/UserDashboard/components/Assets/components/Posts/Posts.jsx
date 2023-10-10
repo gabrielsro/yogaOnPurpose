@@ -5,9 +5,10 @@ import AssetMaker from "../AssetMaker";
 import PostsList from "../PostsList";
 import AppInfo from "../../../AppInfo";
 
-const Posts = ({ loggedUser }) => {
+const Posts = ({ loggedUser, setLoggedUser }) => {
   const [categoryState, setCategoryState] = useState({ view: "collapsed" });
   const [assetState, setAssetState] = useState({ status: "loaded" });
+
   return (
     <div className="asset">
       {assetState.status == "loaded" && (
@@ -31,7 +32,10 @@ const Posts = ({ loggedUser }) => {
                 loggedUser={loggedUser}
                 setAssetState={setAssetState}
               />
-              <PostsList />
+              <PostsList
+                setLoggedUser={setLoggedUser}
+                loggedUser={loggedUser}
+              />
             </div>
           )}
         </div>

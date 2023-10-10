@@ -1,0 +1,80 @@
+.postEditorWrapper {
+  padding-top: 10px;
+}
+
+.postEditorForm label {
+  display: block;
+}
+
+.postEditorForm input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.postEditorButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.postEditorButtons img {
+  width: 30px;
+}
+
+.postEditorButtons div {
+  display: flex;
+  gap: 10px;
+}
+
+.postEditorButtons button {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 3px;
+  gap: 5px;
+  border-radius: 5px;
+}
+
+.postEditorLoadingWrapper {
+  min-height: 518px;
+  display: grid;
+  place-content: center;
+}
+
+.postEditorErrorWrapper {
+  min-height: 518px;
+  display: grid;
+  place-content: center;
+  font-weight: bold;
+  color: rgb(241, 82, 82);
+}
+
+.postEditorSuccessWrapper {
+  min-height: 518px;
+  display: grid;
+  place-content: center;
+  font-weight: bold;
+  color: rgb(139, 196, 58);
+}
+
+.postEditorErrorWrapper img,
+.postEditorSuccessWrapper img {
+  width: 40px;
+}
+
+.postEditorErrorWrapper div,
+.postEditorSuccessWrapper div {
+  display: flex;
+  align-items: center;
+}
+
+.postEditorMessages {
+  height: 30px;
+  display: grid;
+  place-content: center;
+}
+
+.postEditorErrorContainer {
+  color: rgb(237, 86, 86);
+  font-weight: bold;
+}

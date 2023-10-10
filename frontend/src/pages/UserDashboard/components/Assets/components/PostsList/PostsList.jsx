@@ -5,11 +5,12 @@ import Loading from "../../../Loading";
 import Error from "../../../Error";
 import AssetsList from "../AssetsList";
 
-const PostsList = () => {
+const PostsList = ({ setLoggedUser, loggedUser }) => {
   const [listState, setListState] = useState({ status: "loading" });
   useEffect(() => {
     getPosts(setListState);
-  }, []);
+  }, [loggedUser]);
+
   return (
     <div>
       {listState.status == "loading" && <Loading />}
@@ -17,7 +18,11 @@ const PostsList = () => {
         <Error message={"We couldn't access the posts at this time"} />
       )}
       {listState.status == "success" && (
-        <AssetsList assets={listState.result} type="post" />
+        <AssetsList
+          assets={listState.result}
+          setLoggedUser={setLoggedUser}
+          type="post"
+        />
       )}
     </div>
   );

@@ -40,7 +40,7 @@ const UserDashboard = ({ loggedUser, setLoggedUser }) => {
           setLoggedUser={setLoggedUser}
         />
         <Info loggedUser={loggedUser} />
-        <Assets loggedUser={loggedUser} />
+        <Assets loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
         {loggedUser.level == "admin" && <Schedule />}
         {loggedUser.level == "admin" && <Users />}
       </div>

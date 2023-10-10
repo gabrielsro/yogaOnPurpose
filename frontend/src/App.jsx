@@ -16,6 +16,8 @@ const App = () => {
     getLogin(setAppState, setLoggedUser);
   }, []);
 
+  console.log("APP RENDER");
+
   if (appState == "loading") {
     return (
       <Modal>
