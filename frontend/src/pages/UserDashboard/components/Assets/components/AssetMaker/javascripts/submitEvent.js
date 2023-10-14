@@ -12,7 +12,7 @@ export default async (action, author, stateSetter, editorRef) => {
   formDataObject.dateEnd = document.getElementById("eventDateFinish").value;
   formDataObject.location = document.getElementById("eventLocation").value;
   formDataObject.status = action;
-  formDataObject.organizers = [author.id];
+  formDataObject.organizers = [author._id];
   formDataObject.description = editorRef.current.getContent();
 
   const mainImage =

@@ -1,0 +1,67 @@
+.eventEditorWrapper {
+  padding-top: 10px;
+}
+
+.eventEditorForm label {
+  display: block;
+}
+
+.eventEditorForm input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.under {
+  margin-top: 10px;
+}
+
+.eventEditorMessages {
+  height: 35px;
+  display: grid;
+  place-content: center;
+}
+
+.eventEditorControls {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.eventEditorControls div {
+  display: flex;
+  gap: 10px;
+}
+
+.eventEditorControls button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.eventEditorControls img {
+  width: 30px;
+}
+
+.currentMainImage div,
+.currentSecondaryImage div {
+  display: grid;
+  place-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.currentMainImage img,
+.currentSecondaryImage img {
+  max-width: 800px;
+}
+
+.eventEditorErrorMessage {
+  font-weight: bold;
+  color: rgb(235, 86, 86);
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 10px;
+}

@@ -1,4 +1,5 @@
 import Event from "../models/event";
+import deleteImages from "../utils/cdn/deleteImages";
 
 export default {
   createEvent,
@@ -21,6 +22,45 @@ async function createEvent(req, res, next) {
     console.log(err);
     next(err);
   }
+}
+
+async function updateEvent(req, res, next) {
+  console.log(req.body);
+
+  let oldEvent;
+
+  try {
+    oldEvent = await Event.findOneAndUpdate(
+      { _id: req.params.eventId },
+      req.body,
+    );
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+    return;
+  }
+
+  let pics = [];
+
+  req.body.mainImage && oldEvent.mainImage && pics.push(oldEvent.mainImage);
+
+  req.body.secondaryImage &&
+    oldEvent.secondaryImage &&
+    pics.push(oldEvent.secondaryImage);
+
+  if (pics.length > 0) {
+    try {
+      await deleteImages(pics);
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    }
+  }
+
+  res.sendStatus(200);
+
+  next();
 }
 
 async function getEvents(req, res, next) {
@@ -59,5 +99,4 @@ async function getEventsAccount(req, res) {
   }
 }
 
-async function updateEvent() {}
 async function deleteEvent() {}

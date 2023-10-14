@@ -8,8 +8,12 @@ import AssetsList from "../AssetsList";
 const ItemsList = () => {
   const [listState, setListState] = useState({ status: "loading" });
   useEffect(() => {
-    getItems(setListState);
-  }, []);
+    listState.status == "loading" && getItems(setListState);
+  }, [listState.status]);
+
+  console.log("ITEMSLIST RENDER:");
+  console.log(listState);
+
   return (
     <div>
       {listState.status == "loading" && <Loading />}
@@ -17,7 +21,11 @@ const ItemsList = () => {
         <Error message={"We couldn't access the store at this time"} />
       )}
       {listState.status == "success" && (
-        <AssetsList assets={listState.result} type="item" />
+        <AssetsList
+          assets={listState.result}
+          setItemsListState={setListState}
+          type="item"
+        />
       )}
     </div>
   );

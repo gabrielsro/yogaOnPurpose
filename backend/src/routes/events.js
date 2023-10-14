@@ -5,11 +5,15 @@ import cdnSignatureValidator from "../utils/validators/cdnSignatureValidator";
 
 const router = Router();
 
-router.get("/account", events.getEventsAccount);
+router.put(
+  "/:eventId",
+  authenticate,
+  cdnSignatureValidator,
+  events.updateEvent,
+);
+router.get("/account", authenticate, events.getEventsAccount);
 router.get("/", events.getEvents);
 router.get("/:eventId", events.getEvent);
 router.post("/", authenticate, cdnSignatureValidator, events.createEvent);
-router.put("/");
-router.delete("/");
 
 export default router;

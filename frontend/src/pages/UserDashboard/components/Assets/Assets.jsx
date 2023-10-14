@@ -23,7 +23,7 @@ const Assets = ({ loggedUser, setLoggedUser }) => {
       {assetsState.view !== "collapsed" && (
         <div className="assets">
           <Posts loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
-          <Events loggedUser={loggedUser} />
+          <Events loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
           <Store loggedUser={loggedUser} />
         </div>
       )}

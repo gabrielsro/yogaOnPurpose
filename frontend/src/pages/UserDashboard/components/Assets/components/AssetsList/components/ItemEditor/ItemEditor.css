@@ -1,0 +1,86 @@
+.itemEditorForm label {
+  display: block;
+  margin-top: 10px;
+}
+
+.itemEditorForm input {
+  width: 100%;
+}
+
+.itemEditorMessages {
+  height: 36px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: grid;
+  place-content: center;
+  color: rgb(236, 94, 94);
+  font-weight: bold;
+}
+
+.itemEditorControls {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.itemEditorControls div {
+  display: flex;
+  gap: 10px;
+}
+
+.itemEditorControls img {
+  width: 30px;
+}
+
+.itemEditorControls button {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  gap: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.itemEditorCurrentImage img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.itemEditorCurrentImageContainer {
+  display: grid;
+  place-content: center;
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+.currentImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.4);
+  width: 100%;
+  text-align: center;
+}
+
+.itemEditorForm fieldset {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 4px;
+}
+
+@media only screen and (min-width: 900px) {
+  .itemEditorCurrentImageContainer {
+    height: 300px;
+    width: 300px;
+  }
+
+  .itemEditorCurrentImage img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}

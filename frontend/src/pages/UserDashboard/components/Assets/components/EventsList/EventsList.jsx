@@ -8,8 +8,8 @@ import AssetsList from "../AssetsList";
 const EventsList = () => {
   const [listState, setListState] = useState({ status: "loading" });
   useEffect(() => {
-    getEvents(setListState);
-  }, []);
+    listState.status == "loading" && getEvents(setListState);
+  }, [listState]);
 
   return (
     <div>
@@ -18,7 +18,11 @@ const EventsList = () => {
         <Error message={"We couldn't access the events at this time"} />
       )}
       {listState.status == "success" && (
-        <AssetsList assets={listState.result} type="event" />
+        <AssetsList
+          assets={listState.result}
+          setEventListState={setListState}
+          type="event"
+        />
       )}
     </div>
   );

@@ -1,5 +1,6 @@
 import Item from "../models/item";
 import Picture from "../models/picture";
+import deleteImages from "../utils/cdn/deleteImages";
 
 export default {
   createItem,
@@ -62,7 +63,9 @@ async function getItems(req, res, next) {
 
 async function getItemsForLevel(req, res) {
   try {
-    const items = await Item.find().sort({ createdAt: -1 });
+    const items = await Item.find()
+      .populate("pictures")
+      .sort({ createdAt: -1 });
     res.json({ items });
   } catch (err) {
     res.sendStatus(500);
@@ -79,5 +82,90 @@ async function getItem(req, res, next) {
     next();
   }
 }
-async function updateItem() {}
+async function updateItem(req, res, next) {
+  //If pics detected, create pics:
+  if (Array.isArray(req.body.pics) && req.body.pics.length > 0) {
+    const picPromises = req.body.pics.map((pic) => {
+      const promise = new Promise((resolve, reject) => {
+        const newPic = new Picture({
+          cdnId: pic.publicId,
+          item: req.params.itemId,
+          position: pic.position,
+        });
+        newPic
+          .save()
+          .then((result) => resolve(result))
+          .catch((err) => reject(err));
+      });
+      return promise;
+    });
+
+    //Add newly created pics to req.body.pictures:
+    req.body.pictures = await Promise.all(picPromises)
+      .then((saved) => saved)
+      .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      });
+  }
+
+  try {
+    //If user uploaded pictures, update req.body accordingly:
+    if (req.body.pictures && Array.isArray(req.body.pictures)) {
+      const targetItem = await Item.findById(
+        req.params.itemId,
+        "pictures",
+      ).populate("pictures");
+
+      const targetPictures = targetItem.pictures;
+      let toBeDeleted = [];
+      console.log("New", req.body.pictures);
+      console.log("Current", targetPictures);
+
+      if (targetPictures.length > 0) {
+        //Replace if on same position
+        targetPictures.forEach((c) => {
+          req.body.pictures.forEach((n) => {
+            if (c.position == n.position) {
+              toBeDeleted.push(c.cdnId);
+              return;
+            }
+          });
+        });
+        //Include if on different position
+        targetPictures.forEach((c) => {
+          if (req.body.pictures.every((n) => n.position !== c.position)) {
+            req.body.pictures.push(c);
+          }
+        });
+      }
+
+      console.log("toBeDeleted", toBeDeleted);
+      console.log("newPicsForThisItem:", req.body.pictures);
+
+      toBeDeleted.length > 0 && deleteImages(toBeDeleted);
+
+      //Sort pictures and assign thumbnail picture:
+      if (req.body.pictures.length > 0) {
+        if (req.body.pictures.length > 1) {
+          req.body.pictures.sort((a, b) => {
+            return a.position - b.position;
+          });
+        }
+        req.body.thumbnail = req.body.pictures[0].cdnId;
+      }
+    }
+
+    //Update Item
+
+    await Item.findOneAndUpdate({ _id: req.params.itemId }, req.body);
+
+    res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+    next();
+  }
+}
 async function deleteItem() {}

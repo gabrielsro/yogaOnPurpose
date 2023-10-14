@@ -5,7 +5,7 @@ import AssetMaker from "../AssetMaker";
 import EventsList from "../EventsList";
 import AppInfo from "../../../AppInfo";
 
-const Events = ({ loggedUser }) => {
+const Events = ({ loggedUser, setLoggedUser }) => {
   const [categoryState, setCategoryState] = useState({ view: "collapsed" });
   const [assetState, setAssetState] = useState({ status: "loaded" });
   return (
@@ -31,7 +31,7 @@ const Events = ({ loggedUser }) => {
                 loggedUser={loggedUser}
                 setAssetState={setAssetState}
               />
-              <EventsList />
+              <EventsList setLoggedUser={setLoggedUser} />
             </div>
           )}
         </div>

@@ -8,7 +8,7 @@ export default async (action, author, stateSetter, editorRef) => {
   formDataObject.name = document.getElementById("itemName").value;
   formDataObject.price = document.getElementById("itemPrice").value;
   formDataObject.status = action;
-  formDataObject.uploader = author.id;
+  formDataObject.uploader = author._id;
   formDataObject.uploaderName = `${author.firstName} ${author.lastName}`;
   formDataObject.description = editorRef.current.getContent();
 

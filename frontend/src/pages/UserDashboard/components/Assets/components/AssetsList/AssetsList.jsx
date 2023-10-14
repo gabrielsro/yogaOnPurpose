@@ -7,14 +7,30 @@ import publishIcon from "../../../../icons/play.svg";
 import placeholderPicture from "./images/picturePlaceholder2.svg";
 import { useState } from "react";
 import PostEditor from "./components/PostEditor";
+import EventEditor from "./components/EventEditor";
+import ItemEditor from "./components/ItemEditor";
+import itemResize from "./javascripts/itemResize";
 
-const AssetsList = ({ assets, type, setLoggedUser }) => {
+const AssetsList = ({
+  assets,
+  type,
+  setLoggedUser,
+  setEventListState,
+  setItemsListState,
+}) => {
   const [assetState, setAssetState] = useState({ showing: [] });
   console.log(assetState);
+  console.log("ASSETLIST RENDER");
+
   return (
     <ul className="assetList" id={type == "item" ? "item" : "regular"}>
-      {assets.map((asset) => (
-        <li key={asset._id} className="assetListElementWrapper">
+      {assets.map((asset, index) => (
+        <li
+          key={asset._id}
+          className="assetListElementWrapper"
+          id={type == "item" ? `item${asset._id}` : ""}
+          data-position={index}
+        >
           <div className="assetsListElement">
             {type == "post" && (
               <div className="assetBasics">
@@ -38,7 +54,7 @@ const AssetsList = ({ assets, type, setLoggedUser }) => {
                   <p>{asset.location}</p>
                 </div>
                 <div className="eventBasicsOrganizers">
-                  <p>{`By: ${asset.organizers[0].firstName} ${asset.organizers[0].lastName}`}</p>
+                  <p>{`By: ${asset.organizers[0]?.firstName} ${asset.organizers[0]?.lastName}`}</p>
                 </div>
                 <div className="eventBasicsDate">
                   <p>{`Starts: ${dateFormatter(asset.dateStart)}`}</p>
@@ -98,6 +114,29 @@ const AssetsList = ({ assets, type, setLoggedUser }) => {
                             )
                           : assetState.showing.concat([`editPost${asset._id}`]),
                       });
+                    type == "event" &&
+                      setAssetState({
+                        showing: assetState.showing.some(
+                          (s) => s == `editEvent${asset._id}`,
+                        )
+                          ? assetState.showing.filter(
+                              (s) => s !== `editEvent${asset._id}`,
+                            )
+                          : assetState.showing.concat([
+                              `editEvent${asset._id}`,
+                            ]),
+                      });
+                    type == "item" &&
+                      setAssetState({
+                        showing: assetState.showing.some(
+                          (s) => s == `editItem${asset._id}`,
+                        )
+                          ? assetState.showing.filter(
+                              (s) => s !== `editItem${asset._id}`,
+                            )
+                          : assetState.showing.concat([`editItem${asset._id}`]),
+                      });
+                    type == "item" && itemResize(`item${asset._id}`);
                   }}
                 >
                   <img src={editIcon} alt="Edit icon" />
@@ -118,6 +157,17 @@ const AssetsList = ({ assets, type, setLoggedUser }) => {
           {assetState.showing.some((s) => s == `editPost${asset._id}`) &&
             type == "post" && (
               <PostEditor post={asset} setLoggedUser={setLoggedUser} />
+            )}
+          {assetState.showing.some((s) => s == `editEvent${asset._id}`) &&
+            type == "event" && (
+              <EventEditor
+                event={asset}
+                setEventListState={setEventListState}
+              />
+            )}
+          {assetState.showing.some((s) => s == `editItem${asset._id}`) &&
+            type == "item" && (
+              <ItemEditor item={asset} setItemsListState={setItemsListState} />
             )}
         </li>
       ))}
