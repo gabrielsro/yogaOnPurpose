@@ -5,7 +5,7 @@ import AssetMaker from "../AssetMaker";
 import EventsList from "../EventsList";
 import AppInfo from "../../../AppInfo";
 
-const Events = ({ loggedUser, setLoggedUser }) => {
+const Events = ({ setLoggedUser }) => {
   const [categoryState, setCategoryState] = useState({ view: "collapsed" });
   const [assetState, setAssetState] = useState({ status: "loaded" });
   return (
@@ -26,11 +26,7 @@ const Events = ({ loggedUser, setLoggedUser }) => {
           </button>
           {categoryState.view !== "collapsed" && (
             <div>
-              <AssetMaker
-                assetType={"event"}
-                loggedUser={loggedUser}
-                setAssetState={setAssetState}
-              />
+              <AssetMaker assetType={"event"} setAssetState={setAssetState} />
               <EventsList setLoggedUser={setLoggedUser} />
             </div>
           )}

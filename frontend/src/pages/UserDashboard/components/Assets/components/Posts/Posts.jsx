@@ -27,11 +27,7 @@ const Posts = ({ loggedUser, setLoggedUser }) => {
           </button>
           {categoryState.view !== "collapsed" && (
             <div>
-              <AssetMaker
-                assetType={"post"}
-                loggedUser={loggedUser}
-                setAssetState={setAssetState}
-              />
+              <AssetMaker assetType={"post"} setAssetState={setAssetState} />
               <PostsList
                 setLoggedUser={setLoggedUser}
                 loggedUser={loggedUser}

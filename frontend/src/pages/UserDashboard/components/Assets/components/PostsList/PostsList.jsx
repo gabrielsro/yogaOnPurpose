@@ -8,8 +8,8 @@ import AssetsList from "../AssetsList";
 const PostsList = ({ setLoggedUser, loggedUser }) => {
   const [listState, setListState] = useState({ status: "loading" });
   useEffect(() => {
-    getPosts(setListState);
-  }, [loggedUser]);
+    listState.status == "loading" && getPosts(setListState);
+  }, [loggedUser, listState.status]);
 
   return (
     <div>
@@ -22,6 +22,7 @@ const PostsList = ({ setLoggedUser, loggedUser }) => {
           assets={listState.result}
           setLoggedUser={setLoggedUser}
           type="post"
+          setPostListState={setListState}
         />
       )}
     </div>

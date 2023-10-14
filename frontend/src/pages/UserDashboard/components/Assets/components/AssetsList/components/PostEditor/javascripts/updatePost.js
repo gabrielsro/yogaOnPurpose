@@ -5,7 +5,7 @@ export default async (
   postContent,
   stateSetter,
   recoverySetter,
-  setLoggedUser,
+  setPostListState,
   buttonSetter,
 ) => {
   stateSetter({ status: "loading" });
@@ -49,7 +49,7 @@ export default async (
       status: "loaded",
       success: true,
     });
-    setLoggedUser(newUser);
+    setPostListState({ status: "loading" });
   }, 2000);
 
   return;

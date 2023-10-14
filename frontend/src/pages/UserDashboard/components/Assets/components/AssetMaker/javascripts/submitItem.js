@@ -1,15 +1,13 @@
 const cloudName = "drkbr9f2j";
 const cloudKey = "562967783543786";
 
-export default async (action, author, stateSetter, editorRef) => {
+export default async (action, stateSetter, editorRef) => {
   stateSetter({ status: "loading" });
   const formData = new FormData();
   let formDataObject = Object.fromEntries(formData);
   formDataObject.name = document.getElementById("itemName").value;
   formDataObject.price = document.getElementById("itemPrice").value;
   formDataObject.status = action;
-  formDataObject.uploader = author._id;
-  formDataObject.uploaderName = `${author.firstName} ${author.lastName}`;
   formDataObject.description = editorRef.current.getContent();
 
   //Pic handling:

@@ -13,7 +13,7 @@ import submitItem from "./javascripts/submitItem";
 import BundledEditor from "../../../../../../components/BundledEditor";
 import editorConfig from "./javascripts/editorConfig";
 
-const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
+const AssetMaker = ({ assetType, setAssetState }) => {
   const [makerState, setMakerState] = useState({ status: "idle" });
   const postEditorRef = useRef(null);
   const eventEditorRef = useRef(null);
@@ -183,26 +183,11 @@ const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
                     onClick={(e) => {
                       e.preventDefault();
                       assetType == "post" &&
-                        submitPost(
-                          "draft",
-                          loggedUser,
-                          setAssetState,
-                          postEditorRef,
-                        );
+                        submitPost("draft", setAssetState, postEditorRef);
                       assetType == "event" &&
-                        submitEvent(
-                          "draft",
-                          loggedUser,
-                          setAssetState,
-                          eventEditorRef,
-                        );
+                        submitEvent("draft", setAssetState, eventEditorRef);
                       assetType == "item" &&
-                        submitItem(
-                          "draft",
-                          loggedUser,
-                          setAssetState,
-                          itemEditorRef,
-                        );
+                        submitItem("draft", setAssetState, itemEditorRef);
                     }}
                   >
                     <img src={saveIcon} alt="Save icon" />
@@ -213,26 +198,11 @@ const AssetMaker = ({ assetType, loggedUser, setAssetState }) => {
                     onClick={(e) => {
                       e.preventDefault();
                       assetType == "post" &&
-                        submitPost(
-                          "published",
-                          loggedUser,
-                          setAssetState,
-                          postEditorRef,
-                        );
+                        submitPost("published", setAssetState, postEditorRef);
                       assetType == "event" &&
-                        submitEvent(
-                          "published",
-                          loggedUser,
-                          setAssetState,
-                          eventEditorRef,
-                        );
+                        submitEvent("published", setAssetState, eventEditorRef);
                       assetType == "item" &&
-                        submitItem(
-                          "published",
-                          loggedUser,
-                          setAssetState,
-                          itemEditorRef,
-                        );
+                        submitItem("published", setAssetState, itemEditorRef);
                     }}
                   >
                     <img src={publishIcon} alt="Publish icon" />

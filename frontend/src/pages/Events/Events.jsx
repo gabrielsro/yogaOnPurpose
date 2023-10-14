@@ -22,7 +22,14 @@ const Events = () => {
       {eventsState.status == "error" && (
         <ErrorPage message={eventsState.message} />
       )}
-      {eventsState.status == "loaded" && (
+      {eventsState.status == "loaded" && eventsState.result.length < 1 && (
+        <div className="emptyEventsPage">
+          <div>
+            <p>There are no Events</p>
+          </div>
+        </div>
+      )}
+      {eventsState.status == "loaded" && eventsState.result.length > 0 && (
         <div>
           <EventOptionsPage />
           <EventListPage eventList={eventsState.result} />

@@ -15,5 +15,6 @@ router.get("/account", authenticate, events.getEventsAccount);
 router.get("/", events.getEvents);
 router.get("/:eventId", events.getEvent);
 router.post("/", authenticate, cdnSignatureValidator, events.createEvent);
+router.delete("/:eventId", authenticate, events.deleteEvent);
 
 export default router;

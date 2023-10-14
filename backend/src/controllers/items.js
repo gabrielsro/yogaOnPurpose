@@ -12,6 +12,9 @@ export default {
 };
 
 async function createItem(req, res) {
+  req.body.uploader = req.user._id;
+  req.body.uploaderName = `${req.user.firstName} ${req.user.lastName}`;
+
   try {
     const newItem = new Item(req.body);
     if (req.body.pics.length > 0) {

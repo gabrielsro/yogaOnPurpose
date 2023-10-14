@@ -10,7 +10,7 @@ import Loading from "../../../../../Loading";
 import fireIcon from "../../../../../../icons/fire.svg";
 import successIcon from "../../../../../../../../components/Modal/icons/done.svg";
 
-const PostEditor = ({ post, setLoggedUser }) => {
+const PostEditor = ({ post, setPostListState }) => {
   const editorRef = useRef(null);
   const [editorView, setEditorView] = useState({
     status: "loaded",
@@ -132,7 +132,7 @@ const PostEditor = ({ post, setLoggedUser }) => {
                         editorRef.current.getContent(),
                         setEditorView,
                         setRecoveryData,
-                        setLoggedUser,
+                        setPostListState,
                         setEditorState,
                       );
                     }}
@@ -151,7 +151,7 @@ const PostEditor = ({ post, setLoggedUser }) => {
                         editorRef.current.getContent(),
                         setEditorView,
                         setRecoveryData,
-                        setLoggedUser,
+                        setPostListState,
                         setEditorState,
                       );
                     }}

@@ -1,7 +1,7 @@
 const cloudName = "drkbr9f2j";
 const cloudKey = "562967783543786";
 
-export default async (action, author, stateSetter, editorRef) => {
+export default async (action, stateSetter, editorRef) => {
   stateSetter({
     status: "loading",
   });
@@ -12,7 +12,7 @@ export default async (action, author, stateSetter, editorRef) => {
   formDataObject.dateEnd = document.getElementById("eventDateFinish").value;
   formDataObject.location = document.getElementById("eventLocation").value;
   formDataObject.status = action;
-  formDataObject.organizers = [author._id];
+  formDataObject.organizers = [];
   formDataObject.description = editorRef.current.getContent();
 
   const mainImage =

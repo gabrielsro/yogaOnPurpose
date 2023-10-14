@@ -5,7 +5,7 @@ import AssetMaker from "../AssetMaker";
 import ItemsList from "../ItemsList";
 import AppInfo from "../../../AppInfo";
 
-const Store = ({ loggedUser }) => {
+const Store = () => {
   const [categoryState, setCategoryState] = useState({ view: "collapsed" });
   const [assetState, setAssetState] = useState({ status: "loaded" });
   return (
@@ -26,11 +26,7 @@ const Store = ({ loggedUser }) => {
           </button>
           {categoryState.view !== "collapsed" && (
             <div>
-              <AssetMaker
-                assetType={"item"}
-                loggedUser={loggedUser}
-                setAssetState={setAssetState}
-              />
+              <AssetMaker assetType={"item"} setAssetState={setAssetState} />
               <ItemsList />
             </div>
           )}
