@@ -1,5 +1,6 @@
 import Item from "../models/item";
 import Picture from "../models/picture";
+import User from "../models/user";
 import deleteImages from "../utils/cdn/deleteImages";
 
 export default {
@@ -20,7 +21,9 @@ async function createItem(req, res) {
     if (req.body.pics.length > 0) {
       newItem.thumbnail = req.body.pics[0].publicId;
     }
+
     const savedItem = await newItem.save();
+
     if (req.body.pics.length > 0) {
       const picPromises = req.body.pics.map((pic) => {
         const picPromise = new Promise((resolve, reject) => {
@@ -36,16 +39,32 @@ async function createItem(req, res) {
         });
         return picPromise;
       });
-      await Promise.all(picPromises).then(async (result) => {
-        const sortedResult = result.sort((a, b) => {
-          return a.position - b.position;
-        });
-        const finalResult = sortedResult.map((s) => s._id);
-        await Item.findByIdAndUpdate(savedItem._id, { pictures: finalResult });
+
+      const userUpdatePromise = new Promise((resolve, reject) => {
+        User.findByIdAndUpdate(req.body.uploader, {
+          $push: { items: savedItem._id },
+        })
+          .then(resolve)
+          .catch((err) => reject(err));
       });
+
+      await Promise.all(picPromises.concat([userUpdatePromise])).then(
+        async (result) => {
+          const picResult = result.filter((r) => r.cdnId);
+          const sortedResult = picResult.sort((a, b) => {
+            return a.position - b.position;
+          });
+          const finalResult = sortedResult.map((s) => s._id);
+          await Item.findByIdAndUpdate(savedItem._id, {
+            pictures: finalResult,
+          });
+        },
+      );
     }
     if (req.body.pics.length < 1) {
-      await newItem.save();
+      await User.findByIdAndUpdate(req.body.uploader, {
+        $push: { items: savedItem._id },
+      });
     }
     res.sendStatus(200);
   } catch (err) {
@@ -171,4 +190,53 @@ async function updateItem(req, res, next) {
     next();
   }
 }
-async function deleteItem() {}
+async function deleteItem(req, res, next) {
+  try {
+    //Delete item
+    const deletedItem = await Item.findOneAndRemove({ _id: req.params.itemId });
+
+    //Delete pictures and update user in parallel
+    const userUpdatePromise = new Promise((resolve, reject) => {
+      User.findByIdAndUpdate(deletedItem.uploader, {
+        $pull: { items: req.params._id },
+      })
+        .then(resolve)
+        .catch((err) => reject(err));
+    });
+
+    const picsRemovalPromise = new Promise((resolve, reject) => {
+      const promises = deletedItem.pictures.map((picture) => {
+        const promise = new Promise((resolve, reject) => {
+          Picture.findOneAndRemove({ _id: picture._id })
+            .then((removed) => {
+              resolve(removed.cdnId);
+            })
+            .catch((err) => reject(err));
+        });
+        return promise;
+      });
+
+      Promise.all(promises)
+        .then((removals) => {
+          resolve(removals);
+        })
+        .catch((err) => reject(err));
+    });
+
+    Promise.all([userUpdatePromise, picsRemovalPromise])
+      .then((results) => {
+        results[1].length > 0 && deleteImages(results[1]);
+        res.sendStatus(200);
+        next();
+      })
+      .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+        next();
+      });
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+    next();
+  }
+}

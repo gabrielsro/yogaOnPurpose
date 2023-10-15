@@ -7,7 +7,6 @@ cloudinary.config({
 });
 
 export default async (IDs) => {
-  console.log(IDs);
   if (!Array.isArray) {
     return;
   }

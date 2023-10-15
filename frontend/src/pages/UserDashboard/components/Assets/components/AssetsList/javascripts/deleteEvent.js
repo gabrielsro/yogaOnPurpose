@@ -14,7 +14,7 @@ export default async (
       console.log(response);
       stateSetter({
         status: "error",
-        message: "We couldn't delete this post. Please try again later",
+        message: "We couldn't delete this event. Please try again later",
       });
       setTimeout(() => {
         parentListStateSetter({ status: "loading" });
@@ -30,7 +30,7 @@ export default async (
     console.log(err);
     stateSetter({
       status: "error",
-      message: "We couldn't delete this post. Please try again later",
+      message: "We couldn't delete this event. Please try again later",
     });
     setTimeout(() => {
       parentListStateSetter({ status: "loading" });

@@ -17,10 +17,17 @@ const Store = () => {
       {storeState.status == "error" && (
         <ErrorPage message={storeState.message} />
       )}
-      {storeState.status == "loaded" && (
+      {storeState.status == "loaded" && storeState.result.length > 0 && (
         <div>
           <StoreOptionsPage />
           <StoreListPage itemList={storeState.result} />
+        </div>
+      )}
+      {storeState.status == "loaded" && storeState.result.length < 1 && (
+        <div className="emptyStorePage">
+          <div>
+            <p>Store is empty</p>
+          </div>
         </div>
       )}
     </div>

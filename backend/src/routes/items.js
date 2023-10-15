@@ -10,6 +10,6 @@ router.get("/level", authenticate, items.getItemsForLevel);
 router.get("/:itemId", items.getItem);
 router.post("/", authenticate, cdnSignatureValidator, items.createItem);
 router.put("/:itemId", authenticate, cdnSignatureValidator, items.updateItem);
-router.delete("/:itemId", items.deleteItem);
+router.delete("/:itemId", authenticate, items.deleteItem);
 
 export default router;

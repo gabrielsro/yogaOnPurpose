@@ -18,6 +18,7 @@ const userSchema = new Schema(
     comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
     events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
     status: { type: String, enum: ["active", "suspended"] },
+    items: [{ type: Schema.Types.ObjectId, ref: "Item" }],
   },
   { timestamps: true },
 );
