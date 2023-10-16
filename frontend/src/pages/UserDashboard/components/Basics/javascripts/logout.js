@@ -5,10 +5,13 @@ export default async (stateSetter, userSetter, navigate) => {
     errorMessage: null,
   });
   try {
-    const logout = await fetch("http://localhost:3003/logout", {
-      method: "POST",
-      credentials: "include",
-    });
+    const logout = await fetch(
+      "https://yogaonpurpose-production.up.railway.app/logout",
+      {
+        method: "POST",
+        credentials: "include",
+      },
+    );
     if (logout.ok) {
       stateSetter({
         status: "done",

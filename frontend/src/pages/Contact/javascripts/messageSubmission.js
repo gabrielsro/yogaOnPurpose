@@ -6,12 +6,15 @@ export default (stateSetter) => {
     const formData = new FormData(form);
     const formDataObject = Object.fromEntries(formData);
     const formDataJson = JSON.stringify(formDataObject);
-    const response = await fetch("http://localhost:3003/contact", {
-      method: "POST",
-      body: formDataJson,
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://yogaonpurpose-production.up.railway.app/contact",
+      {
+        method: "POST",
+        body: formDataJson,
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+      },
+    );
     if (!response.ok) {
       stateSetter({ status: "error" });
       console.log(response);

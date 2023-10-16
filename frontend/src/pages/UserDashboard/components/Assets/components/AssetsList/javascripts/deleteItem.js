@@ -6,10 +6,13 @@ export default async (
 ) => {
   try {
     console.log("deleting item");
-    const response = await fetch(`http://localhost:3003/items/${assetId}`, {
-      method: "DELETE",
-      credentials: "include",
-    });
+    const response = await fetch(
+      `https://yogaonpurpose-production.up.railway.app/items/${assetId}`,
+      {
+        method: "DELETE",
+        credentials: "include",
+      },
+    );
     setAssetDelete({ status: "off" });
     if (!response.ok) {
       console.log(response);

@@ -1,9 +1,12 @@
 export default async (eventId, stateSetter) => {
   try {
-    const response = await fetch(`http://localhost:3003/events/${eventId}`, {
-      method: "GET",
-      credentials: "include",
-    });
+    const response = await fetch(
+      `https://yogaonpurpose-production.up.railway.app/events/${eventId}`,
+      {
+        method: "GET",
+        credentials: "include",
+      },
+    );
     if (!response.ok) {
       stateSetter({
         status: "error",

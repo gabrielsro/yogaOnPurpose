@@ -12,7 +12,7 @@ export default async (event, stateSetter, setLoggedUser) => {
     try {
       //Get signature
       const signatureResponse = await fetch(
-        "http://localhost:3003/cdn-signature",
+        "https://yogaonpurpose-production.up.railway.app/cdn-signature",
         {
           method: "GET",
           credentials: "include",
@@ -62,12 +62,15 @@ export default async (event, stateSetter, setLoggedUser) => {
       userObject.profilePicUpdate = cdnPic;
       const userPicString = JSON.stringify(userObject);
 
-      const response = await fetch("http://localhost:3003/users/profilePic", {
-        method: "POST",
-        credentials: "include",
-        body: userPicString,
-        headers: { "Content-Type": "application/json" },
-      });
+      const response = await fetch(
+        "https://yogaonpurpose-production.up.railway.app/users/profilePic",
+        {
+          method: "POST",
+          credentials: "include",
+          body: userPicString,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
       if (!response.ok) {
         console.log(response);
         stateSetter({ status: "loaded", error: true });

@@ -40,7 +40,7 @@ export default async (
     try {
       //1. Get CDN signature:
       const signatureResponse = await fetch(
-        "http://localhost:3003/cdn-signature",
+        "https://yogaonpurpose-production.up.railway.app/cdn-signature",
         {
           method: "GET",
           credentials: "include",
@@ -146,12 +146,15 @@ export default async (
   //2. Upload newData to backend
 
   try {
-    const response = await fetch(`http://localhost:3003/items/${itemId}`, {
-      method: "PUT",
-      credentials: "include",
-      body: newDataString,
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      `https://yogaonpurpose-production.up.railway.app/items/${itemId}`,
+      {
+        method: "PUT",
+        credentials: "include",
+        body: newDataString,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
 
     if (!response.ok) {
       console.log(response);

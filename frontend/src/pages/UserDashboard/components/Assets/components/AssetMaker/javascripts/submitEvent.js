@@ -41,7 +41,7 @@ export default async (action, stateSetter, editorRef) => {
       : undefined;
 
     const signatureResponse = await fetch(
-      "http://localhost:3003/cdn-signature",
+      "https://yogaonpurpose-production.up.railway.app/cdn-signature",
       {
         method: "GET",
         credentials: "include",
@@ -148,12 +148,15 @@ export default async (action, stateSetter, editorRef) => {
   console.log(formDataString);
 
   try {
-    const response = await fetch("http://localhost:3003/events", {
-      method: "POST",
-      credentials: "include",
-      body: formDataString,
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      "https://yogaonpurpose-production.up.railway.app/events",
+      {
+        method: "POST",
+        credentials: "include",
+        body: formDataString,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
     if (!response.ok) {
       console.log(response);
       stateSetter({

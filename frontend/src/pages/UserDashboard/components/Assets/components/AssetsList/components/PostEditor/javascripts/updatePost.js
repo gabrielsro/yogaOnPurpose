@@ -18,12 +18,15 @@ export default async (
 
   const dataString = JSON.stringify(data);
 
-  const response = await fetch(`http://localhost:3003/posts/${postId}`, {
-    method: "PUT",
-    credentials: "include",
-    body: dataString,
-    headers: { "Content-Type": "application/json" },
-  });
+  const response = await fetch(
+    `https://yogaonpurpose-production.up.railway.app/posts/${postId}`,
+    {
+      method: "PUT",
+      credentials: "include",
+      body: dataString,
+      headers: { "Content-Type": "application/json" },
+    },
+  );
 
   if (!response.ok) {
     console.log(response);

@@ -1,8 +1,11 @@
 export default async (stateSetter) => {
-  const response = await fetch("http://localhost:3003/users", {
-    method: "GET",
-    credentials: "include",
-  });
+  const response = await fetch(
+    "https://yogaonpurpose-production.up.railway.app/users",
+    {
+      method: "GET",
+      credentials: "include",
+    },
+  );
   if (!response.ok) {
     console.log(response);
     stateSetter({

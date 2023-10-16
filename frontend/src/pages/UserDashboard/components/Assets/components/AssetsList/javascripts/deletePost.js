@@ -5,10 +5,13 @@ export default async (
   setAssetDelete,
 ) => {
   try {
-    const response = await fetch(`http://localhost:3003/posts/${assetId}`, {
-      method: "DELETE",
-      credentials: "include",
-    });
+    const response = await fetch(
+      `https://yogaonpurpose-production.up.railway.app/posts/${assetId}`,
+      {
+        method: "DELETE",
+        credentials: "include",
+      },
+    );
     setAssetDelete({ status: "off" });
     if (!response.ok) {
       console.log(response);

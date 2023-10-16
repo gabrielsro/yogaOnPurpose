@@ -25,7 +25,7 @@ export default async (
   if (mainImage || secondaryImage) {
     try {
       const signatureResponse = await fetch(
-        "http://localhost:3003/cdn-signature",
+        "https://yogaonpurpose-production.up.railway.app/cdn-signature",
         {
           method: "GET",
           credentials: "include",
@@ -145,12 +145,15 @@ export default async (
   console.log(dataString);
 
   try {
-    const response = await fetch(`http://localhost:3003/events/${eventId}`, {
-      method: "PUT",
-      credentials: "include",
-      body: dataString,
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      `https://yogaonpurpose-production.up.railway.app/events/${eventId}`,
+      {
+        method: "PUT",
+        credentials: "include",
+        body: dataString,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
 
     if (!response.ok) {
       console.log(response);

@@ -7,11 +7,14 @@ export default async function submitSignup(e, stateSetter) {
   let response;
   let responseRaw;
   try {
-    responseRaw = await fetch("http://localhost:3003/users", {
-      method: "POST",
-      body: formDataJSON,
-      headers: { "Content-Type": "application/json" },
-    });
+    responseRaw = await fetch(
+      "https://yogaonpurpose-production.up.railway.app/users",
+      {
+        method: "POST",
+        body: formDataJSON,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
     response = await responseRaw.json();
   } catch (err) {
     stateSetter({ status: "serverError", failedToFetch: true });

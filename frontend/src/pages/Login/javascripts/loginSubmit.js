@@ -6,12 +6,15 @@ export default async (e, stateSetter, userSetter, navigate) => {
   const formDataJSON = JSON.stringify(formDataObject);
   let user;
   try {
-    user = await fetch("http://localhost:3003/login", {
-      method: "POST",
-      body: formDataJSON,
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-    });
+    user = await fetch(
+      "https://yogaonpurpose-production.up.railway.app/login",
+      {
+        method: "POST",
+        body: formDataJSON,
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+      },
+    );
   } catch (err) {
     stateSetter({ status: "connectionError", error: err.message });
     return;
