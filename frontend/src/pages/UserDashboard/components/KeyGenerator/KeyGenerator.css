@@ -1,0 +1,44 @@
+.keyGeneratorWrapper {
+  padding-top: 10px;
+  padding-left: 46px;
+  height: 60px;
+}
+
+.keyGeneratorLoading {
+  height: 60px;
+  display: grid;
+  place-content: center;
+}
+
+.keyGeneratorWrapper form {
+  display: flex;
+  gap: 10px;
+}
+
+.keyGeneratorWrapper form select {
+  text-align: center;
+}
+
+.keyGeneratorWrapper form button {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.generatedKey {
+  padding-top: 15px;
+  min-height: 30px;
+  display: flex;
+  flex-direction: column;
+  place-content: end;
+}
+
+.keyGeneratorError {
+  color: rgb(235, 83, 83);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.keyGeneratorError img {
+  width: 25px;
+}

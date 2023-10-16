@@ -53,14 +53,6 @@ const Signup = () => {
             className="invisible"
             onInput={() => passwordValidator()}
           />
-          <label htmlFor="level">Level:</label>
-          <select name="level" id="level">
-            <option value="" hidden={true}>
-              Select the user level
-            </option>
-            <option value="admin">Admin</option>
-            <option value="guest">Guest</option>
-          </select>
           <label htmlFor="key">Key:</label>
           <input type="password" id="key" name="key" />
           <div className="buttonContainer">

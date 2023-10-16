@@ -8,6 +8,7 @@ import Settings from "./components/Settings";
 import Info from "./components/Info";
 import Assets from "./components/Assets";
 import AppInfo from "./components/AppInfo";
+import KeyGenerator from "./components/KeyGenerator";
 
 const UserDashboard = ({ loggedUser, setLoggedUser }) => {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ const UserDashboard = ({ loggedUser, setLoggedUser }) => {
           navigate={navigate}
           user={dashboardState.user}
         />
+        <KeyGenerator />
         <Settings
           loggedUser={loggedUser}
           previousView={dashboardState.previousView}
@@ -41,8 +43,8 @@ const UserDashboard = ({ loggedUser, setLoggedUser }) => {
         />
         <Info loggedUser={loggedUser} />
         <Assets loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
-        {loggedUser.level == "admin" && <Schedule />}
-        {loggedUser.level == "admin" && <Users />}
+        {loggedUser.level == "Owner" && <Schedule />}
+        {loggedUser.level == "Owner" && <Users />}
       </div>
     );
   }
