@@ -1,6 +1,6 @@
 import "./EventOptionsPage.css";
 
 const EventOptionsPage = () => {
-  return <div>EventOptionsPage</div>;
+  return <div className="eventOptionsPage"></div>;
 };
 export default EventOptionsPage;

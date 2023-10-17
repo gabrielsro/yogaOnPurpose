@@ -83,6 +83,7 @@
 @media only screen and (min-width: 930px) {
   .itemTitlePage {
     padding-top: 0px;
+    padding-bottom: 40px;
   }
   .itemWrapper {
     display: grid;
@@ -112,5 +113,8 @@
     height: 503px;
     background-color: rgba(58, 58, 59, 0.1);
     backdrop-filter: blur(8px);
+  }
+  .itemMainPic img {
+    border-radius: 5px;
   }
 }

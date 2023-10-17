@@ -1,6 +1,6 @@
 import "./StoreOptionsPage.css";
 
 const StoreOptionsPage = () => {
-  return <div>StoreOptionsPage</div>;
+  return <div className="storeOptionsPage"></div>;
 };
 export default StoreOptionsPage;
