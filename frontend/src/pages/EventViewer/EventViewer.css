@@ -85,8 +85,8 @@
 }
 
 .eventDescriptionPage img {
-  max-width: calc(100vw -10px);
-  max-height: calc(100vw -10px);
+  max-width: calc(100vw - 10px);
+  max-height: calc(100vw - 10px);
 }
 
 @media only screen and (min-width: 900px) {
