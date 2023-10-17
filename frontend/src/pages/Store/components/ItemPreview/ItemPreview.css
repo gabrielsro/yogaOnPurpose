@@ -42,9 +42,11 @@
     max-height: 252.5px;
     height: auto;
     aspect-ratio: 1;
+    overflow: hidden;
   }
 
   .itemThumbnail img {
     max-height: 252.5px;
+    height: auto;
   }
 }
