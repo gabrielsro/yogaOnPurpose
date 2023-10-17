@@ -1,3 +1,8 @@
+.itemCard a {
+  text-decoration: none;
+  color: black;
+}
+
 .itemThumbnail {
   min-width: 192.5px;
   min-height: 192.5px;
