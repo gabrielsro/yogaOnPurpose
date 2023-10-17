@@ -15,9 +15,13 @@ import LoadingPage from "../../../../../LoadingPage";
 const UserPreview = ({ user }) => {
   const [previewWarning, setPreviewWarning] = useState({ status: "off" });
   const [previewState, setPreviewState] = useState({ status: "loaded" });
+
   if (previewWarning.status == "accepted") {
     deleteUser(user._id, setPreviewState);
   }
+
+  console.log(previewState);
+
   return (
     <li className="userPreviewCard">
       {previewState.status == "loaded" && (
