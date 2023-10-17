@@ -87,7 +87,7 @@
 .eventDescriptionPage img {
   aspect-ratio: auto;
   max-width: calc(100vw - 10px);
-  max-height: calc(100vw - 10px);
+  height: auto;
 }
 
 @media only screen and (min-width: 900px) {
@@ -119,8 +119,7 @@
   }
 
   .eventDescriptionPage img {
-    aspect-ratio: auto;
     max-width: 900px;
-    max-height: 900px;
+    height: auto;
   }
 }
