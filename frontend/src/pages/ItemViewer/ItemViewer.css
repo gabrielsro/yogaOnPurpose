@@ -80,6 +80,10 @@
   color: white;
 }
 
+.itemDescriptionPage img {
+  max-width: 80vw;
+}
+
 @media only screen and (min-width: 930px) {
   .itemTitlePage {
     padding-top: 0px;
@@ -116,5 +120,9 @@
   }
   .itemMainPic img {
     border-radius: 5px;
+  }
+
+  .itemDescriptionPage img {
+    max-width: 200px;
   }
 }

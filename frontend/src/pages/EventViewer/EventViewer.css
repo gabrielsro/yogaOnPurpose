@@ -83,4 +83,13 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .eventMainPage,
+  .eventTitlePage,
+  .eventBasicsPage,
+  .eventMediaPage,
+  .eventDescriptionPage,
+  .comments {
+    min-width: 900px;
+  }
 }
