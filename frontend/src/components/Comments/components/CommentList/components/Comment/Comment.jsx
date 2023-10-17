@@ -30,7 +30,6 @@ const Comment = ({ comment, assetType }) => {
       </div>
       <div className="commentInteraction">
         <div className="commentInfo">
-          <p>{comment.comments.length}</p>
           {comment.comments.length > 0 && (
             <button
               className="transparentButton"
@@ -42,6 +41,7 @@ const Comment = ({ comment, assetType }) => {
                 });
               }}
             >
+              <p>{comment.comments.length}</p>
               <img src={commentsIcon} alt="Comments icon" />
             </button>
           )}
