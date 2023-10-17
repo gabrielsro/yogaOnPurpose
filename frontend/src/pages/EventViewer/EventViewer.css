@@ -70,6 +70,15 @@
   font-weight: bold;
 }
 
+.eventMainPage,
+.eventTitlePage,
+.eventBasicsPage,
+.eventMediaPage,
+.eventDescriptionPage,
+.comments {
+  width: 100vw;
+}
+
 @media only screen and (min-width: 900px) {
   .eventOrganizersPage {
     padding-top: 20px;
@@ -90,6 +99,6 @@
   .eventMediaPage,
   .eventDescriptionPage,
   .comments {
-    min-width: 900px;
+    width: 900px;
   }
 }
