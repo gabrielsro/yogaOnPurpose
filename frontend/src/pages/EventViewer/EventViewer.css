@@ -85,6 +85,7 @@
 }
 
 .eventDescriptionPage img {
+  aspect-ratio: auto;
   max-width: calc(100vw - 10px);
   max-height: calc(100vw - 10px);
 }
@@ -118,6 +119,7 @@
   }
 
   .eventDescriptionPage img {
+    aspect-ratio: auto;
     max-width: 900px;
     max-height: 900px;
   }
