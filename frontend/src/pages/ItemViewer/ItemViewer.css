@@ -81,8 +81,8 @@
 }
 
 .itemDescriptionPage img {
-  max-width: 80vw;
-  max-height: 80vw;
+  max-width: 90vw;
+  max-height: 90vw;
 }
 
 @media only screen and (min-width: 930px) {
@@ -100,7 +100,8 @@
   }
   .itemInfoPage {
     padding-top: 20px;
-    width: 400px;
+    min-width: 410px;
+    max-width: 850px;
   }
   .itemPricePage {
     font-size: 2.4rem;
