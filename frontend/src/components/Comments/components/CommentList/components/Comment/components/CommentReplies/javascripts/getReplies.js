@@ -2,7 +2,7 @@ export default async (parentComment, stateSetter) => {
   console.log(parentComment);
   try {
     const response = await fetch(
-      `https://api.yogaonpurpose.net/${parentComment._id}`,
+      `https://api.yogaonpurpose.net/comments/${parentComment._id}`,
       { method: "GET", credentials: "include" },
     );
     if (!response.ok) {
