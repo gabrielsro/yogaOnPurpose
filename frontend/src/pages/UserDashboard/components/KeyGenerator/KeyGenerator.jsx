@@ -34,7 +34,7 @@ const KeyGenerator = () => {
                   <option defaultValue="" hidden={true}>
                     --Select Account Level--
                   </option>
-                  <option value="Admin">Owner</option>
+                  <option value="Owner">Owner</option>
                   <option value="Admin">Admin</option>
                   <option value="Seller">Seller</option>
                   <option value="Blogger">Blogger</option>
