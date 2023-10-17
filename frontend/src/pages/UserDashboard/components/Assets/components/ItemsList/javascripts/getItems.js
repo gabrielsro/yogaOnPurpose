@@ -1,12 +1,9 @@
 export default async (stateSetter) => {
   try {
-    const response = await fetch(
-      "https://yogaonpurpose-production.up.railway.app/items/level",
-      {
-        method: "GET",
-        credentials: "include",
-      },
-    );
+    const response = await fetch("https://api.yogaonpurpose.net/items/level", {
+      method: "GET",
+      credentials: "include",
+    });
     if (!response.ok) {
       stateSetter({ status: "error" });
       console.log(response);

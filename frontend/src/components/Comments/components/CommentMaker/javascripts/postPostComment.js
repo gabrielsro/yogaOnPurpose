@@ -6,7 +6,7 @@ export default async (assetId, stateSetter, parentStateSetter) => {
   dataObject.depth = 0;
   const dataString = JSON.stringify(dataObject);
   const response = await fetch(
-    `https://yogaonpurpose-production.up.railway.app/comments/post/${assetId}`,
+    `https://api.yogaonpurpose.net/comments/post/${assetId}`,
     {
       method: "POST",
       credentials: "include",

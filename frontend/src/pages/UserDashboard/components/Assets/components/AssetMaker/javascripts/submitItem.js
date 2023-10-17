@@ -24,7 +24,7 @@ export default async (action, stateSetter, editorRef) => {
     });
 
     const signatureResponse = await fetch(
-      "https://yogaonpurpose-production.up.railway.app/cdn-signature",
+      "https://api.yogaonpurpose.net/cdn-signature",
       {
         method: "GET",
         credentials: "include",
@@ -100,15 +100,12 @@ export default async (action, stateSetter, editorRef) => {
   const formDataString = JSON.stringify(formDataObject);
 
   try {
-    const response = await fetch(
-      "https://yogaonpurpose-production.up.railway.app/items",
-      {
-        method: "POST",
-        credentials: "include",
-        body: formDataString,
-        headers: { "Content-Type": "application/json" },
-      },
-    );
+    const response = await fetch("https://api.yogaonpurpose.net/items", {
+      method: "POST",
+      credentials: "include",
+      body: formDataString,
+      headers: { "Content-Type": "application/json" },
+    });
     if (!response.ok) {
       console.log(response);
       stateSetter({

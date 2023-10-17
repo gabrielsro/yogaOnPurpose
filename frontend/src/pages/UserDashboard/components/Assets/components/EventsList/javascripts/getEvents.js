@@ -1,7 +1,7 @@
 export default async (stateSetter) => {
   try {
     const response = await fetch(
-      "https://yogaonpurpose-production.up.railway.app/events/account",
+      "https://api.yogaonpurpose.net/events/account",
       {
         method: "GET",
         credentials: "include",

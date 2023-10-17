@@ -25,7 +25,7 @@ export default async (
   if (mainImage || secondaryImage) {
     try {
       const signatureResponse = await fetch(
-        "https://yogaonpurpose-production.up.railway.app/cdn-signature",
+        "https://api.yogaonpurpose.net/cdn-signature",
         {
           method: "GET",
           credentials: "include",
@@ -146,7 +146,7 @@ export default async (
 
   try {
     const response = await fetch(
-      `https://yogaonpurpose-production.up.railway.app/events/${eventId}`,
+      `https://api.yogaonpurpose.net/events/${eventId}`,
       {
         method: "PUT",
         credentials: "include",

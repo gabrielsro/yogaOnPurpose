@@ -5,7 +5,7 @@ export default async (e, setGeneratorStatus) => {
   const formDataObject = Object.fromEntries(formData);
   try {
     const response = await fetch(
-      `https://yogaonpurpose-production.up.railway.app/key/${formDataObject.level}`,
+      `https://api.yogaonpurpose.net/key/${formDataObject.level}`,
       {
         method: "GET",
         credentials: "include",

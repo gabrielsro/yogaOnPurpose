@@ -1,7 +1,7 @@
 export default async (assetType, assetId, parentStateSetter) => {
   try {
     const response = await fetch(
-      `https://yogaonpurpose-production.up.railway.app/comments/${assetType}/${assetId}`,
+      `https://api.yogaonpurpose.net/comments/${assetType}/${assetId}`,
       { method: "GET", credentials: "include" },
     );
     if (!response.ok) {

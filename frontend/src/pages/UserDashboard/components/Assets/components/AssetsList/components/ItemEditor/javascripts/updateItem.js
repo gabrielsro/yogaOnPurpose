@@ -40,7 +40,7 @@ export default async (
     try {
       //1. Get CDN signature:
       const signatureResponse = await fetch(
-        "https://yogaonpurpose-production.up.railway.app/cdn-signature",
+        "https://api.yogaonpurpose.net/cdn-signature",
         {
           method: "GET",
           credentials: "include",
@@ -147,7 +147,7 @@ export default async (
 
   try {
     const response = await fetch(
-      `https://yogaonpurpose-production.up.railway.app/items/${itemId}`,
+      `https://api.yogaonpurpose.net/items/${itemId}`,
       {
         method: "PUT",
         credentials: "include",

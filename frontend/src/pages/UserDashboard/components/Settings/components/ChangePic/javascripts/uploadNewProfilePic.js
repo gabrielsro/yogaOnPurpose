@@ -12,7 +12,7 @@ export default async (event, stateSetter, setLoggedUser) => {
     try {
       //Get signature
       const signatureResponse = await fetch(
-        "https://yogaonpurpose-production.up.railway.app/cdn-signature",
+        "https://api.yogaonpurpose.net/cdn-signature",
         {
           method: "GET",
           credentials: "include",

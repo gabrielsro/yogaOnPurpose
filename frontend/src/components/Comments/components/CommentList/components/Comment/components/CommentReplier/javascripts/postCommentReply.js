@@ -17,7 +17,7 @@ export default async (event, comment, stateSetter, contextType) => {
   const dataString = JSON.stringify(dataObject);
   try {
     const response = await fetch(
-      `http://localhost:3003/comments/comment/${comment._id}`,
+      `https://api.yogaonpurpose.net/comments/comment/${comment._id}`,
       {
         method: "POST",
         credentials: "include",

@@ -7,7 +7,7 @@ export default async (
   try {
     console.log("deleting item");
     const response = await fetch(
-      `https://yogaonpurpose-production.up.railway.app/items/${assetId}`,
+      `https://api.yogaonpurpose.net/items/${assetId}`,
       {
         method: "DELETE",
         credentials: "include",

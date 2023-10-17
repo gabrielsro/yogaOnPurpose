@@ -19,7 +19,7 @@ export default async (
   const dataString = JSON.stringify(data);
 
   const response = await fetch(
-    `https://yogaonpurpose-production.up.railway.app/posts/${postId}`,
+    `https://api.yogaonpurpose.net/posts/${postId}`,
     {
       method: "PUT",
       credentials: "include",

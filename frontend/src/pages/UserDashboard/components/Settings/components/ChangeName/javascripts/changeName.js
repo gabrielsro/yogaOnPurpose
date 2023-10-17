@@ -9,15 +9,12 @@ export default async (e, stateSetter, setLoggedUser) => {
   dataObject.lastName = lastName;
   const dataString = JSON.stringify(dataObject);
 
-  const response = await fetch(
-    "https://yogaonpurpose-production.up.railway.app/users",
-    {
-      method: "PUT",
-      credentials: "include",
-      body: dataString,
-      headers: { "Content-Type": "application/json" },
-    },
-  );
+  const response = await fetch("https://api.yogaonpurpose.net/users", {
+    method: "PUT",
+    credentials: "include",
+    body: dataString,
+    headers: { "Content-Type": "application/json" },
+  });
 
   if (!response.ok) {
     stateSetter({ status: "error" });

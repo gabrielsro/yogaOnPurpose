@@ -6,7 +6,7 @@ export default async (
 ) => {
   try {
     const response = await fetch(
-      `https://yogaonpurpose-production.up.railway.app/posts/${assetId}`,
+      `https://api.yogaonpurpose.net/posts/${assetId}`,
       {
         method: "DELETE",
         credentials: "include",

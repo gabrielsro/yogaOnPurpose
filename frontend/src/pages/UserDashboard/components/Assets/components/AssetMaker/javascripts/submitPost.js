@@ -7,15 +7,12 @@ export default async (action, stateSetter, editorRef) => {
   formDataObject.content = editorRef.current.getContent();
   const formDataString = JSON.stringify(formDataObject);
   try {
-    const response = await fetch(
-      "https://yogaonpurpose-production.up.railway.app/posts",
-      {
-        method: "POST",
-        credentials: "include",
-        body: formDataString,
-        headers: { "Content-Type": "application/json" },
-      },
-    );
+    const response = await fetch("https://api.yogaonpurpose.net/posts", {
+      method: "POST",
+      credentials: "include",
+      body: formDataString,
+      headers: { "Content-Type": "application/json" },
+    });
     if (!response.ok) {
       console.log(response);
       stateSetter({
