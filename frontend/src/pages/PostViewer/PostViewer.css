@@ -33,7 +33,7 @@
 }
 
 .postViewerContent img {
-  max-width: 890px;
+  max-width: calc(100vw - 20px);
   height: auto;
 }
 
@@ -66,5 +66,9 @@
   .postViewer > div {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .postViewerContent img {
+    max-width: 900px;
   }
 }
