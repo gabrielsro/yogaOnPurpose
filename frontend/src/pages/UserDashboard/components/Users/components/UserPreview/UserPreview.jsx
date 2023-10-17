@@ -17,7 +17,7 @@ const UserPreview = ({ user }) => {
   const [previewState, setPreviewState] = useState({ status: "loaded" });
 
   if (previewWarning.status == "accepted") {
-    deleteUser(user._id, setPreviewState);
+    deleteUser(user._id, setPreviewState, setPreviewWarning);
   }
 
   console.log(previewState);
