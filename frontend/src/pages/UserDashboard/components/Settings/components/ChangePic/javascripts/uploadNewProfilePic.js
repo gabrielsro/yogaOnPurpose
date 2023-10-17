@@ -63,7 +63,7 @@ export default async (event, stateSetter, setLoggedUser) => {
       const userPicString = JSON.stringify(userObject);
 
       const response = await fetch(
-        "https://yogaonpurpose-production.up.railway.app/users/profilePic",
+        "https://api.yogaonpurpose.net/users/profilePic",
         {
           method: "POST",
           credentials: "include",
