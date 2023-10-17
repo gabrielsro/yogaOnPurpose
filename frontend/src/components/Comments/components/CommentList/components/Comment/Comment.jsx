@@ -32,7 +32,7 @@ const Comment = ({ comment, assetType }) => {
         <div className="commentInfo">
           {comment.comments.length > 0 && (
             <button
-              className="transparentButton"
+              className="transparentButton repliesCount"
               onClick={(e) => {
                 e.preventDefault();
                 setCommentsState({
