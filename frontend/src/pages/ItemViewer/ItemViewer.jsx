@@ -17,7 +17,7 @@ const ItemViewer = () => {
       {itemState.status == "loading" && <LoadingPage />}
       {itemState.status == "error" && <ErrorPage message={itemState.message} />}
       {itemState.status == "loaded" && (
-        <div>
+        <div className="itemViewerPage">
           <div className="pageControls">
             <Link to="/store" className="returnLink">
               Return
