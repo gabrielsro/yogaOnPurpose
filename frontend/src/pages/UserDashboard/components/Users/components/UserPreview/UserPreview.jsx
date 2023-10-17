@@ -6,10 +6,25 @@ import editIcon from "../../../../icons/edit2.svg";
 import deleteIcon from "../../../../icons/delete.svg";
 import adminIcon from "../../../Info/icons/crown.svg";
 import guestIcon from "../../../Info/icons/guest.svg";
+import deleteUser from "./javascripts/deleteUser";
+import { useState } from "react";
+import Modal from "../../../../../../components/Modal";
+import WarningOption from "../../../WarningOption";
 
 const UserPreview = ({ user }) => {
+  const [previewWarning, setPreviewWarning] = useState({ status: "off" });
   return (
     <li className="userPreviewCard">
+      {previewWarning.status == "question" && (
+        <Modal>
+          <WarningOption
+            message={`Do you want to permanently delete user ${user.firstName} ${user.lastName}?`}
+            stateSetter={setPreviewWarning}
+            type={undefined}
+            assetId={user._id}
+          />
+        </Modal>
+      )}
       <div className="userInfo">
         <div className="userPic">
           {!user.profilePic && (
@@ -41,7 +56,13 @@ const UserPreview = ({ user }) => {
       </div>
       <div className="userStats"></div>
       <div className="userActions">
-        <button className="transparentButton">
+        <button
+          className="transparentButton"
+          onClick={(e) => {
+            e.preventDefault();
+            setPreviewWarning({ status: "question" });
+          }}
+        >
           <img src={deleteIcon} alt="Delete button" />
         </button>
         <button className="transparentButton">

@@ -32,7 +32,7 @@ const UserDashboard = ({ loggedUser, setLoggedUser }) => {
           navigate={navigate}
           user={dashboardState.user}
         />
-        <KeyGenerator />
+        {loggedUser.level == "Owner" && <KeyGenerator />}
         <Settings
           loggedUser={loggedUser}
           previousView={dashboardState.previousView}
