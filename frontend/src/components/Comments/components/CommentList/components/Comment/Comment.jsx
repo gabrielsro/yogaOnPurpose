@@ -31,18 +31,20 @@ const Comment = ({ comment, assetType }) => {
       <div className="commentInteraction">
         <div className="commentInfo">
           <p>{comment.comments.length}</p>
-          <button
-            className="transparentButton"
-            onClick={(e) => {
-              e.preventDefault();
-              setCommentsState({
-                showingReplier: commentState.showingReplier,
-                showingReplies: commentState.showingReplies ? false : true,
-              });
-            }}
-          >
-            <img src={commentsIcon} alt="Comments icon" />
-          </button>
+          {comment.comments.length > 0 && (
+            <button
+              className="transparentButton"
+              onClick={(e) => {
+                e.preventDefault();
+                setCommentsState({
+                  showingReplier: commentState.showingReplier,
+                  showingReplies: commentState.showingReplies ? false : true,
+                });
+              }}
+            >
+              <img src={commentsIcon} alt="Comments icon" />
+            </button>
+          )}
         </div>
         <div className="commentActions">
           <button
