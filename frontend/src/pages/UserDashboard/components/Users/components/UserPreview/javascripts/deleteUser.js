@@ -1,4 +1,3 @@
-export default async (e, setPreviewWarning) => {
-  e.preventDefault();
-  setPreviewWarning({ status: "question" });
+export default async (userId, setPreviewState) => {
+  setPreviewState({ status: "loading" });
 };
