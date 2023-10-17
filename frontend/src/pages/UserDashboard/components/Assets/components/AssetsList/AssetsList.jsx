@@ -134,7 +134,7 @@ const AssetsList = ({
                       <img src={placeholderPicture} alt="Placeholder item" />
                     ) : (
                       <img
-                        src={`https://res.cloudinary.com/drkbr9f2j/image/upload/c_thumb,w_300,g_face/v1696457085/${asset.thumbnail}`}
+                        src={`https://res.cloudinary.com/drkbr9f2j/image/upload/c_thumb,w_300/v1696457085/${asset.thumbnail}`}
                         alt="Item"
                       />
                     )}
