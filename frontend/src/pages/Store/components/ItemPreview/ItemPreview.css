@@ -40,6 +40,8 @@
 @media only screen and (min-width: 900px) {
   .itemThumbnail {
     max-height: 252.5px;
+    height: auto;
+    aspect-ratio: 1;
   }
 
   .itemThumbnail img {
