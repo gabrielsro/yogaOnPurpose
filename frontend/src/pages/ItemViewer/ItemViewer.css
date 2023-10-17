@@ -96,7 +96,8 @@
   }
   .itemWrapper {
     display: grid;
-    place-content: center;
+    place-content: start;
+    padding-left: 20px;
   }
   .itemContentsPage {
     display: flex;
