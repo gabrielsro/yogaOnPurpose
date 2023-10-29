@@ -1,3 +1,5 @@
 import toggleMobileMenu from "./toggleMobileMenu";
 
-export default () => window.innerWidth < 501 && toggleMobileMenu();
+export default () => {
+  window.innerWidth < 791 && toggleMobileMenu();
+};
