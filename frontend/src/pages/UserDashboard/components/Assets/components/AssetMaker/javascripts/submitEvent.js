@@ -8,12 +8,18 @@ export default async (action, stateSetter, editorRef) => {
   const formData = new FormData();
   let formDataObject = Object.fromEntries(formData);
   formDataObject.name = document.getElementById("eventName").value;
-  formDataObject.dateStart = document
-    .getElementById("eventDate")
-    .value.toISOString();
-  formDataObject.dateEnd = document
-    .getElementById("eventDateFinish")
-    .value.toISOString();
+  console.log("dateInputValue:");
+  console.log(document.getElementById("eventDate").value);
+  console.log("experimentalValue:");
+  console.log(
+    new Date().toISOString(document.getElementById("eventDate").value),
+  );
+  formDataObject.dateStart = new Date(
+    document.getElementById("eventDate").value,
+  ).toISOString();
+  formDataObject.dateEnd = new Date(
+    document.getElementById("eventDateFinish").value,
+  ).toISOString();
   formDataObject.location = document.getElementById("eventLocation").value;
   formDataObject.status = action;
   formDataObject.organizers = [];
