@@ -132,8 +132,8 @@ export default async (
   }
 
   data.name = editorName;
-  data.dateStart = startDate;
-  data.dateEnd = endDate;
+  data.dateStart = new Date(startDate).toISOString();
+  data.dateEnd = new Date(endDate).toISOString();
   data.description = content;
   data.location = location;
   data.status = eventStatus;
