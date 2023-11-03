@@ -12,7 +12,7 @@ export default async (action, stateSetter, editorRef) => {
   console.log(document.getElementById("eventDate").value);
   console.log("experimentalValue:");
   console.log(
-    new Date().toISOString(document.getElementById("eventDate").value),
+    new Date(document.getElementById("eventDate").value).toISOString(),
   );
   formDataObject.dateStart = new Date(
     document.getElementById("eventDate").value,
