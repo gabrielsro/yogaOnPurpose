@@ -32,7 +32,13 @@ const EventPreview = ({ event }) => {
               <img src={locationIcon} alt="Location icon" />
             </div>
             <div>
-              <p>{/https/.test(event.location) ? "link" : event.location}</p>
+              <p>
+                {/https/.test(event.location) ? (
+                  <a href={event.location}>Link</a>
+                ) : (
+                  event.location
+                )}
+              </p>
             </div>
           </div>
           <div className="eventCardDates">
