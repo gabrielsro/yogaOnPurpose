@@ -48,7 +48,15 @@ const EventViewer = () => {
               <div>
                 <div className="eventLocationPage">
                   <img src={locationIcon} alt="Location icon" />
-                  <p>{eventState.result.location}</p>
+                  {/* <p>{eventState.result.location}</p> */}
+                  {console.log(eventState.result.location)}
+                  <p>
+                    {/https/.test(eventState.result.location) ? (
+                      <a href={eventState.result.location}>Link</a>
+                    ) : (
+                      eventState.result.location
+                    )}
+                  </p>
                 </div>
                 <div className="eventDatesPage">
                   <img src={calendarIcon} alt="Dates icon" />
