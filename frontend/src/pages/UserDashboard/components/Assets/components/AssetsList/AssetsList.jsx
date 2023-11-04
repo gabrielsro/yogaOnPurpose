@@ -114,7 +114,11 @@ const AssetsList = ({
                     <p>{asset.name}</p>
                   </div>
                   <div className="eventBasicsLocation">
-                    <p>{asset.location}</p>
+                    {/http/.test(asset.location) ? (
+                      <a href={asset.location}>Link</a>
+                    ) : (
+                      <p>{asset.location}</p>
+                    )}
                   </div>
                   <div className="eventBasicsOrganizers">
                     <p>{`By: ${asset.organizers[0]?.firstName} ${asset.organizers[0]?.lastName}`}</p>
