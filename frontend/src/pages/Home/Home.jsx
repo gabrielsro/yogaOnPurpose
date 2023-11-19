@@ -1,5 +1,4 @@
 import "./Home.css";
-import Logo from "../../../staticImages/mainLogo.png";
 import rain from "./javascripts/rain.js";
 import carousel from "./javascripts/carousel.js";
 import img1 from "./images/yoga11.jpg";
@@ -25,7 +24,11 @@ const Home = () => {
     <div className="page" id="home">
       <div className="logoSection">
         <div className="logoContainer">
-          <img src={Logo} alt="Yoga on Purpose logo" id="logo" />
+          <img
+            src="https://res.cloudinary.com/drkbr9f2j/image/upload/v1700402117/mainLogo_sd22kf.png"
+            alt="Yoga on Purpose logo"
+            id="logo"
+          />
         </div>
         <div className="slogan">
           <h1>Purpose fuels passion</h1>
