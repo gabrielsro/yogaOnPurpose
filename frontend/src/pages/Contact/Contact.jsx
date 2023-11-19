@@ -5,7 +5,6 @@ import LoadingPage from "../LoadingPage/LoadingPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import SuccessPage from "../SuccessPage";
 import Externals from "../../components/Externals";
-import Footer from "../../components/Footer";
 
 const Contact = () => {
   const [contactState, setContactState] = useState({ status: "loaded" });
@@ -45,7 +44,6 @@ const Contact = () => {
               <Externals />
             </div>
           </main>
-          <Footer />
         </div>
       )}
       {contactState.status == "loading" && <LoadingPage />}
