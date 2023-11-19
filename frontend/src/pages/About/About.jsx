@@ -1,6 +1,6 @@
 import "./About.css";
 import jamieProfile from "./images/jamieProfile.jpg";
-import namaste from "./icons/namaste.svg";
+import Externals from "../../components/Externals";
 
 const About = () => {
   return (
@@ -27,9 +27,9 @@ const About = () => {
           <p>
             {`Join me on this transformative journey, and together, we'll unlock the boundless potential that yoga offers. Your path to a purposeful and passionate life starts here. Namaste.`}
           </p>
-          <img src={namaste} alt="Namaste icon" />
         </div>
       </section>
+      <Externals />
     </div>
   );
 };

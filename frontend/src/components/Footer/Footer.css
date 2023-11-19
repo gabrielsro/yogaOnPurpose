@@ -1,0 +1,36 @@
+#footer footer {
+  background-color: rgb(215, 213, 213);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding: 10px;
+  display: grid;
+  place-content: center;
+}
+
+#footer footer div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#footer footer img {
+  width: 30px;
+}
+
+#footer footer .footerContact {
+  gap: 120px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 790px) {
+  #footer footer {
+    bottom: 50px;
+  }
+
+  #footer footer .footerContact {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+}

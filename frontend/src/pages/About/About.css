@@ -1,6 +1,7 @@
 #about {
   display: grid;
   place-content: center;
+  padding-bottom: 70px;
 }
 
 .mainAbout {

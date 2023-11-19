@@ -3,12 +3,13 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 70vh auto;
+  grid-template-rows: 55vh auto;
 }
 
 .contactForm {
   display: grid;
   place-content: center;
+  padding-top: 40px;
 }
 
 .contactOptions {
@@ -16,7 +17,10 @@
   display: grid;
   place-content: center;
   grid-column: 1/3;
-  padding-bottom: 100px;
+}
+
+.footerContainer {
+  grid-column: 1/3;
 }
 
 .contactForm form {
@@ -69,10 +73,6 @@
     width: 100%;
   }
 
-  .contactForm {
-    height: 100vh;
-  }
-
   .contactForm form {
     width: 90vw;
     grid-template-columns: 1fr;
@@ -88,10 +88,5 @@
     width: 100%;
     flex-direction: column;
     gap: 90px;
-  }
-
-  .contactOptions {
-    padding-top: 70px;
-    width: 100%;
   }
 }

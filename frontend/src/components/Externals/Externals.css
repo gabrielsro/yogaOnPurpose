@@ -1,0 +1,16 @@
+.homeExternals {
+  margin-top: 70px;
+  display: grid;
+  place-content: center;
+}
+
+.homeExternals ul {
+  width: 200px;
+  display: flex;
+  place-content: center;
+  gap: 40px;
+}
+
+.homeExternals img {
+  width: 40px;
+}
