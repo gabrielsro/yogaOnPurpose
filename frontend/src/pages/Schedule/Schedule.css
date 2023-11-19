@@ -1,0 +1,15 @@
+.schedulePageContainer {
+  display: grid;
+  place-content: center;
+  padding-top: 200px;
+}
+
+.schedulePageContainer img {
+  width: 180px;
+}
+
+.schedulePageImg {
+  padding-top: 30px;
+  display: grid;
+  place-content: center;
+}
