@@ -44,10 +44,8 @@ const Contact = () => {
             <div className="contactOptions">
               <Externals />
             </div>
-            <div className="footerContainer">
-              <Footer />
-            </div>
           </main>
+          <Footer />
         </div>
       )}
       {contactState.status == "loading" && <LoadingPage />}
