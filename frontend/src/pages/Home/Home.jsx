@@ -1,5 +1,5 @@
 import "./Home.css";
-import Logo from "../../../../staticImages/mainLogo.png";
+import Logo from "../../../staticImages/mainLogo.png";
 import rain from "./javascripts/rain.js";
 import carousel from "./javascripts/carousel.js";
 import img1 from "./images/yoga11.jpg";
