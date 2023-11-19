@@ -6,7 +6,7 @@
 
 #logo {
   height: 100%;
-  width: 300px;
+  width: 100%;
 }
 
 ol > li {
@@ -17,20 +17,12 @@ ol > li {
   display: grid;
   grid-template-columns: 300px auto;
   overflow: hidden;
+  background: linear-gradient(to right, #8fbabf, #cfc8c6);
 }
 
 .logoContainer {
   width: 300px;
   grid-column: 1/2;
-  grid-row: 1/2;
-}
-
-.logoGradient {
-  position: relative;
-  background: linear-gradient(to right, #8fbabf, #cfc8c6);
-  width: 100%;
-  height: 190px;
-  grid-column: 2/3;
   grid-row: 1/2;
 }
 

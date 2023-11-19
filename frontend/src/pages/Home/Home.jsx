@@ -1,5 +1,5 @@
 import "./Home.css";
-import Logo from "./images/YOPLogo.png";
+import Logo from "../../../../staticImages/mainLogo.png";
 import rain from "./javascripts/rain.js";
 import carousel from "./javascripts/carousel.js";
 import img1 from "./images/yoga11.jpg";
@@ -27,7 +27,6 @@ const Home = () => {
         <div className="logoContainer">
           <img src={Logo} alt="Yoga on Purpose logo" id="logo" />
         </div>
-        <div className="logoGradient"></div>
         <div className="slogan">
           <h1>Purpose fuels passion</h1>
         </div>
